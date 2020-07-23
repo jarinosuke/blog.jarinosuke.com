@@ -34,13 +34,19 @@ bio svg {
     fill: #2c2c2c;
 }
 
+article header h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
 article header h3 {
     font-size: 24px;
     line-height: 1.1;
     margin-bottom: 8px;
 }
 
-article header small {
+article header .date {
     font-size: 16px;
     display: block;
     color: #3d3d3d;
@@ -69,6 +75,7 @@ main h3 {
 
 article h1, h2, h3 {
     margin-top: 88px;
+    font-weight: "normal";
 }
 
 article p code {
