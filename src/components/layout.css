@@ -1,5 +1,5 @@
 a {
-    color: #4F96B5;
+    color: #3187e9;
 }
 
 li {
@@ -13,25 +13,25 @@ pre, code {
 .logo {
     font-family: "IBM Plex Sans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
-header ul {
-    margin: 0px;
+bio ul {
+    margin: 4px;
 }
 
-header li {
-    margin-right: 16px;
+bio li {
+    margin-right: 24px;
     display: inline-block;
 }
 
-header li.icon {
-    margin-right: 8px;
+bio li.icon {
+    margin-right: 20px;
     vertical-align: middle;
 }
 
-header svg {
-    fill: #b0baba;
+bio svg {
+    fill: #2c2c2c;
 }
 
 article header {
