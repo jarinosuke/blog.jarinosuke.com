@@ -1,5 +1,5 @@
 a {
-    color: #3187e9;
+    color: #e0b41d;
 }
 
 li {
@@ -76,6 +76,10 @@ main h3 {
 article h1, h2, h3 {
     margin-top: 88px;
     font-weight: "normal";
+}
+
+article section {
+
 }
 
 article p code {

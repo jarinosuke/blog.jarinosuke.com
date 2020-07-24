@@ -19,10 +19,10 @@ const fontNames = [
 const typography = new Typography({
   baseFontSize: 20,
   baseLineHeight: 1.6,
-  headerColor: '#4c4c4c',
+  headerColor: '#464646',
   headerFontFamily: fontNames,
   headerWeight: 700,
-  bodyColor: '#3f3f3f',
+  bodyColor: '#000000',
   bodyFontFamily: fontNames,
   bodyWeight: 400,
 })
