@@ -1,17 +1,31 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  }
-}
+const fontNames = [
+  "-apple-system",
+  "SF Pro JP",
+  "SF Pro Display",
+  "SF Pro Icons",
+  "Hiragino Kaku Gothic Pro",
+  "ヒラギノ角ゴ Pro W3",
+  "メイリオ",
+  "Meiryo",
+  "ＭＳ Ｐゴシック",
+  "Helvetica Neue",
+  "Helvetica",
+  "Arial",
+  "sans-serif",
+];
 
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+const typography = new Typography({
+  baseFontSize: 20,
+  baseLineHeight: 1.6,
+  headerColor: '#4c4c4c',
+  headerFontFamily: fontNames,
+  headerWeight: 700,
+  bodyColor: '#3f3f3f',
+  bodyFontFamily: fontNames,
+  bodyWeight: 400,
+})
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
