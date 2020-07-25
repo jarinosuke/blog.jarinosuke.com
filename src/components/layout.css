@@ -122,3 +122,14 @@ article pre {
     padding: 24px;
     border-radius: 8px;
 }
+
+.gatsby-code-title {
+    background: #0c78cc;
+    color: #ffffff;
+    padding: 8px 8px;
+    font-size: 0.8em;
+    line-height: 1;
+    font-weight: bold;
+    display: table;
+    border-radius: 8px 8px 8px 8px;
+  }
