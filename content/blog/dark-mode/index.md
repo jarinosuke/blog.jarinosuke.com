@@ -6,12 +6,12 @@ description: ""
 
 ### やったこと
 
-- prefers-color-sche を使ってスタイルの切り替えを実装した（ダークモード対応）
+- `prefers-color-scheme` を使ってスタイルの切り替えを実装した（ダークモード対応）
   - それに伴って全体的にデザインを変更、普段使ってる Mac/iOS Note.app ぽい黄色にした
 - シンタックスハイライトのデザイン変更した
 - コードブロックの上にファイル名やタイトルを付け加えられるようにした
 - 内部の Markdown へのリンク遷移時に、リロードされないようにした
-  - gatsby-plugin-catch-links を使った
+  - `gatsby-plugin-catch-links` を使った
   - 直リンクだと、デプロイ前のプレビューで遷移確認できないのと、せっかくSPAぽく動いてるので無駄なリロードは避けたかったので
 
 対応した PR は[これ](https://github.com/jarinosuke/blog.jarinosuke.com/pull/9)
