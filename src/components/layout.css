@@ -1,25 +1,29 @@
-body {
-  -webkit-font-smoothing: antialiased;
-
-  --bg: #f4f3f4;
-  --textNormal: #000000;
-  --textTitle: #464646;
-  --textLink: #e0b41d;
-  --hr: hsla(0, 0%, 0%, 0.2);
-
-  background-color: var(--bg);
-}
+@media (prefers-color-scheme: light) {
+  body {
+    -webkit-font-smoothing: antialiased;
   
-body.dark {
-  -webkit-font-smoothing: antialiased;
+    --bg: #f4f3f4;
+    --textNormal: #000000;
+    --textTitle: #464646;
+    --textLink: #e0b41d;
+    --hr: hsla(0, 0%, 0%, 0.2);
+  
+    background-color: var(--bg);
+  }
+}
 
-  --bg: #1c1e20;
-  --textNormal: #e7e7e7;
-  --textTitle: #dadad8;
-  --textLink: #deb35a;
-  --hr: hsla(0, 0%, 100%, 0.2);
-
-  background-color: var(--bg);
+@media (prefers-color-scheme: dark) {
+  body {
+    -webkit-font-smoothing: antialiased;
+  
+    --bg: #1c1e20;
+    --textNormal: #e7e7e7;
+    --textTitle: #dadad8;
+    --textLink: #deb35a;
+    --hr: hsla(0, 0%, 100%, 0.2);
+  
+    background-color: var(--bg);
+  }
 }
 
 li {
