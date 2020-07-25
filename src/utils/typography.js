@@ -1,4 +1,5 @@
 import Typography from "typography"
+import '../components/layout.css'
 
 const fontNames = [
   "-apple-system",
@@ -19,13 +20,26 @@ const fontNames = [
 const typography = new Typography({
   baseFontSize: 20,
   baseLineHeight: 1.6,
-  headerColor: '#464646',
+  headerColor: 'var(--textTitle)',
   headerFontFamily: fontNames,
   headerWeight: 700,
-  bodyColor: '#000000',
+  bodyColor: 'var(--textNormal)',
   bodyFontFamily: fontNames,
   bodyWeight: 400,
+  overrideThemeStyles: () => ({
+    a: {
+      color: 'var(--textLink)',
+    },
+    hr: {
+      background: 'var(--hr)',
+    },
+    svg: {
+      fill: 'var(--textNormal)'
+    }
+  }),
 })
+
+
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
