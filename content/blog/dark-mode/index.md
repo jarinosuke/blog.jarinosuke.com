@@ -1,0 +1,44 @@
+---
+title: "ダークモード対応した"
+date: 2020-07-25 09:00 +0900
+description: ""
+---
+
+### やったこと
+
+- prefers-color-scheme を使ってスタイルの切り替えを実装した（ダークモード対応）
+- シンタックスハイライトのデザイン変更した
+- コードブロックの上にファイル名やタイトルを付け加えられるようにした
+
+対応した PR は[これ](https://github.com/jarinosuke/blog.jarinosuke.com/pull/9)
+
+### しなかったこと
+
+- シンタックスハイライトのダークモード対応
+  - 面倒そうだったのと、 `prism-tomorrow` でどちらの場合も事足りそうな雰囲気だったので見送り
+
+### CSS Media Query
+
+ユーザの端末や設定などに CSS からアクセスするための仕組み
+
+今回のダークモードについても `prefers-color-scheme` というキー名に対して以下の様にクエリを投げ、
+
+その返り値が `light` か `dark` によってスタイルの出し分けを行っている
+
+```css:title=layout.css
+@media (prefers-color-scheme: light) {
+  body {} 
+}
+
+@media (prefers-color-scheme: dark) {
+  body {} 
+}
+```
+手元の Safari や Chrome では動くぽいので、既に一定標準なのかもしれない
+
+### 参考
+
+- [prefers-color-scheme を用いた Dark Mode 対応と User Preference Media Features](https://blog.jxck.io/entries/2018-11-10/dark-mode-via-prefers-color-scheme.html)
+- [Gatsbyでブログを作りました](https://blog.ebiken.dev/blog/my-new-blog/)
+- [Gatsbyにシンタックスハイライトを入れてコードをきれいに表示する](https://littlebylittle.work/2020/01/gatsby-syntax-highlighting/)
+- [GatsbyJSで作っているブログでコードブロックにタイトルをつけられるようにした](https://kikunantoka.com/2019/12/11--install-code-title/)
