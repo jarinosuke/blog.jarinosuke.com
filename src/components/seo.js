@@ -18,8 +18,6 @@ const SEO = ({ description, lang, meta, image: metaImage, title }) => {
           siteMetadata {
             title
             description
-            author
-            keywords
             siteUrl
             social {
               twitter
@@ -44,10 +42,6 @@ const SEO = ({ description, lang, meta, image: metaImage, title }) => {
         {
           name: `description`,
           content: metaDescription,
-        },
-        {
-          name: "keywords",
-          content: site.siteMetadata.keywords.join(","),
         },
         {
           property: `og:title`,

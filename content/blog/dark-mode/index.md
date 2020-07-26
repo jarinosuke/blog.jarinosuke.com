@@ -2,6 +2,7 @@
 title: "ダークモード対応した"
 date: 2020-07-25 09:00 +0900
 description: ""
+featured: ../assets/kuwagata.tron.png
 ---
 
 ### やったこと

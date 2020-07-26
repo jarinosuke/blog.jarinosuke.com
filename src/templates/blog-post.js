@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={image}
-        pathname={this.props.location.pathname}
+        pathname={location.pathname}
       />
       <article>
         <header>
@@ -53,7 +53,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
+        author {
+          username
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -73,6 +75,7 @@ export const pageQuery = graphql`
           }
         }
         date(formatString: "YYYY/MM/DD")
+        description
       }
     }
   }

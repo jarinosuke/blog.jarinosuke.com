@@ -2,6 +2,7 @@
 title: "‘A Philosophy of Software Design’ を読んだ"
 date: 2020-03-05 09:00 +0900
 description: ""
+featured: formula.png
 ---
 
 ## A Philosophy of Software Design

@@ -8,5 +8,6 @@ cat - << EOS > content/blog/$unixtime/index.md
 title: "$today"
 date: $today
 description: ""
+featured: ../assets/kuwagata.tron.png
 ---
 EOS

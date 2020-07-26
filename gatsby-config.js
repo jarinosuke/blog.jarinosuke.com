@@ -4,6 +4,7 @@ module.exports = {
     title: `jarinosuke blog`,
     author: {
       name: `Naoki ISHIKAWA`,
+      username: `jarinosuke`,
       summary: `who lives and works in Tokyo building mobile apps.`,
     },
     description: `mobile developer's blog`,
