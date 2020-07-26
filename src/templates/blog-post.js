@@ -9,12 +9,17 @@ import { rhythm } from "../utils/typography"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const image = post.frontmatter.image
+      ? post.frontmatter.image.childImageSharp.resize
+      : null
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={image}
+        pathname={this.props.location.pathname}
       />
       <article>
         <header>
@@ -48,6 +53,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -56,8 +62,17 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY/MM/DD")
         description
+        image: featured {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
+        date(formatString: "YYYY/MM/DD")
       }
     }
   }

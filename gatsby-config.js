@@ -8,6 +8,7 @@ module.exports = {
     },
     description: `mobile developer's blog`,
     siteUrl: `https://blog.jarinosuke.com`,
+    image: "content/assets/kuwagata.tron.png",
     social: {
       twitter: `jarinosuke`,
     },
