@@ -1,23 +1,24 @@
 import React from "react"
+import { Link, graphql } from "gatsby"
+
 import PropTypes from "prop-types"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 // Components
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const TagsPage = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+  const group = data.allMarkdownRemark.group
+
+  return (
+    <Layout location={location} title={siteTitle}>
+    <SEO title="All tags" />
+    <bio><Bio /></bio>
+    <h1>Tags</h1>
+    <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
@@ -26,9 +27,11 @@ const TagsPage = ({
           </li>
         ))}
       </ul>
-    </div>
-  </div>
-)
+    
+  </Layout>
+  )
+}
+
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
