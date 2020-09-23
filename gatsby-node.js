@@ -9,28 +9,28 @@ exports.createPages = async ({ graphql, actions }) => {
   const tagTemplate = path.resolve("src/templates/tags.js")
   const result = await graphql(
     `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              slug
             }
-          }
-          tags: allMarkdownRemark(limit: 1000) {
-            group(field: frontmatter___tags) {
-              fieldValue
+            frontmatter {
+              tags
             }
           }
         }
       }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
     `
   )
 
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.postsRemark.edges
 
   posts.forEach((post, index) => {
     createPage({
