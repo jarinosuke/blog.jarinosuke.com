@@ -17,7 +17,7 @@ const TagsPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
     <SEO title="All tags" />
     <bio><Bio /></bio>
-    <h1>Tags</h1>
+    <h1>All tags</h1>
     <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
