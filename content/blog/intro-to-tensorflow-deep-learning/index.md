@@ -2,6 +2,7 @@
 title: "‘Intro to TensorFlow for Deep Learning | Udacity’ を受講した"
 date: 2020-03-25 09:00 +0900
 description: ""
+featured: '../assets/kuwagata.tron.png'
 tags: ['machine learning', 'online course']
 ---
 
