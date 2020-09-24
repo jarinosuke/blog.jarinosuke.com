@@ -13,7 +13,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const image = post.frontmatter.image
       ? post.frontmatter.image.childImageSharp.resize
       : null
-  const tags = post.frontmatter.tags
+  const tags = post.frontmatter.tags ? post.frontmatter.tags : []
 
   return (
     <Layout location={location} title={siteTitle}>
