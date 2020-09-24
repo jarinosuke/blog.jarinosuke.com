@@ -2,7 +2,7 @@
 title: "Gatsby + Netlify の新しいブログを作った"
 date: 2020-07-24 09:00 +0900
 description: ""
-featured: 'netlify-ci.png'
+featured: './netlify-ci.png'
 tags: ['frontend']
 ---
 
