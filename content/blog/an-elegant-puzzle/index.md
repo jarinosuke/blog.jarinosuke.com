@@ -2,7 +2,8 @@
 title: "‘An Elegant Puzzle: System of Engineering Management’ を読んだ"
 date: 2020-01-24 09:00 +0900
 description: ""
-featured: ../assets/kuwagata.tron.png
+featured: '../assets/kuwagata.tron.png'
+tags: ['management', 'reading']
 ---
 
 ## Summary
