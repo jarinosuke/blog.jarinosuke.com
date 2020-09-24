@@ -1,10 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import _ from "lodash"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -12,6 +13,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const image = post.frontmatter.image
       ? post.frontmatter.image.childImageSharp.resize
       : null
+  const tags = post.frontmatter.tags
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -31,6 +33,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <hr
+          style={{
+            marginBottom: rhythm(0.5),
+          }}
+        />
+        Tags
+        {tags.map(tag => {
+          return (
+            <li key={tag}>
+              <Link to={`/tags/${_.kebabCase(tag)}/`}>{tag}</Link>
+            </li>
+          )
+        })}
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -75,7 +90,7 @@ export const pageQuery = graphql`
           }
         }
         date(formatString: "YYYY/MM/DD")
-        description
+        tags
       }
     }
   }
