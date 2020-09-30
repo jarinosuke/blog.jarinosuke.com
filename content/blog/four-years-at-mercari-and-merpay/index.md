@@ -2,7 +2,7 @@
 title: "メルカリ・メルペイでの4年間"
 date: 2020-10-01 09:00 +0900
 description: ""
-featured: 'roppongi_hills.jpeg'
+featured: './roppongi_hills.jpeg'
 tags: ["work", "management", "career"]
 ---
 
