@@ -68,8 +68,7 @@ Merpay開発開始から半年経ったくらいからEngineering Managerの業�
 
 2019年末には機会を頂いて[EOF 2019](https://eof.connpass.com/event/143794/)で以下の発表もさせてもらった。
 
-- [メルペイのエンジニアリング組織の変化と目指すチーム像](https://speakerdeck.com/jarinosuke/
-merupeifalseenziniaringuzu-zhi-falsebian-hua-tomu-zhi-sutimuxiang)
+- [メルペイのエンジニアリング組織の変化と目指すチーム像](https://speakerdeck.com/jarinosuke/merupeifalseenziniaringuzu-zhi-falsebian-hua-tomu-zhi-sutimuxiang)
 - [メルペイiOSエンジニアが「EMとしての1年半」で気づいた、チームに必要な3つの要素 #eof2019](https://mercan.mercari.com/articles/18940/)
     
 2020年に入ってもOrigamiチームの合流や、リモート環境下でのマネジメントやコミュニケーションなどチャレンジングなことが続いた。
