@@ -1,5 +1,5 @@
 ---
-title: "2020-12-21 09:00 +0900"
+title: "Resolve storyboard/xib files upgrade diffs at once"
 date: 2020-12-21 09:00 +0900
 description: ""
 featured: '../assets/kuwagata.tron.png'
