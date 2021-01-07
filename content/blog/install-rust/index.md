@@ -1,5 +1,5 @@
 ---
-title: "2021-01-07 09:00 +0900"
+title: "Rust をインストールする"
 date: 2021-01-07 09:00 +0900
 description: ""
 featured: '../assets/kuwagata.tron.png'
