@@ -57,7 +57,7 @@ https://support.apple.com/ja-jp/HT201238
 
 iCloud は写真と動画それぞれどちらも劣化なしで元ファイルを保持してくれるので、一時キャッシュとして扱うことにした。
 
-### Google Photo
+### 3. Google Photo
 
 既に2021年6月1日からのストレージ有料化が発表されているので、メインのバックアップ先としては検討できなかった。
 
@@ -67,7 +67,7 @@ https://photos.google.com/u/0/storagepolicy?hl=ja\
 
 万が一何かが消えた時などにもしかしたらここにあるかも？と探せれば良いかな程度の温度感。
 
-### Time Machine
+### 4. Time Machine
 
 以前から Mac で Time Machine を使ってバックアップを取っていた。
 
@@ -78,7 +78,7 @@ https://support.apple.com/ja-jp/guide/photos/pht6d60d10f/mac
 念の為ダウンロードする写真をオリジナルに設定している。
 ![](photos-download-original.png)
 
-### HDD
+### 5. HDD
 
 上記の Time Machine とは別の HDD/SSD を使って、 `Photos Library.photoslibrary` のハードコピーを保存する。
 
