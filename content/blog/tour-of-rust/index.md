@@ -8,13 +8,13 @@ tags: ["Rust"]
 
 ### 感想
 
-この前に[Rustプログラミング入門 を読んだ](../introduction-to-rust-programming)
+この前に[Rustプログラミング入門 を読んだ](../introduction-to-rust-programming)。
 
 そこで Rust の全体像や実際の開発方法については浅くはありながらもキャッチアップできたと思うので、
 
 次はもう少し言語に深く触れてみたいという課題感があり、[Tour of Rust](https://tourofrust.com) をやってみた。
 
-5日くらいかけて一日1時間弱で全9章を終えることができた。
+5日くらいかけて一日30分~1時間で全9章を終えることができた。
 
 途中からは日本語訳がないので苦手な人は注意が必要かも。
 
@@ -26,9 +26,9 @@ tags: ["Rust"]
 
 この [Hecto: Build your own text editor in Rust](https://www.philippflenker.com/hecto/) が良さそうと思っている。
 
-以下読書時のメモ
-
 ### 読書メモ
+
+以下は読書時メモ
 
 - Chapter 1 The Basics
     - 変数の型が違う場合の `as` キーワードある
@@ -43,7 +43,7 @@ let v = loop {
   if x == 13 {
     break "13 を発見";
   }
-};```
+};
     - ブロックの最後に `;` が無い式は、それが戻り値として使用される
     - if 文を三項演算子のように使うこともできる
 - Chapter 3 Basic Data Structure Types
@@ -52,7 +52,7 @@ let v = loop {
         - その値はプリミティブな型かデータ構造
         - コンパイラにメモリ上で隣り合うデータの配置を伝える設計図のようなもの
     - メモリ
-        - #Rust には3種類のメモリ空間がある
+        - Rust には3種類のメモリ空間がある
         - データメモリ
             - 固定長もしくはライフサイクル中に常に存在するデータを格納
             - プログラム内の文字列キャラクタは読み取り専用なのでここ
@@ -65,7 +65,7 @@ let v = loop {
             - データをヒープメモリに入れることを allocation、削除することを deallocation という
     - タプルを使った構造体も作ることができる
         - ```rust
-struct Location(i32, i32);```
+struct Location(i32, i32);
     - フィールドを持たない構造体も宣言できる
         - あまり使われない
 - Chapter 4 Generics Types
@@ -73,7 +73,7 @@ struct Location(i32, i32);```
         - struct や enum につけることができる
         - `::<T>` を使う
             - `::<>` を turbofish というらしい、魚に見えるから？
-    - #Rust には null がない
+    - Rust には null がない
         - 変数に値がない可能性を意味するため、プログラミングが難しくなる
         - `None` によって代替する
         - `Option` を使うのが一般的
@@ -83,12 +83,12 @@ struct Location(i32, i32);```
         - 強力な `?` 演算子がある
         - 以下の2つは等価
             - ```rust
-do_something_that_might_fail()?```
+do_something_that_might_fail()?
             - ```rust
 match do_something_that_might_fail() {
     Ok(v) => v,
     Err(e) => return Err(e),
-}```
+}
     - unwrap
         - Option / Result にある
             - 値がある場合はその値を、無い場合は `panic!` する
@@ -99,8 +99,8 @@ match do_something_that_might_fail() {
         - `Vec` は構造体、内部的にはヒープ上の固定リストへの参照を持っている
         - デフォルトの容量よりも多くの項目が追加された場合、ヒープにより大きな固定長を生成して再割り当てする
 - Chapter 5 Ownership & Borrowing Data
-    - #Rust にはが[[Garbage Collection]]がない
-    - [[C++]]ではResource Acquisition Is Initializationとも呼ばれる
+    - Rust にはがGarbage Collectionがない
+    - C++ではResource Acquisition Is Initializationとも呼ばれる
     - メモリ開放は階層的に行われる
         - 構造体自体がまず消され、その後に子要素が消える
     - 関数の引数に所有者が渡されると、所有権は関数の仮引数にmoveする
@@ -115,7 +115,7 @@ match do_something_that_might_fail() {
             - 値のコピーも可能
     - 参照は所有者よりも長くは存在してはいけない
         - 存在しないデータへの参照を防ぐ
-        - [[C言語]] では [[ダングリングポインタ]] と呼ばれる
+        - C言語ではダングリングポインタと呼ばれる
     - 参照の一部を参照することも可能
     - 明示的なライフタイム
         - コンパイラは全ての変数のライフタイムを管理している　
@@ -132,7 +132,7 @@ match do_something_that_might_fail() {
     - Rust には inheritance は無い
     - method の最初のパラメータは必ず self への参照になる
         - ```rust
-fn get_sound(&self) -> &str```
+fn get_sound(&self) -> &str
     - デフォルトだと object のフィールドやメソッドはモジュール内でのみ公開になる
         - モジュール外にも出す場合、 `pub` キーワードをつける
     - polymorphism は trait を使って実現する
@@ -147,7 +147,7 @@ fn get_sound(&self) -> &str```
         - `&dyn MyTrait` を使うことで引数などで dynamic dispatch が使えるようになる
             - trait object と呼ばれる
                 - function へのポインタを持つインスタンスへのポインタ
-                - [[C++]]では vtable と呼ばれる
+                - C++では vtable と呼ばれる
     - Generics
         - generics を使うことでコンパイル時に静的に型が付き、static dispatch が可能になる
         - 下のように書ける
@@ -157,11 +157,11 @@ where
     T:Foo
 {
     ...
-}```
+}
             - ```rust
 fn my_function(foo: impl Foo) {
     ...
-}```
+}
         - これも同じ
             - ```rust
 struct MyStruct<T>
@@ -170,21 +170,21 @@ where
 {
     foo: T
     ...
-}```
+}
             - ```rust
 impl<T> MyStruct<T> {
     ...
-}```
+}
     - Box
         - 格納するデータを stack から heap に移動するための構造体
         - smart pointer と呼ばれるもの
 - Chapter 8 Smart Pointers
     - reference は raw pointer に変換できる
         - ```rust
-*const T```
+*const T
             - 型 T への raw pointer、型 T は変わらない
         - ```rust
-*mut T```
+*mut T
             - 型 T への raw pointer、Tは変わりうる
     - raw pointer は `unsafe` を使って、実際のデータにアクセスできる
     - Rust の reference は C のポインタに使い方なども似ている
@@ -199,7 +199,7 @@ impl<T> MyStruct<T> {
             - ```rust
 let f = Foo { value: 42 };
 let ref_ref_ref_f = &&&f;
-println!("{}", ref_ref_ref_f.value);```
+println!("{}", ref_ref_ref_f.value);
             - `()***ref_ref_ref_f).value` とする必要はない
                 - コンパイラが展開してくれる
     - Smart Pointer
@@ -246,6 +246,5 @@ println!("{}", ref_ref_ref_f.value);```
         - `prelude` モジュール
         - Rust standard library で `std::eprelude::*` に export されているものは自動的に有効になる
         - 自分のライブラリの prelude を作成することも可能
-    - 
 
 
