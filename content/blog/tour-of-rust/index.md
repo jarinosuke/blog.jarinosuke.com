@@ -169,7 +169,9 @@ fn my_function(foo: impl Foo) {
     ...
 }
 ```
+
         - これも同じ
+
 ```rust
 struct MyStruct<T>
 where
@@ -185,15 +187,19 @@ impl<T> MyStruct<T> {
     ...
 }
 ```
+
     - Box
         - 格納するデータを stack から heap に移動するための構造体
         - smart pointer と呼ばれるもの
 - Chapter 8 Smart Pointers
     - reference は raw pointer に変換できる
+
 ```rust
 *const T
 ```
+
             - 型 T への raw pointer、型 T は変わらない
+
 ```rust
 *mut T
 ```
@@ -208,11 +214,13 @@ impl<T> MyStruct<T> {
     - `Copy` trait が実装されている primitive な `i32` 型は、dereference した時にコピーされる
     - `.` オペレータは reference のメソッドやフィールドにアクセスするのに使われる
         - `.` オペレータは連続した reference を自動的に解決する
+
 ```rust
 let f = Foo { value: 42 };
 let ref_ref_ref_f = &&&f;
 println!("{}", ref_ref_ref_f.value);
 ```
+
             - `()***ref_ref_ref_f).value` とする必要はない
                 - コンパイラが展開してくれる
     - Smart Pointer
