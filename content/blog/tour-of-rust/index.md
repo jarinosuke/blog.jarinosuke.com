@@ -37,14 +37,14 @@ tags: ["Rust"]
     - 関数の返り値がない場合、空のタプル `()` が返り値となる
 - Chapter 2 Basic Control Flow
     - `loop` から値を取り出す、便利
-```rust
-let v = loop {
-  x += 1;
-  if x == 13 {
-    break "13 を発見";
-  }
-};
-```
+        ```rust
+        let v = loop {
+          x += 1;
+          if x == 13 {
+            break "13 を発見";
+          }
+        };
+        ```
     - ブロックの最後に `;` が無い式は、それが戻り値として使用される
     - if 文を三項演算子のように使うこともできる
 - Chapter 3 Basic Data Structure Types
@@ -65,9 +65,9 @@ let v = loop {
             - プログラムの実行時に作られるデータ
             - データをヒープメモリに入れることを allocation、削除することを deallocation という
     - タプルを使った構造体も作ることができる
-```rust
-struct Location(i32, i32);
-```
+        ```rust
+        struct Location(i32, i32);
+        ```
     - フィールドを持たない構造体も宣言できる
         - あまり使われない
 - Chapter 4 Generics Types
@@ -84,14 +84,14 @@ struct Location(i32, i32);
     - Result
         - 強力な `?` 演算子がある
         - 以下の2つは等価
-```rust
-do_something_that_might_fail()?
-            - ```rust
-match do_something_that_might_fail() {
-    Ok(v) => v,
-    Err(e) => return Err(e),
-}
-```
+            ```rust
+            do_something_that_might_fail()?
+                        - ```rust
+            match do_something_that_might_fail() {
+                Ok(v) => v,
+                Err(e) => return Err(e),
+            }
+            ```
     - unwrap
         - Option / Result にある
             - 値がある場合はその値を、無い場合は `panic!` する
@@ -134,9 +134,9 @@ match do_something_that_might_fail() {
 -  Chapter 7 Object Oriented Programming
     - Rust には inheritance は無い
     - method の最初のパラメータは必ず self への参照になる
-```rust
-fn get_sound(&self) -> &str
-```
+        ```rust
+        fn get_sound(&self) -> &str
+        ```
     - デフォルトだと object のフィールドやメソッドはモジュール内でのみ公開になる
         - モジュール外にも出す場合、 `pub` キーワードをつける
     - polymorphism は trait を使って実現する
@@ -155,54 +155,48 @@ fn get_sound(&self) -> &str
     - Generics
         - generics を使うことでコンパイル時に静的に型が付き、static dispatch が可能になる
         - 下のように書ける
-```rust
-fn my_function<T>(foo: T)
-where
-    T:Foo
-{
-    ...
-}
-```
+            ```rust
+            fn my_function<T>(foo: T)
+            where
+                T:Foo
+            {
+                ...
+            }
+            ```
 
-```rust
-fn my_function(foo: impl Foo) {
-    ...
-}
-```
-
+            ```rust
+            fn my_function(foo: impl Foo) {
+                ...
+            }
+            ```
         - これも同じ
-
-```rust
-struct MyStruct<T>
-where
-    T: MyTrait
-{
-    foo: T
-    ...
-}
-```
-
-```rust
-impl<T> MyStruct<T> {
-    ...
-}
-```
-
+             ```rust
+             struct MyStruct<T>
+             where
+                 T: MyTrait
+             {
+                 foo: T
+                 ...
+             }
+             ```
+             
+             ```rust
+             impl<T> MyStruct<T> {
+                 ...
+             }
+             ```
     - Box
         - 格納するデータを stack から heap に移動するための構造体
         - smart pointer と呼ばれるもの
 - Chapter 8 Smart Pointers
     - reference は raw pointer に変換できる
-
-```rust
-*const T
-```
-
+        ```rust
+        *const T
+        ```
             - 型 T への raw pointer、型 T は変わらない
-
-```rust
-*mut T
-```
+        ```rust
+        *mut T
+        ```
             - 型 T への raw pointer、Tは変わりうる
     - raw pointer は `unsafe` を使って、実際のデータにアクセスできる
     - Rust の reference は C のポインタに使い方なども似ている
@@ -214,13 +208,11 @@ impl<T> MyStruct<T> {
     - `Copy` trait が実装されている primitive な `i32` 型は、dereference した時にコピーされる
     - `.` オペレータは reference のメソッドやフィールドにアクセスするのに使われる
         - `.` オペレータは連続した reference を自動的に解決する
-
-```rust
-let f = Foo { value: 42 };
-let ref_ref_ref_f = &&&f;
-println!("{}", ref_ref_ref_f.value);
-```
-
+            ```rust
+            let f = Foo { value: 42 };
+            let ref_ref_ref_f = &&&f;
+            println!("{}", ref_ref_ref_f.value);
+            ```
             - `()***ref_ref_ref_f).value` とする必要はない
                 - コンパイラが展開してくれる
     - Smart Pointer
@@ -228,7 +220,6 @@ println!("{}", ref_ref_ref_f.value);
         - `Deref` `DerefMut` `Drop` trait を使って実装する
         - `unsafe` は普通の Rust のコードと同じだが、その内部は Rust が安全かどうかは保証できない範囲になっている
             - 例えば i32 の型への reference を、 f32 で dereference するときは unsafe ブロックを付けて展開する
-            - 
         - 以下2つはどちらも `unsafe` な dereference を raw pointer に行っている
             - `Vec<T>` も smart pointer
                 - `vec[3]` は raw pointer を dereference している
