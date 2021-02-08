@@ -193,11 +193,11 @@ tags: ["Rust"]
         ```rust
         *const T
         ```
-            - 型 T への raw pointer、型 T は変わらない
+    - 型 T への raw pointer、型 T は変わらない
         ```rust
         *mut T
         ```
-            - 型 T への raw pointer、Tは変わりうる
+    - 型 T への raw pointer、Tは変わりうる
     - raw pointer は `unsafe` を使って、実際のデータにアクセスできる
     - Rust の reference は C のポインタに使い方なども似ている
         - ただコンパイル時の制約やどのようにそれが扱われるかなどが見られる
