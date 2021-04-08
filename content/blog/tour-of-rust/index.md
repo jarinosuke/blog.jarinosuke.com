@@ -26,6 +26,8 @@ tags: ["Rust"]
 
 この [Hecto: Build your own text editor in Rust](https://www.philippflenker.com/hecto/) が良さそうと思っている。
 
+(追記) [Build your own text editor in Rust を読んだ](../build-your-own-text-editor-in-rust) で上記のメモを残した。
+
 ### 読書メモ
 
 以下は読書時メモ
