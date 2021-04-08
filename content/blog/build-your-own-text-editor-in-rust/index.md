@@ -8,7 +8,7 @@ tags: ["Rust"]
 
 ## 感想
 
-[[Hecto: Build your own text editor in Rust]](https://www.philippflenker.com/hecto/) を手を動かしながら読んだのでそのメモ。
+[Hecto: Build your own text editor in Rust](https://www.philippflenker.com/hecto/) を手を動かしながら読んだのでそのメモ。
 
 通して読んでみて総論とても良かった。
 
