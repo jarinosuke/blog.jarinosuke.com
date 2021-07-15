@@ -1,6 +1,6 @@
 ---
 title: "Flutter の学習をしている"
-date: 2021-07-15 09:00 +0900
+date: 2021-07-16 09:00 +0900
 description: ""
 featured: './flutter_logo.png'
 tags: ["dev", "flutter"]
@@ -16,7 +16,7 @@ tags: ["dev", "flutter"]
 
 [サンプル](https://github.com/flutter/samples)が豊富なことや、コミュニティが強いこともとても学習に助かっている。
 
-特に YouTube チャンネルの [flutterdev](https://www.youtube.com/c/flutterdev) はコンテンツの量と質が良くて、良い塩梅でフランクで見やすい時間の尺の動画が多い。
+特に YouTube の [flutterdev](https://www.youtube.com/c/flutterdev) はコンテンツの量と質が良くて、良い塩梅でフランクで見やすい時間の尺の動画が多い。
 
 また、これはサンプル程度の小規模のアプリだからの可能性があるが、開発体験がとても良かった。
 
