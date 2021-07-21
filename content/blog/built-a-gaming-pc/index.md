@@ -2,7 +2,7 @@
 title: "ゲーミングPCを組んだ"
 date: 2021-07-21 09:00 +0900
 description: ""
-featured: ''./pc_parts.jpeg'
+featured: './pc_parts.jpeg'
 tags: ["gaming"]
 ---
 
