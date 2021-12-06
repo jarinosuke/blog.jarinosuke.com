@@ -68,7 +68,7 @@ module.exports = {
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#f4f3f4`,
-        theme_color: `#e0b41d`,
+        theme_color: `#f4f3f4`,
         display: `minimal-ui`,
         icon: `content/assets/kuwagata.tron.png`,
         query: `
