@@ -1,8 +1,6 @@
 ---
 title: "‘A Philosophy of Software Design’ を読んだ"
-date: '2020-03-05T09:00:00.322Z'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+date: '2020-03-05T09:00:00.000Z'
 tags: ['reading', 'software design']
 ---
 
