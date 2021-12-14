@@ -4,7 +4,7 @@ date: '2021-07-16T09:00:00.000Z'
 tags: ["dev", "flutter"]
 ---
 
-### Flutter の学習をしている
+# Flutter の学習をしている
 
 最初は SwiftUI に関する情報や設計などを見聞きしたりするつもりだったはずだったけれど、
 
@@ -22,9 +22,9 @@ tags: ["dev", "flutter"]
 
 合わせて通常の iOS アプリ開発とは違って、 hot reload が小気味よく動くのも良い。
 
-### 以下は読んだ記事やコンテンツに関するメモ
+# 以下は読んだ記事やコンテンツに関するメモ
 
-#### 1.はじめに読んだ
+## 1.はじめに読んだ
 
 - [Flutter for iOS developers](https://flutter.dev/docs/get-started/flutter-for/ios-devs)
 
@@ -42,7 +42,7 @@ SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
 
 ざっと読んだだけだが、 Flutter 特有の便利ビルド設定や配布などは無くて愚直に `Runner` を編集するしか無いのかと思った。
 
-#### 2.環境構築
+## 2.環境構築
 
 - `brew install flutter`
 - `flutter doctor` で足りないものを直す
@@ -50,7 +50,7 @@ SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
 
 これくらいで開発を始められた
 
-#### 3.はじめに手を動かした
+## 3.はじめに手を動かした
 
 - [Write your first Flutter app, part 1](https://flutter.dev/docs/get-started/codelab)
 - [Write Your First Flutter App, part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2#0)
@@ -59,7 +59,7 @@ SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
 
 ここまでくるともう少し細かいことに目がいくようになってきた
 
-#### 4.Layout, Interaction
+## 4.Layout, Interaction
 
 - [Building layouts](https://flutter.dev/docs/development/ui/layout/tutorial)
 - [Adding interactivity to your Flutter app](https://flutter.dev/docs/development/ui/interactive)
@@ -72,7 +72,7 @@ SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
 
 それと同時により画面が広い範囲で扱われるべき app state 的なものはどうなるのかに興味が湧いた。
 
-#### 5.State management
+## 5.State management
 
 いくつか読んだので、コメントは各記事に対してインラインで書く
 
@@ -115,6 +115,6 @@ SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
 
 - [How Flutter renders Widgets](https://www.youtube.com/watch?v=996ZgFRENMs)
 
-### 継続する予定
+# 継続する予定
 
 調べること自体が楽しいので、もう少しサンプルやドキュメントなどをみていきたい。

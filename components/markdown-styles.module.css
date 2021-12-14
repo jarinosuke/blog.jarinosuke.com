@@ -39,10 +39,21 @@
   @apply my-6;
 }
 
+.markdown a {
+  @apply hover:underline text-blue-600 hover:text-blue-800
+}
+.markdown h1 {
+  @apply text-5xl mt-16 mb-8 leading-snug;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-4xl mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-3xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+  @apply text-2xl mt-4 mb-2 leading-snug;
 }
