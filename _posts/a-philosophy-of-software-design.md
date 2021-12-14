@@ -1,6 +1,6 @@
 ---
 title: "‘A Philosophy of Software Design’ を読んだ"
-date: '2020-03-16T05:35:07.322Z'
+date: '2020-03-05T09:00:00.322Z'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['reading', 'software design']
@@ -42,7 +42,7 @@ Comment に関する Chapter は飛ばしたが、ざっと全部読んだ。
 
 合わせて、測定するための目安として以下のような数式も用いられていた。
 
-![](formula.png)
+![](/assets/blog/a-philosophy-of-software-design/formula.png)
 
 > The overall complexity of a system (C) is determined by the complexity of each part p (cp) weighted by the fraction of time developers spend working on that part (tp).
 
