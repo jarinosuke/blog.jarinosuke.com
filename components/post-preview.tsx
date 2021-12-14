@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 type Props = {
   title: string
-  coverImage: string
   date: string
   slug: string
 }
@@ -18,10 +17,10 @@ const PostPreview = ({
     <div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
+          <a className="text-main-1 hover:underline">{title}</a>
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className=" text-sub-1 text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
     </div>

@@ -10,25 +10,25 @@ const Footer = () => {
         <div className="py-4 flex flex-col lg:flex-row items-center">
           <h3 className="text-1xl lg:text-4xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             <Link href="/">
-              <a className="hover:underline">{BLOG_TITLE}</a>
+              <a className="text-main-1 hover:underline">{BLOG_TITLE}</a>
             </Link>
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
               href={`https://github.com/jarinosuke`}
-              className="mx-3 font-bold hover:underline"
+              className="text-main-1 mx-3 font-bold hover:underline"
             >
               GitHub
             </a>
             <a
               href={`https://twitter.com/jarinosuke`}
-              className="mx-3 font-bold hover:underline"
+              className="text-main-1 mx-3 font-bold hover:underline"
             >
               Twitter 
             </a>
             <a
               href={`https://www.linkedin.com/in/jarinosuke/`}
-              className="mx-3 font-bold hover:underline"
+              className="text-main-1 mx-3 font-bold hover:underline"
             >
               LinkedIn
             </a>
