@@ -1,0 +1,59 @@
+.markdown {
+  @apply text-lg leading-relaxed;
+}
+
+.markdown p,
+.markdown ul {
+  list-style: disc;
+  list-style-type: disc;
+  margin: 0;
+  padding: 0;
+}
+
+.markdown ul ul {
+  list-style: circle;
+  list-style-type: circle;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}
+
+.markdown ul ul ul {
+  list-style: square;
+  list-style-type: square;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}
+
+.markdown ul ul ul ul {
+  list-style: circle;
+  list-style-type: circle;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+} 
+
+.markdown ol,
+.markdown blockquote {
+  @apply my-6;
+}
+
+.markdown a {
+  @apply hover:underline text-blue-700 hover:text-blue-900
+}
+.markdown h1 {
+  @apply text-5xl mt-16 mb-8 leading-snug;
+}
+
+.markdown h2 {
+  @apply text-4xl mt-12 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-3xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+  @apply text-2xl mt-4 mb-2 leading-snug;
+}
