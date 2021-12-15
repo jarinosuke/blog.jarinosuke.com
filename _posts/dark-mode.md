@@ -31,7 +31,7 @@ tags: ['frontend']
 
 その返り値が `light` か `dark` によってスタイルの出し分けを行っている
 
-```css:title=layout.css
+```css
 @media (prefers-color-scheme: light) {
   body {} 
 }
