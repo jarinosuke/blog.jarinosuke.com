@@ -1,7 +1,12 @@
 import Head from 'next/head'
-import { BLOG_TITLE, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { BLOG_TITLE } from '../lib/constants'
 
-const Meta = () => {
+type Props = {
+  slug?: string
+}
+
+const Meta = ( { slug }: Props) => {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
   return (
     <Head>
       <link
@@ -36,7 +41,8 @@ const Meta = () => {
         name="description"
         content={`${BLOG_TITLE}.`}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content={`${baseUrl}/ogp/${slug}.png`} />
+      <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/${slug}.png`} />
     </Head>
   )
 }
