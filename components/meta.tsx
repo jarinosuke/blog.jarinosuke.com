@@ -39,7 +39,7 @@ const Meta = ( { slug }: Props) => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`${BLOG_TITLE}.`}
+        content={`${BLOG_TITLE}`}
       />
       <meta property="og:image" content={`${baseUrl}/ogp/${slug}.png`} />
       <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/${slug}.png`} />
