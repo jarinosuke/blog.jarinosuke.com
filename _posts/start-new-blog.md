@@ -37,7 +37,7 @@ GraphQL を使って、ビルド時にあれこれできるのは面白いなと
 
 ポチポチやるだけで GitHub とのインテグレーションが完結して、なんなら Pull Request を作成するたびに `gatsby build` が走ってデプロイ予定の Preview のビルドまでしてくれる。
 
-![](netlify-ci.png)
+![](/assets/blog/start-new-blog/netlify-ci.png)
 
 他に凝った使い方はあまりしていない。
 

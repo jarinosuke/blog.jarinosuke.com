@@ -9,21 +9,15 @@ tags: ["Rust"]
 この前に[Rustプログラミング入門 を読んだ](../introduction-to-rust-programming)。
 
 そこで Rust の全体像や実際の開発方法については浅くはありながらもキャッチアップできたと思うので、
-
 次はもう少し言語に深く触れてみたいという課題感があり、[Tour of Rust](https://tourofrust.com) をやってみた。
 
 5日くらいかけて一日30分~1時間で全9章を終えることができた。
-
 途中からは日本語訳がないので苦手な人は注意が必要かも。
-
 終わってみての感想としては以前よりは言語に対しての理解が深まった気がする。
-
 特に heap / stack 周りの `Box` を使ったメモリ管理や、Ownership management (dereference) あたり。
 
 とはいえ、これで自分で何かものを作れるかというとまだ自信がないので次は実践的なアプリケーション開発をしてみようと思う。
-
 この [Hecto: Build your own text editor in Rust](https://www.philippflenker.com/hecto/) が良さそうと思っている。
-
 (追記) [Build your own text editor in Rust を読んだ](../build-your-own-text-editor-in-rust) で上記のメモを残した。
 
 ### 読書メモ
