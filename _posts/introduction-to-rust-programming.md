@@ -61,7 +61,7 @@ https://github.com/jarinosuke/rust-programming-introduction
     - [The Adventures of OS: Making a RISC-V Operating System using Rust](http://osblog.stephenmarz.com/index.html) も面白そう
 - Chapter 2
     - install
-        - [Rust をインストールする](../install-rust)
+        - [Rust をインストールする](../posts/install-rust)
     - パッケージ関連
         - rls
             - Rust Language Server 
