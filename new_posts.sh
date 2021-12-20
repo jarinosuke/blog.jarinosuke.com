@@ -5,7 +5,5 @@ cat - << EOS > _posts/$file.md
 ---
 title: "$today"
 date: '$today'
-description: ""
-tags: []
 ---
 EOS

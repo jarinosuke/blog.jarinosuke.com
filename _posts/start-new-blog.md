@@ -1,7 +1,6 @@
 ---
 title: "Gatsby + Netlify の新しいブログを作った"
 date: '2020-07-24T09:00:00.000Z'
-tags: ['frontend']
 ---
 
 ### 動機

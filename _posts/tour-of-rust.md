@@ -1,12 +1,11 @@
 ---
 title: "Tour of Rust を読んだ"
 date: '2021-02-08T09:00:00.000Z'
-tags: ["Rust"]
 ---
 
 ### 感想
 
-この前に[Rustプログラミング入門 を読んだ](../posts/introduction-to-rust-programming)。
+この前に[Rustプログラミング入門 を読んだ](introduction-to-rust-programming)。
 
 そこで Rust の全体像や実際の開発方法については浅くはありながらもキャッチアップできたと思うので、
 次はもう少し言語に深く触れてみたいという課題感があり、[Tour of Rust](https://tourofrust.com) をやってみた。

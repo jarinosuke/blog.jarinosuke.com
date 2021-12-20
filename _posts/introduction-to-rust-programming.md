@@ -1,7 +1,6 @@
 ---
 title: "Rustプログラミング入門 を読んだ"
 date: '2021-02-02T09:00:00.000Z'
-tags: ["Rust"]
 ---
 
 ![](/assets/blog/introduction-to-rust-programming/introduction-to-rust-programming.png)
@@ -61,7 +60,7 @@ https://github.com/jarinosuke/rust-programming-introduction
     - [The Adventures of OS: Making a RISC-V Operating System using Rust](http://osblog.stephenmarz.com/index.html) も面白そう
 - Chapter 2
     - install
-        - [Rust をインストールする](../posts/install-rust)
+        - [Rust をインストールする](install-rust)
     - パッケージ関連
         - rls
             - Rust Language Server 
