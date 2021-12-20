@@ -1,27 +1,20 @@
 ---
 title: "Roam Research でノート・タスク管理のツールをアップデートした"
 date: '2020-12-05T09:00:00.000Z'
-tags: ["productivity", "roamresearch"]
 ---
 
 # ツールの変更
 
 2020年9月末くらいから、ノートやタスク管理系のツールをガッと一気に変更した。
-
 定期的にツールを変えたくなる時は訪れる（良くない癖）けど、ここまで一気に変更するのは初めてかもしれない。
-
 今までの課題感・変更する動機などを簡単にまとめる。
-
 新しいツールを3ヶ月弱使ってみた上での紹介などは長くなるので別の記事などで書きたいと思う。
 
 # 今までのツールと課題感
 
 今まではノートを取るのは iOS/Mac 純正メモアプリ、タスク管理(主にGTD)は [Things](https://culturedcode.com/things/) を使って行っていた。
-
 変遷でいうとノートはその前は全盛期（今では見る影もない）の [Evernote](https://evernote.com) を長く使っていた。
-
 タスク管理は以前は [Todoist](https://todoist.com) や iOS/Mac 純正リマインダーも使っていた。
-
 その中で大きな不便などはもちろん無いけれど、漠然とした課題感は大きく以下のようにあった。
 
 - 消費したコンテンツの内容を体系化して保存できておらず、忘れてしまう
@@ -36,9 +29,7 @@ tags: ["productivity", "roamresearch"]
 # 動機
 
 上記のような課題がある一方で、同時に移行コストも高いので日々良さそうなツールを試したりしながら見送っていた。
-
 そんな中良いタイミングで良いツールや紹介記事と出会い、また個人的にも[転職](../four-years-at-mercari-and-merpay)もあり、良いリフレッシュの機会が提供されて移行できた。
-
 あと [Rebuild.fm #287](https://rebuild.fm/287/) でも話されていて、自分のきっかけなどを書きたくなった。
 
 以降に際しての方針は課題に対して大まかに以下だった。
@@ -56,9 +47,7 @@ tags: ["productivity", "roamresearch"]
 ![](/assets/blog/start-roam-research/roamresearch.png)
 
 移行先のツールに関してはタイトルにもある通り [Roam Research](https://roamresearch.com) を使うことにした。
-
 早速方針の `なるべく一元化して一つの場所で管理したい` と矛盾するが、その他の補助ツールもいくつかある。
-
 それらの紹介については簡単にしておいて次回以降、以下のようなワークフロー別に書こうと思う。
 
 - 未読管理 (bookmark, highlight保存など)
@@ -93,25 +82,18 @@ tags: ["productivity", "roamresearch"]
 ## 1.[Notion](https://www.notion.so/product)
 
 一番最初に検討した記憶がある。
-
 タスク管理やその他色々なことができて、カスタマイズもかなり柔軟にできた。
-
 ただ、やはり原則としてはディレクトリを軸とした構造的なノート管理なので、
-
 それを自分で満足の行くところまで持っていくかつメンテナンスをしていくのは難しいという判断をした。
 
-[最近 backlink もリリース](https://www.notion.so/Create-links-backlinks-cb3c406403c940b68af52de121e05474)されていたが、
-
-[Roam Research](https://roamresearch.com) と比べると少し貧弱というか、思想が違うものになっている。
+[最近 backlink もリリース](https://www.notion.so/Create-links-backlinks-cb3c406403c940b68af52de121e05474)されていたが、[Roam Research](https://roamresearch.com) と比べると少し貧弱というか、思想が違うものになっている。
 
 ## 2.[Obsidian](https://obsidian.md)
 
 [Roam Research](https://roamresearch.com) の対抗馬というか比較対象で良く取り上げられている。
-
 [Roam Research](https://roamresearch.com) とは違い基本個人は無料、かつデータは iCloud など自分で保存先を選べるという便利なもの。
 
 これを選ばなかった理由は、これも基本はサイドバーにフォルダやノートがあって、
-
 ノートを作るとどのフォルダに入れるかなどを決めなくてはならず、いわゆる構造型のノート管理をする必要があるから
 
 あとは [Roam Research](https://roamresearch.com) の熱狂的なコミュニティと比較すると弱かったのもあるかもしれない
@@ -119,9 +101,7 @@ tags: ["productivity", "roamresearch"]
 ## 3.[Workflowy](https://workflowy.com)
 
 アウトライナー型のリストで書くノートアプリ
-
 タスク管理などだけであればこれ系が十分だと思う
-
 ただリスト同士のリンク型の関連などがしづらいかなと思った
 
 ## 4.[Dynalist](https://dynalist.io)

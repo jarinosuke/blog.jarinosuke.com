@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc",
-    "now-build": "yum install libuuid-devel libmount-devel zlib-devel && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/ && yarn build"
+    "now-build": "yum install libuuid-devel libmount-devel zlib-devel && cp /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/ && yarn build",
+    "g": "./new_posts.sh"
   },
   "dependencies": {
     "canvas": "2.6.1",

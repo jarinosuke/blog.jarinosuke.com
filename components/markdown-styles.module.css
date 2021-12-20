@@ -2,12 +2,11 @@
   @apply text-lg leading-relaxed;
 }
 
-.markdown p,
 .markdown ul {
   list-style: disc;
   list-style-type: disc;
   margin: 0;
-  padding: 0;
+  padding: 1em;
 }
 
 .markdown ul ul {

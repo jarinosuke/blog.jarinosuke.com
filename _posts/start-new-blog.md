@@ -1,7 +1,6 @@
 ---
 title: "Gatsby + Netlify の新しいブログを作った"
 date: '2020-07-24T09:00:00.000Z'
-tags: ['frontend']
 ---
 
 ### 動機
@@ -37,7 +36,7 @@ GraphQL を使って、ビルド時にあれこれできるのは面白いなと
 
 ポチポチやるだけで GitHub とのインテグレーションが完結して、なんなら Pull Request を作成するたびに `gatsby build` が走ってデプロイ予定の Preview のビルドまでしてくれる。
 
-![](netlify-ci.png)
+![](/assets/blog/start-new-blog/netlify-ci.png)
 
 他に凝った使い方はあまりしていない。
 
@@ -60,7 +59,7 @@ Gatsby / GraphQL など知らなかった技術に触れたのも良い機会だ
 
 まだ未着手の実装などは以下
 
-- ✅ダークモード対応 [ダークモード対応した](../dark-mode)
+- ✅ダークモード対応 [ダークモード対応した](../posts/dark-mode)
 - RSS 対応
 - tagging
 - デザインおかしいところ修正
