@@ -7,6 +7,7 @@ type Props = {
 
 const Meta = ( { slug }: Props) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
+  const ogpUrl = (!slug) ? `${baseUrl}/ogp.png` : `${baseUrl}/ogp/${slug}.png`
   return (
     <Head>
       <link
@@ -41,8 +42,8 @@ const Meta = ( { slug }: Props) => {
         name="description"
         content={`${BLOG_TITLE}`}
       />
-      <meta property="og:image" content={`${baseUrl}/ogp/${slug}.png`} />
-      <meta name="twitter:image" key="twitterImage" content={`${baseUrl}/ogp/${slug}.png`} />
+      <meta property="og:image" content={`${ogpUrl}`} />
+      <meta name="twitter:image" key="twitterImage" content={`${ogpUrl}`} />
     </Head>
   )
 }
