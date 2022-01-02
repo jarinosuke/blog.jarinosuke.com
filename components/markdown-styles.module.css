@@ -34,8 +34,12 @@
 } 
 
 .markdown ol,
+
 .markdown blockquote {
-  @apply my-6;
+  @apply p-2 mx-2 my-2 bg-gray-100 mb-4 border-l-4 border-gray-400  rounded-r-lg;
+}
+.markdown blockquote > p {
+  @apply mb-0;
 }
 
 .markdown a {
