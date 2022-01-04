@@ -43,6 +43,10 @@ const Meta = ( { slug }: Props) => {
         content={`${BLOG_TITLE}`}
       />
       <meta property="og:image" content={`${ogpUrl}`} />
+      <meta name="twitter:card" content="summary_large_image" />     
+      <meta name="twitter:site" content="@jarinosuke" />
+      <meta name="twitter:title" content="jarinosuke blog" />
+      <meta name="twitter:description" content="jarinosuke blog" />
       <meta name="twitter:image" key="twitterImage" content={`${ogpUrl}`} />
     </Head>
   )
