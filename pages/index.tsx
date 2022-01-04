@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import { BLOG_TITLE } from '../lib/constants'
+import generatedRssFeed from '../lib/feed'
 import Post from '../types/post'
 
 type Props = {
@@ -31,6 +32,9 @@ const Index = ({ allPosts }: Props) => {
 export default Index
 
 export const getStaticProps = async () => {
+
+  generatedRssFeed();
+
   const allPosts = getAllPosts([
     'title',
     'date',

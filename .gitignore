@@ -35,3 +35,4 @@ yarn-error.log*
 
 public/ogp/*
 !public/ogp/.gitkeep
+/public/rss
