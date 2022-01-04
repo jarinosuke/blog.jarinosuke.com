@@ -15,8 +15,8 @@ function generatedRssFeed(): void {
   
     // デフォルトになる feed の情報
     const feed = new Feed({
-      title: process.env.NEXT_PUBLIC_BASE_NAME || '',
-      description: process.env.NEXT_PUBLIC_BASE_DISC,
+      title: 'jarinosuke blog',
+      description: 'a blog written by jarinosuke',
       id: baseUrl,
       link: baseUrl,
       language: 'ja',
