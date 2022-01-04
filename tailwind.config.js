@@ -1,15 +1,15 @@
 module.exports = {
   purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
         'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
+        'dark-accent-1': '#171717',
         'main-1': '#212121',
+        'dark-main-1': '#D4D4D4',
         'sub-1': '#585F6D',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        'dark-sub-1': '#8A878E',
       },
       spacing: {
         28: '7rem',

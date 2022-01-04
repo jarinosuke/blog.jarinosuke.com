@@ -12,7 +12,7 @@ const PostHeader = ({ title, date }: Props) => {
     <>
       <PostTitle>{title}</PostTitle>
       <div className="max-w-2xl mx-auto">
-        <div className="text-sub-1 mb-6 text-center">
+        <div className="text-sub-1 dark:text-dark-sub-1 mb-6 text-center">
           <DateFormatter dateString={date} />
         </div>
       </div>
