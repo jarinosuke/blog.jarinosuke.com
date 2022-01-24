@@ -1,5 +1,5 @@
 ---
-title: "Tour of Rust を読んだ"
+title: "'Tour of Rust' を読んだ"
 date: '2021-02-08T09:00:00.000Z'
 ---
 
