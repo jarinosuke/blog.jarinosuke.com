@@ -1,5 +1,5 @@
 ---
-title: "最近読んだもの 7 - 非同期コミュニケーション、Mobile Developer Experience"
+title: "最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experience"
 date: '2022-10-31T09:00:00.000Z'
 ---
 
