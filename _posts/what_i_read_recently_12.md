@@ -1,6 +1,6 @@
 ---
 title: "最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化など"
-date: '2022-19-30T09:00:00.000Z'
+date: '2022-12-19T09:00:00.000Z'
 ---
 
 - [Mimicking a Holographic Effect for Mercard](https://engineering.mercari.com/en/blog/entry/20221208-mimicking-a-holographic-effect-for-mercard/)
@@ -24,3 +24,6 @@ date: '2022-19-30T09:00:00.000Z'
 - [The Future of Foundation](https://www.swift.org/blog/future-of-foundation)
 	- Foundation framework が Swift で書き直され OSS 化される
 	- 今までは Swift は OSS だったが、そこで使われる Foundation は以前からある C で実装されたものをラップして扱っていた
+
+
+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
