@@ -24,6 +24,3 @@ date: '2022-12-19T09:00:00.000Z'
 - [The Future of Foundation](https://www.swift.org/blog/future-of-foundation)
 	- Foundation framework が Swift で書き直され OSS 化される
 	- 今までは Swift は OSS だったが、そこで使われる Foundation は以前からある C で実装されたものをラップして扱っていた
-
-
-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
