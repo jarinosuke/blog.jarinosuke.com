@@ -20,4 +20,4 @@ date: '2023-01-23T09:00:00.000Z'
 - [Task Groups in Swift explained with code examples](https://www.avanderlee.com/concurrency/task-groups-in-swift/)
     - Task Group のユースケースごとの紹介
     - DispatchGroup のモダンな形くらいの認識しかなかったのでありがたい
-- 
+- - [UIViewConroller.viewIfLoaded](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621360-viewifloaded) というメソッド iOS9 からあるよという [tweet](https://twitter.com/steipete/status/1189242402659356675)
