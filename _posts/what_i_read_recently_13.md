@@ -17,4 +17,7 @@ date: '2023-01-23T09:00:00.000Z'
     - selector や notification 経由など
 - SwiftUI だと DateFormatter がなくても Text のみで日付のフォーマットを変えられるという [tweet](https://twitter.com/moorvladimir/status/1604764214497005568)
 - Swift 5.8 から closure 内で weakify した self を unwrap したら、その後は暗黙的に扱えるようになったという [tweet](https://twitter.com/yaapete/status/1605494021920415745)
-- - [Task Groups in Swift explained with code examples](https://www.avanderlee.com/concurrency/task-groups-in-swift/)
+- [Task Groups in Swift explained with code examples](https://www.avanderlee.com/concurrency/task-groups-in-swift/)
+    - Task Group のユースケースごとの紹介
+    - DispatchGroup のモダンな形くらいの認識しかなかったのでありがたい
+- 
