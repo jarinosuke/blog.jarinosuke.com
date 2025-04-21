@@ -2,6 +2,7 @@ baseURL = "https://blog.jarinosuke.com/"
 languageCode = "ja-jp"
 title = "jarinosuke blog"
 theme = "PaperMod"
+#enableInlineShortcodes: true
 
 # 投稿のURL構造
 [permalinks]

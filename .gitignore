@@ -1,38 +1,37 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Hugo build output
+/public/
+/resources/_gen/
+/assets/jsconfig.json
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Hugo caches
+/.hugo_build.lock
+/.hugo_cache/
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+# OS-specific files
 .DS_Store
-*.pem
+Thumbs.db
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# IDEs and editors
+.vscode/
+.idea/
+*.sw?
+*.sublime*
 
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Backup files
+*~
+*.bak
+*.tmp
+*.orig
 
-# vercel
-.vercel
+# Node modules (if using npm for assets)
+node_modules/
 
-public/ogp/*
-!public/ogp/.gitkeep
-/public/rss
+# Themes (if added as a submodule, you may exclude this)
+# themes/
+
+# Netlify deploy previews
+.netlify/
+
+# Logs
+log/
+*.log
