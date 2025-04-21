@@ -1,0 +1,53 @@
+baseURL = "https://blog.jarinosuke.com/"
+languageCode = "ja-jp"
+title = "jarinosuke blog"
+theme = "PaperMod"
+
+# 投稿のURL構造
+[permalinks]
+  posts = "/posts/:slug/"
+
+# メニュー（任意で追加）
+[menu]
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 2
+
+# 各種パラメータ
+[params]
+  env = "development" # development | production
+  author = "jarinosuke"
+  description = "jarinosuke blog"
+  keywords = ["blog", "ios"]
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto" # dark, light, auto
+
+  ShowReadingTime = true
+  ShowToc = true
+  TocOpen = false
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+
+  # コードブロックにアイコン表示
+  ShowCodeCopyButtons = true
+
+  # 投稿リストの表示数
+  paginate = 10
+
+  # ソーシャルリンク（任意）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/jarinosuke"
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/jarinosuke"
