@@ -1,6 +1,7 @@
 ---
 title: "'Rustプログラミング入門' を読んだ"
 date: '2021-02-02T09:00:00.000Z'
+tags: ['rust']
 ---
 
 ![](/assets/blog/introduction-to-rust-programming/introduction-to-rust-programming.png)

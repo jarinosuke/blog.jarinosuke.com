@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化など"
 date: '2022-12-19T09:00:00.000Z'
+tags: ['ios']
 ---
 
 - [Mimicking a Holographic Effect for Mercard](https://engineering.mercari.com/en/blog/entry/20221208-mimicking-a-holographic-effect-for-mercard/)

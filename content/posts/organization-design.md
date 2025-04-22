@@ -1,6 +1,7 @@
 ---
 title: "'組織デザイン' を読んだ"
 date: '2022-02-07T09:00:00.000Z'
+tags: ['management', 'reading']
 ---
 
 [組織デザイン]( https://www.amazon.co.jp/dp/4532110238) という本を SNS などで何人かが読んでいたので気になって手に取ってみた。

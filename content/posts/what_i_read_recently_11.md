@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理など"
 date: '2022-11-30T09:00:00.000Z'
+tags: ['ios']
 ---
 
 - [Secret Management on iOS](https://nshipster.com/secrets)

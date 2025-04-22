@@ -1,7 +1,7 @@
 ---
 title: "'イラストでわかる Docker と Kubernetes' を読んだ"
 date: '2021-04-27T09:00:00.000Z'
-tags: ["Docker"]
+tags: ["docker"]
 ---
 
 ### 読んだ動機や前提

@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの8 - Swift Concurrency、 Swifty CLI など"
 date: '2022-11-07T09:00:00.000Z'
+tags: ['ios']
 ---
 
 - [Presenting Sheets: Item, or a Boolean Binding?](https://www.swiftjectivec.com/SwiftUI-sheet-present-item-vs-toggle/)

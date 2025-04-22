@@ -38,6 +38,7 @@ theme = "PaperMod"
   TocOpen = false
   ShowShareButtons = false
   ShowPostNavLinks = true
+  ShowTags = true
   
 
   # コードブロックにアイコン表示

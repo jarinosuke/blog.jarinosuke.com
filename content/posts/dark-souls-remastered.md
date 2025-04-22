@@ -1,6 +1,7 @@
 ---
 title: "'DARK SOULS REMASTERED' をプレイした"
 date: '2022-01-03T09:00:00.000Z'
+tags: ['gaming']
 ---
 
 ![](/assets/blog/dark-souls-remastered/bonfire.jpg)

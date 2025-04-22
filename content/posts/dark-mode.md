@@ -1,7 +1,7 @@
 ---
 title: "ダークモード対応した"
 date: '2020-07-25T09:00:00.000Z'
-tags: ['frontend']
+tags: ['frontend', 'blog']
 ---
 
 ### やったこと
