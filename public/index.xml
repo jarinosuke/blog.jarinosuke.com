@@ -1,0 +1,2377 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>jarinosuke blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on jarinosuke blog</description>
+    <generator>Hugo -- 0.146.6</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 23 Jan 2023 09:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最近読んだもの13 - Swift Concurrencyなど</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE13-swift-concurrency%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Mon, 23 Jan 2023 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE13-swift-concurrency%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftsenpai.com/swift/swift-concurrency-prevent-thread-explosion/&#34;&gt;How Does Swift Concurrency Prevents Thread Explosions?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;what_i_read_recently_8&#34;&gt;最近読んだもの8 - Swift Concurrency、 Swifty CLI など&lt;/a&gt;でも挙げた Swift Concurrency における thread explosion についての詳細&lt;/li&gt;
+&lt;li&gt;Thread Explosion とは CPU core 数に対して16倍以上のスレッドが走っている状態&lt;/li&gt;
+&lt;li&gt;GCD 自体は Thread explosion を抑制する機能はないので簡単に引き起こすことができる&lt;/li&gt;
+&lt;li&gt;Swift Concurrency で &lt;a href=&#34;https://developer.apple.com/documentation/swift/task/init(priority:operation:)-5ltye&#34;&gt;Task.init(priority:operation:)&lt;/a&gt; で同様のことをする
+&lt;ul&gt;
+&lt;li&gt;priority は &lt;code&gt;.userInitiated&lt;/code&gt; &lt;code&gt;.utility&lt;/code&gt; &lt;code&gt;.background&lt;/code&gt; の3種類で優先度順&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.userInitiated&lt;/code&gt; だと CPU コア数分の thread を作成している、それぞれ &lt;code&gt;“com.apple.root.user-initiated-qos.cooperative“&lt;/code&gt; という queue に対して上限 thread 数を設けている&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.utility&lt;/code&gt; &lt;code&gt;.background&lt;/code&gt; は &lt;code&gt;.userInitiated&lt;/code&gt; の Task が実行されている場合は1つまでしか thread が実行されないなど色々なテストがされていた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.hobbyistsoftware.com/2022/11/five-ways-to-break-swift-concurrency/&#34;&gt;Five ways to break Swift Concurrency&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@MainActor&lt;/code&gt; が backgroud thread など他の thread から呼ばれる可能性があるコードのまとめ&lt;/li&gt;
+&lt;li&gt;selector や notification 経由など&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SwiftUI だと DateFormatter がなくても Text のみで日付のフォーマットを変えられるという &lt;a href=&#34;https://twitter.com/moorvladimir/status/1604764214497005568&#34;&gt;tweet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Swift 5.8 から closure 内で weakify した self を unwrap したら、その後は暗黙的に扱えるようになったという &lt;a href=&#34;https://twitter.com/yaapete/status/1605494021920415745&#34;&gt;tweet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.avanderlee.com/concurrency/task-groups-in-swift/&#34;&gt;Task Groups in Swift explained with code examples&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Task Group のユースケースごとの紹介&lt;/li&gt;
+&lt;li&gt;DispatchGroup のモダンな形くらいの認識しかなかったのでありがたい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/uikit/uiviewcontroller/1621360-viewifloaded&#34;&gt;UIViewConroller.viewIfLoaded&lt;/a&gt; というメソッド iOS9 からあるよという &lt;a href=&#34;https://twitter.com/steipete/status/1189242402659356675&#34;&gt;tweet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE12-%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AD%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%9B%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%8A%B9%E6%9E%9Cfoundation-oss-%E5%8C%96%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Mon, 19 Dec 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE12-%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AD%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%9B%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E5%8A%B9%E6%9E%9Cfoundation-oss-%E5%8C%96%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://engineering.mercari.com/en/blog/entry/20221208-mimicking-a-holographic-effect-for-mercard/&#34;&gt;Mimicking a Holographic Effect for Mercard&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;アプリ上のメルカードで使われているジャイロスコープを使ったホログラム効果の解説記事&lt;/li&gt;
+&lt;li&gt;ジャイロからリアルタイムで端末の傾きがとれるのでそれを用いてホログラムを更新する
+&lt;ul&gt;
+&lt;li&gt;その際に色の表現は HSB Model が適していた &lt;a href=&#34;https://developer.apple.com/documentation/uikit/uicolor/1621931-init&#34;&gt;init(hue:saturation:brightness:alpha:)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;余計な電力消費などが出ないように注意した
+&lt;ul&gt;
+&lt;li&gt;data collection を 60fps に制限した&lt;/li&gt;
+&lt;li&gt;Low Power Mode の時はホログラムを disable にした&lt;/li&gt;
+&lt;li&gt;payment tab が active かつ visible なときのみ効果を適用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;QA も色々な端末で行った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danielsaidi.com/blog/2022/11/16/using-complex-gestures-in-a-scroll-view&#34;&gt;Using complex gestures in a SwiftUI ScrollView&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;SwiftUI で &lt;a href=&#34;https://developer.apple.com/documentation/swiftui/scrollview&#34;&gt;ScrollView&lt;/a&gt; 上で複雑な gesture を扱う方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.eidinger.info/swift-enum-with-labeled-associated-values&#34;&gt;Swift Enum With Labeled Associated Values&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Enum の assoc values はラベルが付けられるという記事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.revenuecat.com/blog/engineering/ios-in-app-subscription-tutorial-with-storekit-2-and-swift/&#34;&gt;iOS In-App Subscription Tutorial with StoreKit 2 and Swift&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;StoreKit 2 を使った IAP 実装チュートリアル&lt;/li&gt;
+&lt;li&gt;5年くらい前に実装した時と比較してセットアップ周りがだいぶ変わったなという印象
+&lt;ul&gt;
+&lt;li&gt;StoreKit configuration file は良さそう&lt;/li&gt;
+&lt;li&gt;AppStore Connect も REST API ができたようなので、reneweal や restore の処理なども起動時に行わなくてよくなったのかな？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.swift.org/blog/future-of-foundation&#34;&gt;The Future of Foundation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Foundation framework が Swift で書き直され OSS 化される&lt;/li&gt;
+&lt;li&gt;今までは Swift は OSS だったが、そこで使われる Foundation は以前からある C で実装されたものをラップして扱っていた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE11-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E8%82%A5%E5%A4%A7%E5%8C%96%E8%BB%BD%E9%87%8F%E5%8C%96%E7%A7%98%E5%8C%BF%E6%83%85%E5%A0%B1%E7%AE%A1%E7%90%86%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Wed, 30 Nov 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE11-%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E8%82%A5%E5%A4%A7%E5%8C%96%E8%BB%BD%E9%87%8F%E5%8C%96%E7%A7%98%E5%8C%BF%E6%83%85%E5%A0%B1%E7%AE%A1%E7%90%86%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nshipster.com/secrets&#34;&gt;Secret Management on iOS&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS アプリで情報を秘匿した場合に取りうる方法とその pros/cons まとめ
+&lt;ul&gt;
+&lt;li&gt;結構昔の記事だけどまた news letter で流れてきたので改めて読んだ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;コード内に直接埋め込む、 &lt;code&gt;.xcconfig&lt;/code&gt; など外部ファイルに入れる、 &lt;code&gt;GYB&lt;/code&gt; を使ってコード生成する、などが挙げられている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://oleb.net/2022/animation-modifier-position/&#34;&gt;When .animation animates more (or less) than it’s supposed to&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/swiftui/view/animation(_:value:)&#34;&gt;.animation()&lt;/a&gt; modifier が nest されている場合に、コントロールが難しいという記事&lt;/li&gt;
+&lt;li&gt;並列で並ぶ分には期待通りになるが nest されていると難しいらしい&lt;/li&gt;
+&lt;li&gt;宣言的に書くアニメーションは確かにまた違った難易度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://holyswift.app/introduction-to-swiftui-modularisation-with-spm/&#34;&gt;Introduction to SwiftUI Modularisation with SPM&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;SPM のパッケージ単位でモジュール分割する方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.swiftbysundell.com/articles/opaque-return-types-primary-associated-types/&#34;&gt;Combining opaque return types with primary associated types&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Swift 5.7 で導入された primary associated type の説明
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AnyPublisher&lt;/code&gt; を &lt;code&gt;some Publisher&lt;/code&gt; に書き換えた時に生じる問題を例に挙げていてわかりやすかった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;some&lt;/code&gt; をつけながらも指定されている assoc type を指定することができるようになった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nilcoalescing.com/blog/PinAViewToTheBottomOfSafeArea/&#34;&gt;Pin a view to the bottom of safe area in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;テキスト入力フィールドなどで、safe area の bottom に張り付いているような view をどのように作ればいいか&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/swiftui/view/safeareainset(edge:alignment:spacing:content:)-6gwby&#34;&gt;safeAreaInset(edge:alignment:spacing:content:)&lt;/a&gt; modifier を使うと、使われた view に対して紐づいてくれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.emergetools.com/blog/posts/how-xcode14-unintentionally-increases-app-size&#34;&gt;How Xcode 14 unintentionally increases app size&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Xcode 14 から Bitcode の設定がデフォルトでOFFになった&lt;/li&gt;
+&lt;li&gt;Bitcodeが元々ONだったプロジェクトの場合は問題なさそう？だが、OFFのプロジェクトの場合は strip の設定が正しくされていないとアプリサイズが増えてしまう問題がある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sowenjub.me/writes/how-i-made-my-app-73-percent-ligther/&#34;&gt;How I made my app 73% lighter&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;大きい画像を pdf で xcasset に追加していると、Xcode はそれを @1x として @2x @3x 向けの png を生成するのでアプリサイズが大きくなってしまう&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの10 - 気まずい1:1</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE10-%E6%B0%97%E3%81%BE%E3%81%9A%E3%81%8411/</link>
+      <pubDate>Mon, 21 Nov 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE10-%E6%B0%97%E3%81%BE%E3%81%9A%E3%81%8411/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@mrabkin/the-art-of-the-awkward-1-1-f4e1dcbd1c5c&#34;&gt;The Art of the Awkward 1:1&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;1:1 は気まずいものでないと意味がないという記事
+&lt;ul&gt;
+&lt;li&gt;やや釣りタイトルではあるものの、納得感あった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1:1 は双方が複雑で不確実なもの（感情、希望、恐れなど）を扱うのに適した場
+&lt;ul&gt;
+&lt;li&gt;逆に議論が必要ないものを話す場としては最悪&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;よくある 1:1 での無駄
+&lt;ul&gt;
+&lt;li&gt;軽いアップデート、軽いフィードバック、軽い不満など
+&lt;ul&gt;
+&lt;li&gt;確かに価値はあるが、貴重な1:1な時間を使う必要がない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;その時に自分自身に「この会話はハードだったか？」と聞くべき
+&lt;ul&gt;
+&lt;li&gt;言いたいことを言う時に不安だったり確信がなかったりしたか？気まずかったか？&lt;/li&gt;
+&lt;li&gt;気まずくなかったら本当のことは話せていない&lt;/li&gt;
+&lt;li&gt;例えばバーンアウト気味だとか、転職考えてるとか、思った通りに成長できていないとか&lt;/li&gt;
+&lt;li&gt;良くある例として、馬鹿っぽくなるから良くないことを言わなくなりがち&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1:1 の全ての時間を気まずくする必要はない
+&lt;ul&gt;
+&lt;li&gt;ただ1回のMTGで一定量の気まずさは持って行くべき&lt;/li&gt;
+&lt;li&gt;これが繰り返し起こる問題やサイクルを断ち切る&lt;/li&gt;
+&lt;li&gt;ガードを緩めて本当の信頼につながる&lt;/li&gt;
+&lt;li&gt;変化や成長はいつも気まずいもの&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以前は伝染病のように気まずい会話を嫌っていた
+&lt;ul&gt;
+&lt;li&gt;非常に重要な 1:1 の時間を失っていることに徐々に気づいていった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;気まずい 1:1 のためのルール
+&lt;ul&gt;
+&lt;li&gt;1: オープンな場で議論できるトピックは何も話さない&lt;/li&gt;
+&lt;li&gt;2: 毎回の 1:1 で気まずいことを一つ話すことにコミットする、相手も
+&lt;ul&gt;
+&lt;li&gt;事前にお互いで合意しておくのがいい&lt;/li&gt;
+&lt;li&gt;コミットするとピアプレッシャーも効いてうまく行く&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;気まずい話題の例
+&lt;ul&gt;
+&lt;li&gt;メタ・感情&lt;/li&gt;
+&lt;li&gt;フィードバック&lt;/li&gt;
+&lt;li&gt;アドバイス&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@mrabkin/awkward-1-1s-the-art-of-getting-honest-feedback-2843078b2880&#34;&gt;Awkward 1:1s: How To Get Honest Feedback&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;^の続編、フィードバックのもらい方について&lt;/li&gt;
+&lt;li&gt;「フィードバックください」と言ってもなかなかすぐにもらえるわけではない
+&lt;ul&gt;
+&lt;li&gt;信頼関係を作るのがまず大事というアドバイスはよくあるけどあまり助けにはならないよね&lt;/li&gt;
+&lt;li&gt;フィードバックの会話そのものを通して信頼関係を作るといい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;人から真実を引き出したいときは会話を自分ではなく彼らが快適な方向で進めるのがいい
+&lt;ul&gt;
+&lt;li&gt;信頼関係がない状態でフィードバックを与えるのってリスクを感じるのでそれを減らす&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;How
+&lt;ul&gt;
+&lt;li&gt;Make it safe&lt;/li&gt;
+&lt;li&gt;Make it easy&lt;/li&gt;
+&lt;li&gt;Make it reward&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE9-swiftui-localizationstateobjectenvironmentobject-%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Mon, 14 Nov 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE9-swiftui-localizationstateobjectenvironmentobject-%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nilcoalescing.com/blog/CheckLocalizableStringsWithAccentedPseudolanguage/&#34;&gt;Check localizable strings with the accented pseudolanguage in Xcode&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;SwiftUI での文言ローカライズについて&lt;/li&gt;
+&lt;li&gt;SwiftUI ではいくつかローカライズ文言用のキー定義の方法がある
+&lt;ul&gt;
+&lt;li&gt;まず &lt;code&gt;Text()&lt;/code&gt; に渡す string literal は 暗黙的に &lt;code&gt;LocalizedStringKey&lt;/code&gt; になっているのでローカライズされる&lt;/li&gt;
+&lt;li&gt;また String も &lt;a href=&#34;https://developer.apple.com/documentation/swift/string/init(localized:table:bundle:locale:comment:)&#34;&gt;String(localized:)&lt;/a&gt; で initialize すればそのローカライズされる&lt;/li&gt;
+&lt;li&gt;Xcode の scheme 設定で App Language に &lt;code&gt; Accented PseudoLanguage&lt;/code&gt; という選択肢がある
+&lt;ul&gt;
+&lt;li&gt;これを設定するとローカライズされていない文言が分かりやすくなる（ローカライズされている文言は架空の文字列になる）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sarunw.com/posts/manually-initialize-stateobject/&#34;&gt;Should we manually call @StateObject initializer&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@StateObject&lt;/code&gt; を初期値ではなく、 &lt;code&gt;StateObject(wrappedValue:)&lt;/code&gt; を使って初期化するのは大丈夫なのか？という記事&lt;/li&gt;
+&lt;li&gt;例えば初期化時に何かパラメータが必要なものなど動的にしたいなど&lt;/li&gt;
+&lt;li&gt;結論 initializer の中でなら問題ないが副作用に注意らしい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://holyswift.app/animated-launch-screen-in-swiftui/&#34;&gt;Animated Launch Screen in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Splash screen と TOP 画面でどのように画面遷移を自動（通信完了と同時に dimiss）させるか&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@EnvironmentObject&lt;/code&gt; を使って app top で持っている &lt;code&gt;@StateObject&lt;/code&gt; を inject しているのが勉強になった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tiagolopes.blog/2022/11/01/when-does-a-swiftui-environment-get-retained/&#34;&gt;When does a SwiftUI Environment get retained?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;SwiftUI の EnvironmentObject がどのようにメモリ上で持たれているかの記事&lt;/li&gt;
+&lt;li&gt;leak している view に &lt;code&gt;.environmentObject()&lt;/code&gt; するとそれに引きずられて leak するという話&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.swiftjectivec.com/swiftui-run-code-only-once-versus-onappear-or-task&#34;&gt;Running Code Only Once in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;画面表示時など、一度だけ実行させたいコードがある状況は良く出てくる&lt;/li&gt;
+&lt;li&gt;例えば &lt;code&gt;.onAppear&lt;/code&gt; だと画面が push/pop すると再度呼ばれてしまう&lt;/li&gt;
+&lt;li&gt;この記事では &lt;code&gt;.onFirstAppear&lt;/code&gt; という extension を作って、その内部で &lt;code&gt;FirstAppear&lt;/code&gt; という &lt;code&gt;ViewModifier&lt;/code&gt; を用意しそこで flag 管理することで解決していた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danijelavrzan.com/posts/2022/11/network-connection-alert-swiftui/&#34;&gt;How to check for network connection and present an alert in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NWPathMonitor&lt;/code&gt; を使った &lt;code&gt;ObservableObject&lt;/code&gt; を作り、それを &lt;code&gt;@EnvironmentObject&lt;/code&gt; として application の最上位から inject する方法&lt;/li&gt;
+&lt;li&gt;子 View に関しては &lt;code&gt;@EnvironmentObject&lt;/code&gt; すれば該当のオブジェクトを取得できるので便利&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.eidinger.info/share-files-between-your-ios-app-widget-and-watchkit-extensions&#34;&gt;Share files between your iOS app, Widget and WatchKit extensions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS の sandboxed な環境下で App Extension 間でどのようにファイルを共有するか&lt;/li&gt;
+&lt;li&gt;WatchKit Extension だと session という概念を通じてやりとりするのは知らなかった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://samwize.com/2022/11/01/improve-app-launch-time-2022/&#34;&gt;Improve App Launch Time 2022 Edition&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;環境変数 &lt;code&gt;DYLD_PRINT_STATISTICS&lt;/code&gt;  は動かなくなった&lt;/li&gt;
+&lt;li&gt;代わりに Instruments の App Launch テンプレートで計測できるようになった&lt;/li&gt;
+&lt;li&gt;Debug ではなく Release ターゲットで計測するようにする&lt;/li&gt;
+&lt;li&gt;Test 用の Target テンプレートである &lt;code&gt;UI Testing Bundle&lt;/code&gt; を使うと起動時間を計測するテストが予め含まれている&lt;/li&gt;
+&lt;li&gt;Xcode Organizer にある Launch Time metrics も有効&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの8 - Swift Concurrency、 Swifty CLI など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE8-swift-concurrency-swifty-cli-%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Mon, 07 Nov 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE8-swift-concurrency-swifty-cli-%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.swiftjectivec.com/SwiftUI-sheet-present-item-vs-toggle/&#34;&gt;Presenting Sheets: Item, or a Boolean Binding?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;List 内のコンテンツを sheet などで表示する場合、&lt;a href=&#34;https://developer.apple.com/documentation/SwiftUI/View/sheet(isPresented:onDismiss:content:)&#34;&gt;sheet(isPresented:onDismiss:content:)&lt;/a&gt; よりも &lt;a href=&#34;https://developer.apple.com/documentation/swiftui/view/sheet(item:ondismiss:content:)&#34;&gt;sheet(item:onDismiss:content:)&lt;/a&gt; の方が管理する State が減るので良いという話&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://holyswift.app/create-a-card-with-an-image-outside-its-bounds-in-swiftui/&#34;&gt;Create a Card with an Image Outside its Bounds in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;ある &lt;code&gt;View&lt;/code&gt; の中の &lt;code&gt;View&lt;/code&gt; を一部はみ出させて表示したい場合 SwiftUI でどうやるのかの話&lt;/li&gt;
+&lt;li&gt;UIKit であれば bounds ベースでレイアウトを組んで実現できた&lt;/li&gt;
+&lt;li&gt;SwiftUI だと以下の2つの方法が主に挙げられていた
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ZStack&lt;/code&gt; でラップする
+&lt;ul&gt;
+&lt;li&gt;この content 内で padding をうまいこと指定する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)&#34;&gt;overlay(alignment:content:)&lt;/a&gt; modifier を使う
+&lt;ul&gt;
+&lt;li&gt;overlay modifier の content 内ではみ出させる View を扱う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wojciechkulik.pl/ios/swift-concurrency-things-they-dont-tell-you&#34;&gt;Swift Concurrency – Things They Don’t Tell You&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;async&lt;/code&gt; &lt;code&gt;await&lt;/code&gt; などを使った Concurrency を扱うときによくハマる問題がまとめられていた
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;async&lt;/code&gt; &lt;code&gt;await&lt;/code&gt; すればいいだけと言われてるけどそんなに単純じゃないよ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自分がハマったり勘違いしていた点も入っていたのでかなり有用
+&lt;ul&gt;
+&lt;li&gt;例えば &lt;code&gt;async&lt;/code&gt; な function を &lt;code&gt;await&lt;/code&gt; した後の thread は、する前の処理 thread と同じにはならない可能性がある。など
+&lt;ul&gt;
+&lt;li&gt;解決策としては &lt;code&gt;async&lt;/code&gt; な function が main thread で走ることを保証したい場合は常に &lt;code&gt;@MainActor&lt;/code&gt; で annotate する&lt;/li&gt;
+&lt;li&gt;それが難しい場合、 function 内部で main thread で走ってほしい処理を &lt;code&gt;await MainActor.run {}&lt;/code&gt; する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;actor&lt;/code&gt; の &lt;code&gt;Actor Reentrancy&lt;/code&gt; などもとても参考になった&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Task {}&lt;/code&gt; についても勉強になった
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Task {}&lt;/code&gt; で引数になる closure は &lt;code&gt;user-initiated&lt;/code&gt; な concurrent queue に dispatch される&lt;/li&gt;
+&lt;li&gt;Swift Concurrency は CPU core 数を超えないように queue 毎の thread 数を制限しているので、それを超えてしまうと &lt;code&gt;Task&lt;/code&gt; が suspend する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://betterprogramming.pub/creating-a-swifty-command-line-tool-with-argumentparser-a6240b512b0b&#34;&gt;Creating a Swifty Command-Line Tool With ArgumentParser&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/apple/swift-argument-parser&#34;&gt;swift-argument-parser&lt;/a&gt; を使って簡単に CLI ツールを Swift で作る方法&lt;/li&gt;
+&lt;li&gt;argument や flag などに property wrapper が使われていたりとモダンに手軽に書けそうだなと思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experience</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE7-%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3mobile-developer-experience/</link>
+      <pubDate>Mon, 31 Oct 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE7-%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3mobile-developer-experience/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://shopify.engineering/asynchronous-communication-shopify-engineering&#34;&gt;Asynchronous Communication is the Great Leveler in Engineering&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Shopify のエンジニアによるリモートワーク環境下における非同期コミュニケーションについての記事&lt;/li&gt;
+&lt;li&gt;コミュニケーションのタイプによって同期・非永続的と非同期・永続的で分けられてる図が面白かった
+&lt;ul&gt;
+&lt;li&gt;チャットが同期的な方に入ってるのは確かに、と思った
+&lt;ul&gt;
+&lt;li&gt;ある程度送る側が読まれることを期待していて、さらに返信がリーズナブルな期間で返ってくると思っている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非同期コミュニケーションはリモートワークを効率的にするだけではなく色々なものが永続的になっていくので、適切に行えばどんどんレバレッジがかかっていく&lt;/li&gt;
+&lt;li&gt;全社ではなくチーム内でリモートワークでの標準を決めるのもいいなと思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/mobile-developer-experience-at-slack/&#34;&gt;Mobile Developer Experience at Slack&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Developer pain をリストアップして、それぞれにかかる時間と時給から年間コスト出すのがとても良い
+&lt;ul&gt;
+&lt;li&gt;そしてこれはチームサイズが大きければ大きいほどコスト増になっていく&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;アプローチ方法で興味深かったもの　
+&lt;ul&gt;
+&lt;li&gt;feature チームのmobile engineer と partner になって一緒に開発し、何が大変なのか観察する&lt;/li&gt;
+&lt;li&gt;NPS など mobile engineer 向けにサーベイを行う&lt;/li&gt;
+&lt;li&gt;ペインポイントを解決する前に metrics を集める&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Developer pain
+&lt;ul&gt;
+&lt;li&gt;iOS での CI のビルド時間
+&lt;ul&gt;
+&lt;li&gt;最初 iOS は &lt;a href=&#34;https://github.com/MobileNativeFoundation/bluepill&#34;&gt;Bluepill&lt;/a&gt; を使ってテストの並列化を行った&lt;/li&gt;
+&lt;li&gt;それで一時期は20分くらいまで減ったが、再度50分近くまで増えた&lt;/li&gt;
+&lt;li&gt;次のアプローチとして &lt;a href=&#34;https://bazel.build&#34;&gt;Bazel&lt;/a&gt; で cache layer を作る方法をとった
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Tinder/bazel-diff&#34;&gt;bazel-diff&lt;/a&gt; を使って、2 revison 間に bazel cache の差分があるかどうかの検知もできる&lt;/li&gt;
+&lt;li&gt;これによって平均9分、最小だと4.5分のTTM(Time to merge) まで下げることができた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android での Test 関連の失敗
+&lt;ul&gt;
+&lt;li&gt;Automated なブラックボックステストを入れていたが、テストが増えるにつれてより flaky になった
+&lt;ul&gt;
+&lt;li&gt;一度失敗すると修正するために Automation Engineer に連絡しないといけず、 TTM が増加する傾向があった&lt;/li&gt;
+&lt;li&gt;詳細はこちら &lt;a href=&#34;https://slack.engineering/handling-flaky-tests-at-scale-auto-detection-suppression/&#34;&gt;Handling Flaky Tests at Scale: Auto Detection &amp;amp; Suppression&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;iOS での merge conflict
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/yonaskolb/XcodeGen&#34;&gt;XcodeGen&lt;/a&gt; を導入して対応
+&lt;ul&gt;
+&lt;li&gt;Bazel 導入により、動的に XcodeGen 用の YAML ファイルを生成している&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aviator.co&#34;&gt;Aviator&lt;/a&gt; を使って merge queue の管理と自動化を実現している&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの6 - SwiftUI 関連</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE6-swiftui-%E9%96%A2%E9%80%A3/</link>
+      <pubDate>Mon, 24 Oct 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE6-swiftui-%E9%96%A2%E9%80%A3/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.donnywals.com/what-are-sendable-and-sendable-closures-in-swift/&#34;&gt;What are Sendable and @Sendable closures in Swift?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;以前よりは &lt;code&gt;Sendable&lt;/code&gt; に関する理解が高くなった&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;actor&lt;/code&gt; はデフォルトで &lt;code&gt;Sendable&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;closure に &lt;code&gt;@Sendable&lt;/code&gt; をつけると、その中で capture された値が &lt;code&gt;Sendable&lt;/code&gt; でない場合は warning になる（設定が必要）&lt;/li&gt;
+&lt;li&gt;struct は暗黙的に &lt;code&gt;Sendable&lt;/code&gt; になっている（ただしプロパティ全てが &lt;code&gt;Sendable&lt;/code&gt; なら）
+&lt;ul&gt;
+&lt;li&gt;同様に class でもそれが &lt;code&gt;final&lt;/code&gt; なら &lt;code&gt;Sendable&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftwithmajid.com/2022/08/16/conditional-layouts-in-swiftui/&#34;&gt;Conditional layouts in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS 16 から &lt;code&gt;Layout&lt;/code&gt; protocol が導入された&lt;/li&gt;
+&lt;li&gt;conditional に layout を変えたい場合、 &lt;code&gt;AnyLayout&lt;/code&gt; を使ってより綺麗に書けるようになった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftwithmajid.com/2021/12/09/structural-identity-in-swiftui/&#34;&gt;Structural identity in SwiftUI&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;conditional body の場合、 &lt;code&gt;some View&lt;/code&gt; は &lt;code&gt;_ConditionalContent&amp;lt;LoggedUser, AnonymousUserView&amp;gt;&lt;/code&gt; などになる&lt;/li&gt;
+&lt;li&gt;予期せぬ recreation や animation が発生することがある
+&lt;ul&gt;
+&lt;li&gt;inline modifier などで structure identity を保持するのがいい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://samwize.com/2022/09/30/pitfall-of-nested-observableobject/&#34;&gt;Pitfall of Nested ObservableObject&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;nest された &lt;code&gt;ObservableObject&lt;/code&gt; だと変更が通知されないので、マニュアルで発火させないといけない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.apple.com/documentation/swiftui/view/ontapgesture(count:coordinatespace:perform:)&#34;&gt;onTapGesture(count:coordinateSpace:perform:)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS 16 から SwiftUI でも tap gesture を &lt;code&gt;SwiftUI.View&lt;/code&gt; 単位につけることができるようになった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftwithmajid.com/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/&#34;&gt;Mastering NavigationStack in SwiftUI. Navigator Pattern.&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NavigationView&lt;/code&gt; は deprecated になり、iOS 16 から &lt;code&gt;NavgationStack&lt;/code&gt; が登場した&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;navigationDestination(for:destination:)&lt;/code&gt; で遷移先を統一的に書けるように&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://swiftwithmajid.com/2022/10/05/mastering-navigationstack-in-swiftui-navigationpath&#34;&gt;Mastering NavigationStack in SwiftUI. NavigationPath.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://holyswift.app/three-ways-to-refactor-massive-swiftui-views/&#34;&gt;Three Ways to Refactor Massive SwiftUI Views&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;SwiftUI の View が大きくなった時の分割、リファクタリングの方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの5 - 世界史独学、Team Topologies など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE5-%E4%B8%96%E7%95%8C%E5%8F%B2%E7%8B%AC%E5%AD%A6team-topologies-%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Mon, 27 Jun 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE5-%E4%B8%96%E7%95%8C%E5%8F%B2%E7%8B%AC%E5%AD%A6team-topologies-%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://note.com/sekaishi/n/n765627ad11d9&#34;&gt;【推薦書リスト】世界史独学のための100冊&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;前置き
+&lt;ul&gt;
+&lt;li&gt;最近世界史にと興味が出てきて、高校時代に読んだ詳説世界史BやCOTEN RADIO を読んだり聴いたりして、一通り浅いなりに全体像が見えた気になってきた&lt;/li&gt;
+&lt;li&gt;歴史シミュレーションゲームをやる中で特定の時代や人物（今回の場合だと古代ローマ）をもっと知りたいと思い関連書籍を調べる中で興亡の世界史という本が良さそうとなった&lt;/li&gt;
+&lt;li&gt;レビューをまず読みたいと思い出会ったのがこの記事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;書籍の難易度に対する分類が分かりやすかった
+&lt;ul&gt;
+&lt;li&gt;難易度は「固有名詞の量」と、「前提とするレベル」の2軸で分けられている
+&lt;ul&gt;
+&lt;li&gt;固有名詞の量についてはある程度の専門書を読んで挫折した人なら誰でも経験があるなと思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一定の語句を暗記する(「既知」を蓄える、という言葉がストレートに分かりやすかった)ステップをまず踏むのが世界史だけでなく役に立つのは個人的にも理解できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;膨大な引用されてる書籍があるので、これを軸に色々つまみ食いしていけると良い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://teamtopologies.com&#34;&gt;Team Topoligies&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;前から気になってはいたが、 &lt;a href=&#34;https://fukabori.fm/episode/74&#34;&gt;74. PMFしているスタートアップがスケールする上での組織課題と解法 w/ kameike fukabori.fm&lt;/a&gt; を聞いて今更読み始めた&lt;/li&gt;
+&lt;li&gt;まだ絶賛読み途中なので、読み終わったら別でまとめたい&lt;/li&gt;
+&lt;li&gt;以前読んだ &lt;a href=&#34;an-elegant-puzzle_org&#34;&gt;An Elegant Puzzle: 2 Organizations のメモ&lt;/a&gt; でも出てきたような話もあり、つながりを感じてとても面白い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://courrier.jp/news/archives/290872/&#34;&gt;ジョナサン・ハイトが解き明かす「アメリカ社会がこの10年で桁外れにバカになった理由」&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;成功した民主主義国家を集団的に統一するものとして、社会学者は少なくとも3つの主要な力を特定してきた。社会関係資本（高水準の信頼に基づく広範囲の社会的ネットワーク）、強固な諸制度、そして共有される物語だ。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ソーシャルメディアは、これら3つすべてを弱体化した。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;一部有料会員限定なので、全ては読めてないけどこの一文はとても印象的だった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&#39;物語 ウクライナの歴史―ヨーロッパ最後の大国&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/%E7%89%A9%E8%AA%9E-%E3%82%A6%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%8A%E3%81%AE%E6%AD%B4%E5%8F%B2%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91%E6%9C%80%E5%BE%8C%E3%81%AE%E5%A4%A7%E5%9B%BD-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Mon, 20 Jun 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E7%89%A9%E8%AA%9E-%E3%82%A6%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%8A%E3%81%AE%E6%AD%B4%E5%8F%B2%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91%E6%9C%80%E5%BE%8C%E3%81%AE%E5%A4%A7%E5%9B%BD-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h2 id=&#34;読んだ動機&#34;&gt;読んだ動機&lt;/h2&gt;
+&lt;p&gt;ロシアによるウクライナへの侵攻が2月末頃からはじまった。&lt;/p&gt;
+&lt;p&gt;すぐその後に&lt;a href=&#34;https://cotenradio.fm&#34;&gt;COTEN RADIO&lt;/a&gt;で&lt;a href=&#34;https://www.youtube.com/watch?v=P10VJ0mD2ME&#34;&gt;【緊急収録】ウクライナとロシア 1/6　～ウクライナとロシアの歴史～&lt;/a&gt;が公開された。&lt;/p&gt;
+&lt;p&gt;それを聴いて全体像を浅く把握できたかなと思うと同時に、これを全て鵜呑みにしてしまってもそれはそれでバイアスだなという課題感を持った（この見方自体も Podcast 内で警告があった）。&lt;/p&gt;
+&lt;p&gt;なので、&lt;a href=&#34;https://www.valuebooks.jp/shelf-items/folder/6c62263ae975ef5&#34;&gt;COTEN RADIO が提供している引用書籍&lt;/a&gt;で紹介されているかつ、読みやすそうなものを&lt;a href=&#34;https://twitter.com/jarinosuke/status/1509711395377807362&#34;&gt;手に取ってみた&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今回読んだ&lt;a href=&#34;https://amzn.to/39tbee3&#34;&gt;物語 ウクライナの歴史―ヨーロッパ最後の大国&lt;/a&gt;もそうだけど、COTEN RADIO を支える COTEN CREW 然り、資料を読んで発信してくれる方々全て感謝したいし尊い取り組みだなぁと改めて感じた。&lt;/p&gt;
+&lt;p&gt;こういう方々の活動全てが、今後の歴史を積み上げて作っていくんだなと思った。&lt;/p&gt;
+&lt;p&gt;（なるべく書籍に書かれてある事実と自身の意見は分けて書こうと努力はしてますが、間違いなどある場合はご容赦ください）。&lt;/p&gt;
+&lt;h2 id=&#34;引用とノート&#34;&gt;引用とノート&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ウクライナ史の権威オレスト・スブテルニーは、ウクライナ史の最大のテーマは、「国がなかったこと」だとしている。すなわち、多くの国において歴史の最大のテーマがネーション・ステート（民族国家）の獲得とその発展であるのに比し、ウクライナでは国家の枠組なしで民族がいかに生き残ったかが歴史のメーン・テーマであった (p. 5)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;序文からとても印象的で、ウクライナに関連する人々は国家という枠組み無しでどうやって生きてきたかの歴史になるというのが驚きだった。&lt;/p&gt;
+&lt;h3 id=&#34;1-スキタイ文明と日本神話&#34;&gt;1. スキタイ文明と日本神話&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;王権を正統化する黄金の鋤、軛、戦斧、盃が天から降ってきたとの話に関して、神話学者の大林太良氏、吉田敦彦氏らが、スキタイ神話が朝鮮半島を経由して日本まで伝播した可能性を指摘し、スキタイの器物が日本の皇統を正統化する三種の神器に対応するのではないかと推測しているのは興味深い。 (p. 19)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;元々黒海北岸に住んでいたのはキンメリア人らしいが詳細が分かっていない。&lt;/p&gt;
+&lt;p&gt;その人々を追い出して土着したのがスキタイ人、彼らの建国伝説の中で金属製の器が4つあるがそれが日本神話の3種の神器とリンクしている、なんなら輸入されている可能性もあるのでは？という推察。&lt;/p&gt;
+&lt;p&gt;そんなことあったら素敵な推論だなと思った。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我々が気づくのは、このユーラシア大平原ではその後二〇〇〇年以上たってもほぼ同じことが繰り返されている点である (p. 26)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;騎馬術が高く戦闘能力の高かったスキタイ人のペルシャ帝国の遠征からの防衛の話。&lt;/p&gt;
+&lt;p&gt;そこから1800年代のナポレオン遠征、1900年代のナチス・ドイツのソ連への侵攻、そして直近のロシア侵攻と何度も侵攻に晒されている。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中国で王権の象徴になるのは黄金ではなく「玉」であるのに、朝鮮半島の金冠塚（韓国慶州市）、我が国の藤ノ木古墳（奈良県斑鳩町）から見事な黄金（または金色）の冠が発見されたことについて、これは黄金崇拝の観念が「玉の国」である中国本土を通らずに、北方草原から回して伝播した可能性があると指摘している。 (p. 31)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;こちらもスキタイ文明と日本のリンクの推察。&lt;/p&gt;
+&lt;p&gt;こんな繋がりがあったとしたらワクワクする。&lt;/p&gt;
+&lt;h3 id=&#34;2-キエフルーシは誰のもの&#34;&gt;2. キエフ・ルーシは誰のもの&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ロシア側の言い分はこうである。キエフ公国の滅亡後、ウクライナの地はリトアニアやポーランドの領土となり、国そのものが消滅してしまって、継承しようにも継承者がいなくなってしまった。これに対し、キエフ・ルーシ公国を構成していたモスクワ公国は断絶することなく存続して、キエフ・ルーシ公国の制度と文化を継承し、その後のロシア帝国に発展していった。これからみてもロシアがキエフ・ルーシ公国の正統な継承者であることにはいまさら議論の余地はない。 (p. 40)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ウクライナのナショナリストの言い分はこうである。モスクワを含む当時のキエフ・ルーシ公国の東北地方は民族・言語も違い、ようやく一六世紀になってフィン語に代わってスラヴ語が使われるようになったほどであった。一五世紀のモスクワは、キエフ・ルーシ公国の支配下にあった非スラヴ諸部族の連合体であり、キエフ・ルーシ公国の後継者とはとても言いがたい。また過酷な専制中央集権のロシア・ソ連のシステムはキエフ・ルーシ公国のシステムとはまったく異なり、別系統の国である (p. 40)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;今までキエフ・ルーシ公国はロシア（ソ連）史の文脈で出てくることが多かったのは、ウクライナは独立さえしていなかったから。&lt;/p&gt;
+&lt;p&gt;しかし独立したことでウクライナも一つの独立国、として考えるとこのキエフ・ルーシ公国は誰のものか、という議論になってきた。&lt;/p&gt;
+&lt;p&gt;この辺りは現状なかなかセンシティブな話題になりうるので、改めて事実とそれぞれの認識をノートとして書いておく。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;キエフ・ルーシ公国を作ったのは東スラブ人
+&lt;ul&gt;
+&lt;li&gt;東スラブ人は現在のロシア人、ウクライナ人、ベラルーシ人の先祖となる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;8世紀頃ヴァイキングの登場
+&lt;ul&gt;
+&lt;li&gt;ヴァイキングは自身のことをルーシと呼んだ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;リューリクがルーシの首長になる&lt;/li&gt;
+&lt;li&gt;ルーシの継承方式が曖昧（兄弟相続と父子相続のmix）で衰退
+&lt;ul&gt;
+&lt;li&gt;その中でヴォロディミールは各地の制服の成功、キリスト教を国境にし聖公と呼ばれる&lt;/li&gt;
+&lt;li&gt;ヤロスラフはキエフ大公、内政に長けており賢公とも呼ばれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;キエフ・ルーシ公国はキリスト教化
+&lt;ul&gt;
+&lt;li&gt;ビザンツ文化を吸収&lt;/li&gt;
+&lt;li&gt;ギリシャ正教を選択したことが後世ロシアや西欧諸国・ポーランドとの断絶を生むきっかけの一つ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;12世紀頃から衰退の時期
+&lt;ul&gt;
+&lt;li&gt;諸公国の連合体のような形になる
+&lt;ul&gt;
+&lt;li&gt;代表的なのがモスクワ公国, ハーリチ・ヴォルイニ公国&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;モンゴルによる制服と「タタールのくびき」が始まる
+&lt;ul&gt;
+&lt;li&gt;「タタールのくびき」はロシア史視点なので盛られている可能性があるらしい？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;モスクワ公国はタタールに統治された&lt;/li&gt;
+&lt;li&gt;ハーリチ・ヴォルイニ公国
+&lt;ul&gt;
+&lt;li&gt;キエフ陥落後も1世紀近く存続、現在のウクライナにとっても重要
+&lt;ul&gt;
+&lt;li&gt;ウクライナはキエフ・ルーシ公国の直系と主張している根拠がこれ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ここからタタールはじめ各国の干渉を防ぐが、最終的にリトアニアとポーランドに並行される&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;13世紀半ば~17世紀半ばは空白
+&lt;ul&gt;
+&lt;li&gt;リトアニアとポーランドがキエフ・ルーシ公国だったところを支配&lt;/li&gt;
+&lt;li&gt;モスクワ大公国、ポーランド公国、リトアニア公国と分けた&lt;/li&gt;
+&lt;li&gt;ウクライナという地名が生まれたのもこの時期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ウクライナの地は、古代からクリミアを通じてギリシア・ローマ（その後のイタリア）世界および海の世界とつながっているのである。この開放性は、他のスラヴ諸国の歴史が内陸的な印象を与えるのとは対照的に、ウクライナの大きな特色である。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの4 - モバイルアプリのリファクタリング</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE4-%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <pubDate>Mon, 13 Jun 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE4-%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;what_i_read_recently_3&#34;&gt;前回&lt;/a&gt; の続き&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/scaling-slacks-mobile-codebases-modernization/&#34;&gt;Scaling Slack’s Mobile Codebases: Modernization&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;当初は Modularization と Modernization は分けてフェーズとして考えていた
+&lt;ul&gt;
+&lt;li&gt;Modularization を取り組むうちに、二つを分けて考えて進めるのはコードの書き換えなど重複する作業が多いことに気づいた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2021年2月から初めて1年かかった&lt;/li&gt;
+&lt;li&gt;Modularization は Stabilization を進めていたcoreメンバーだけでは無理で、各 product team からのヘルプが必要だった&lt;/li&gt;
+&lt;li&gt;Modularization
+&lt;ul&gt;
+&lt;li&gt;PJ 以前からいくつかの module はあったが、機能などは全て app target に入っていた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;iOS
+&lt;ul&gt;
+&lt;li&gt;module に分ける際に、module がどのようなストラクチャで何が入るかなど細かく定義した&lt;/li&gt;
+&lt;li&gt;3 types
+&lt;ul&gt;
+&lt;li&gt;Features
+&lt;ul&gt;
+&lt;li&gt;アプリ内の機能&lt;/li&gt;
+&lt;li&gt;1画面や画面の1部、画面の集合など&lt;/li&gt;
+&lt;li&gt;Feature architecture に従う&lt;/li&gt;
+&lt;li&gt;各 Feature module は I/F module と実装 module を持つ　
+&lt;ul&gt;
+&lt;li&gt;I/F module は protocol と data class&lt;/li&gt;
+&lt;li&gt;実装 module は上記の protocol に準拠した実装と内部で使うヘルパーなど&lt;/li&gt;
+&lt;li&gt;これによって feature 同士の結合が少なくなり、内部実装を変えても依存を壊さないことが可能になった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Services
+&lt;ul&gt;
+&lt;li&gt;API call, データ永続化など何かしら専用の機能を持つコードの集合&lt;/li&gt;
+&lt;li&gt;UI コードを含まない&lt;/li&gt;
+&lt;li&gt;Service も同様に I/F と実装で module を分ける&lt;/li&gt;
+&lt;li&gt;Service の実装 module は他の Service や Feature module とリンクできないルールがある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Libraries
+&lt;ul&gt;
+&lt;li&gt;I/Fと実装をわざわざ分ける必要のない、データ構造や簡単なクラスや関数の集合
+&lt;ul&gt;
+&lt;li&gt;システムのAPIの extension など&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;dependency graph の一番下にあるイメージ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bazel
+&lt;ul&gt;
+&lt;li&gt;とてもいい影響を与えた
+&lt;ul&gt;
+&lt;li&gt;導入以前はmoduleを作るたびにprojectのコンフリクがあり辛かった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;target, module それらの依存関係を定義することがdけいた
+&lt;ul&gt;
+&lt;li&gt;Basel build graph から XcodeGen 経由で Xcode でビルドもできるし、Bazel からビルドもできる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bazel 以前は dynamic library として module を link していたので起動時間が伸びたが、導入したことで static link にできた&lt;/li&gt;
+&lt;li&gt;module 化したことで、Bazel の remote shared cache がとても良かった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Code generation
+&lt;ul&gt;
+&lt;li&gt;新モジュール作成時のファイルテンプレートを使った script による自動作成&lt;/li&gt;
+&lt;li&gt;CoreData のモデルの更新も script でやって boilerplate 削減&lt;/li&gt;
+&lt;li&gt;feature flag の作成削除も自動化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android
+&lt;ul&gt;
+&lt;li&gt;iOS に似ているが詳細がいくつか違う&lt;/li&gt;
+&lt;li&gt;スキップ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;その他感想など
+&lt;ul&gt;
+&lt;li&gt;Slack の Principal Engineer でも XCode って書くんだなって思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/scaling-slacks-mobile-codebases-modernization/&#34;&gt;Scaling Slack’s Mobile Codebases: Modernization&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Modernization
+&lt;ul&gt;
+&lt;li&gt;モダン化はこのPJが終わったからといって終わるわけではない&lt;/li&gt;
+&lt;li&gt;将来の新しい技術やデザインパターンなどにも適合できるような余地が必要
+&lt;ul&gt;
+&lt;li&gt;このPJではさまざまな理由で SwiftUI は不採用としたが、将来的には取り入れるような状態にした&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;iOS
+&lt;ul&gt;
+&lt;li&gt;architecture
+&lt;ul&gt;
+&lt;li&gt;独自のVIPERを採用
+&lt;ul&gt;
+&lt;li&gt;Feature, View, Interact, Presenter&lt;/li&gt;
+&lt;li&gt;データフローを強制できる&lt;/li&gt;
+&lt;li&gt;開発者を楽にさせるために generics やテンプレートを使っている&lt;/li&gt;
+&lt;li&gt;詳細は別でまたblogにしたい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;stricter linting&lt;/li&gt;
+&lt;li&gt;新しいmodule下では、以前より使っていた SwiftLint より強力な linting を入れた&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static let shared&lt;/code&gt; などの global singleton
+&lt;ul&gt;
+&lt;li&gt;global object でも、依存関係を明示的にしてmockingを簡単にするためにI/F からの注入を促した&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Notifications/NotificaitonCenter
+&lt;ul&gt;
+&lt;li&gt;Combine の publishers/subscribers の使用を促した&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UIViewController.topPresented&lt;/code&gt; &lt;code&gt;.topMostPresentedViewControllerInStack&lt;/code&gt;的なやつ&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UIKit&lt;/code&gt; の使用
+&lt;ul&gt;
+&lt;li&gt;内製の &lt;code&gt;SlackKit&lt;/code&gt; というUIコンポーネントを使うようにした&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Combine
+&lt;ul&gt;
+&lt;li&gt;既に限定的な場所で inhouse の Reactive Programming ぽい RxSwift みたいなものは使っていた
+&lt;ul&gt;
+&lt;li&gt;なのでそこから Combine へのマイグレーションは割と自然にできた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PJ当初はbackportがなかったかつSlackはiOS12もサポートしていたので、CombineX を使っていた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SlackKit
+&lt;ul&gt;
+&lt;li&gt;内製のUIコンポーネント&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PJの結果
+&lt;ul&gt;
+&lt;li&gt;PJ通して1.5年で2022年1月に終了&lt;/li&gt;
+&lt;li&gt;iOS
+&lt;ul&gt;
+&lt;li&gt;コードベース中 68% Modernized 81% Modularized&lt;/li&gt;
+&lt;li&gt;280モジュールが作られた&lt;/li&gt;
+&lt;li&gt;CIの安定性が77%-&amp;gt;90%&lt;/li&gt;
+&lt;li&gt;CI実行時間が64%に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;developer survey も良好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Next steps
+&lt;ul&gt;
+&lt;li&gt;module 間の依存関係
+&lt;ul&gt;
+&lt;li&gt;module 数の増加は意図した結果だったが、すぐに元々のルールが十分ではないことに気づいた&lt;/li&gt;
+&lt;li&gt;当初のルールは Features もしくは Services は他の Features / Services の I/F モジュールとだけ依存できる、というものだけ&lt;/li&gt;
+&lt;li&gt;なので Library は他のそれと依存できるし、Features / Services とも依存できてしまった&lt;/li&gt;
+&lt;li&gt;これが低レベルもしくは上の階層でおこり、すぐに module 間の循環参照が起きてしまった&lt;/li&gt;
+&lt;li&gt;これを解決するために Layer を導入し、あるモジュールが属するレイヤーがあってそのモジュールはそれより下のレイヤーにのみ依存できるようなルールを作って修正中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;dependency injection
+&lt;ul&gt;
+&lt;li&gt;module 化したことで整理されて依存するコードが module から作成できるようになって mocking も可能になった&lt;/li&gt;
+&lt;li&gt;ただ app target は多数のコードが注入され、簡単に循環参照やメモリリークするようになってしまった&lt;/li&gt;
+&lt;li&gt;injection の方法をいろいろ調査して、標準の initializer injection を使うことに決めた
+&lt;ul&gt;
+&lt;li&gt;dev friendly, compile 時に決定されるなどの理由&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Features / Services の実装 module だけが app target に link されている
+&lt;ul&gt;
+&lt;li&gt;そしてそれらの依存関係はそれらの module が作成される時に一緒に組み込まれないといけない&lt;/li&gt;
+&lt;li&gt;つまりこれだと app target が大きいままで、扱いづらくなってしまう&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/uber/needle&#34;&gt;Needle&lt;/a&gt; という DI framework の導入を考えている
+&lt;ul&gt;
+&lt;li&gt;これで module 間の依存を明確化でき、app target の全ての実装 module を link しなくてもビルドできるようになる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの3 - モバイルアプリのコード共通化、リファクタリング</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE3-%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E5%85%B1%E9%80%9A%E5%8C%96%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <pubDate>Mon, 06 Jun 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE3-%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E5%85%B1%E9%80%9A%E5%8C%96%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/client-consistency-at-slack-beyond-libslack/&#34;&gt;Client Consistency at Slack: Beyond Libslack&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Slack アプリでのC++によるコード共通化をやめたという記事&lt;/li&gt;
+&lt;li&gt;multi-platform の恩恵が減った(iOS/Androidのみ)、C++が&amp;quot;できる&amp;quot;モバイルエンジニアがあまりいないこと、PF毎の結合・ビルド・テストのオーバーヘッドなどがstopした背景
+&lt;ul&gt;
+&lt;li&gt;ライブラリのリリースも各PFでsync upしないといけないとかもあるあるだなと思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;やめただけでなく、そこからの何を学んで何を始めたかまで書かれていて良かった&lt;/li&gt;
+&lt;li&gt;2014年に書かれた Dropbox の C++ によるコード共通化と、2019に書かれたそれをやめた記事も合わせて読むと理解が深まる
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://oleb.net/blog/2014/05/how-dropbox-uses-cplusplus-cross-platform-development/&#34;&gt;How Dropbox Uses C++ for Cross-Platform iOS and Android Development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dropbox.tech/mobile/the-not-so-hidden-cost-of-sharing-code-between-ios-and-android&#34;&gt;The (not so) hidden cost of sharing code between iOS and Android&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/stabilize-modularize-modernize-scaling-slacks-mobile-codebases/&#34;&gt;Stabilize, Modularize, Modernize: Scaling Slack’s Mobile Codebases&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Slack アプリのリファクタリングPJの長編ブログ第一弾&lt;/li&gt;
+&lt;li&gt;書かれていることは大体良くある話でどれも納得できた
+&lt;ul&gt;
+&lt;li&gt;rapid growth が訪れると、今までは一度に返せていたデータも server/client どちらも捌けなくなってくる&lt;/li&gt;
+&lt;li&gt;合わせて組織的に人数も増えるので、数人では成り立っていたレイヤーもあるようでない一貫性のあまり無い architecture も too complex になり限界を迎える&lt;/li&gt;
+&lt;li&gt;growth に伴って機能追加もどんどん増えるので、complexity が様々な角度で上がる&lt;/li&gt;
+&lt;li&gt;Rewrite/Refactor の議論
+&lt;ul&gt;
+&lt;li&gt;Rewrite はリスクが高すぎるという良くある指摘
+&lt;ul&gt;
+&lt;li&gt;並列で走る既存の機能追加の追従、時間とコストの度合いなど&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Slack は既存の refactor を選択した&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以下は驚いた点
+&lt;ul&gt;
+&lt;li&gt;Android は2015年に一度 rearchitect しただけ、iOSに関しては2013年のリリース以来ずっとそのまま&lt;/li&gt;
+&lt;li&gt;過去にコード共通化も試したが残念なところが多くて失敗
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://slack.engineering/client-consistency-at-slack-beyond-libslack/&#34;&gt;Client Consistency at Slack: Beyond Libslack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;2020年夏にPJが開始
+&lt;ul&gt;
+&lt;li&gt;ゴールは明確で、技術負債の返済と今後5年の開発に適応できる程度のモダンな architecture&lt;/li&gt;
+&lt;li&gt;IC ドリブンな PJ というのが面白かった
+&lt;ul&gt;
+&lt;li&gt;executive stakeholders に対して、長期的にどのようなリターンがあるかを将来的にあるかを継続して propose していたらしい&lt;/li&gt;
+&lt;li&gt;その proposal の主な観点は3つで
+&lt;ul&gt;
+&lt;li&gt;どうやって今ある問題を解決するか
+&lt;ul&gt;
+&lt;li&gt;ビルド時間、テスト失敗率、マイグレーション率、モバイル開発者からのフィードバックなどのデータから&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;どうやって進捗を計測するか
+&lt;ul&gt;
+&lt;li&gt;ゴールまでの進捗をダッシュボード化
+&lt;ul&gt;
+&lt;li&gt;ビルド時間の減少、main app target のコード行数など&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PJの各フェーズにおいて、失敗した場合にどのようなバックアッププラン(failure mode)があるか
+&lt;ul&gt;
+&lt;li&gt;期待しない結果になった場合に、とりうる選択をあげる
+&lt;ul&gt;
+&lt;li&gt;これがリスクを和らげるための良いデモ材料にもなった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PJにおける最終的な3つのテーマにしてそれぞれフェーズに分けて進めた
+&lt;ul&gt;
+&lt;li&gt;Stabilization
+&lt;ul&gt;
+&lt;li&gt;一番ヤバい技術負債やアンチパターンを取り除いて、pendになっていた一番重要なマイグレーションを終わらせる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Modularization
+&lt;ul&gt;
+&lt;li&gt;モノリスになってるappをコンポーネント化、それによって相互依存性やビルド時間の減少、並列での開発を可能にさせる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Modernization
+&lt;ul&gt;
+&lt;li&gt;より forward-looking な技術やデザインパターンを採用する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;この進め方を読んでとても良いなと思ったのと同時に、進め方を分けると大きくhorizontal/vertical あるなと思った。これは horizontal
+&lt;ul&gt;
+&lt;li&gt;対して vertical はある機能に対して、一気にこのフェーズを進めてそれを横展開してアプリ全体に広げるというパターン
+&lt;ul&gt;
+&lt;li&gt;以前経験した大規模なリファクタなどはこれに当たるなと思った&lt;/li&gt;
+&lt;li&gt;これのメリットもあって、1つの機能で限定的にはじめるので影響も軽微、かつ全て行うのでこれが成功すれば横展開の確度も高い&lt;/li&gt;
+&lt;li&gt;デメリットとしては失敗した時のコストが高い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Stabilization フェーズ
+&lt;ul&gt;
+&lt;li&gt;6ヶ月続いた&lt;/li&gt;
+&lt;li&gt;developer による worst な codebase に対する「止血」作業&lt;/li&gt;
+&lt;li&gt;iOS は既存のObjC の Swift 移行、ネットワークとデータアクセス library の移行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの2 - Engineering Career Ladder, PdM の役割</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE2-engineering-career-ladder-pdm-%E3%81%AE%E5%BD%B9%E5%89%B2/</link>
+      <pubDate>Mon, 30 May 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE2-engineering-career-ladder-pdm-%E3%81%AE%E5%BD%B9%E5%89%B2/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dropbox.tech/culture/sharing-our-engineering-career-framework-with-the-world&#34;&gt;Sharing our Engineering Career Framework with the world&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Dropbox のエンジニアリングチームのキャリアラダー&lt;/li&gt;
+&lt;li&gt;それぞれのレベルで期待される Impact が定義されている&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dropbox.github.io/dbx-career-framework/what_is_impact.html&#34;&gt;What is Impact?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;あえて Impact はある程度曖昧な定義になっているが、これに対しての方針と Impact を出すための lever が書かれていたのが面白かった
+&lt;ul&gt;
+&lt;li&gt;Impact は Consistency, Velocity, Accountability が無いといけない
+&lt;ul&gt;
+&lt;li&gt;例えば一時的に出た結果や、長期間かけて出した累積の結果ではいけない&lt;/li&gt;
+&lt;li&gt;またシニアレベルになるにつれて、自身の決定がビジネスへの Impact につながることが求められる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Impact を出すためのレバー
+&lt;ul&gt;
+&lt;li&gt;ドメインエキスパート
+&lt;ul&gt;
+&lt;li&gt;ここでいうドメインとは技術的なもので、Windows / iOS など&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;イノベーション&lt;/li&gt;
+&lt;li&gt;プロダクトエキスパート&lt;/li&gt;
+&lt;li&gt;プロジェクトリーダーシップ&lt;/li&gt;
+&lt;li&gt;テクニカルリーダーシップとメンター&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;過去の自分の経験を振り返っても、このようなレバーのようなアドバイスがもらえる・できると next step が見えやすいなと思った&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://productlife.to/p/-execution-at-facebook&#34;&gt;How Facebook Builds Products&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;(以前保存した時は確か url の通り &amp;ldquo;Execution at Facebook&amp;rdquo; だったがタイトル変わった？)&lt;/li&gt;
+&lt;li&gt;入社1年弱の Facebook PM が Twitter にまだ JIRA チケットも書いてないし sprint もやってないよ、と書いたことをきっかけに色々な人があぁだこうだ言ってるのを Facebook のシニアなPMがまとめた記事
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/GergelyOrosz/status/1421345357397741568&#34;&gt;Uber でも開発系の Project Management は EM/Engineers が行っているらしい&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;この記事では Facebook PM の責任は2つで great strategy and great execution
+&lt;ul&gt;
+&lt;li&gt;「どのゲームで遊ぶのか、どうやってそれを遊ぶのか」を決めるのが役割&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;だからと言って結果はどうでも良くはなくて、むしろ100%責任がある&lt;/li&gt;
+&lt;li&gt;execution にも順位付けがあると書かれていたのが面白かった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>最近読んだもの1 - Actor, @MainActor, [weak self] など</title>
+      <link>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE1-actor-@mainactor-weak-self-%E3%81%AA%E3%81%A9/</link>
+      <pubDate>Fri, 20 May 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E3%82%82%E3%81%AE1-actor-@mainactor-weak-self-%E3%81%AA%E3%81%A9/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://oleb.net/2022/how-mainactor-works/&#34;&gt;How @MainActor works&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@MainActor&lt;/code&gt; property wrapper がどういう動きになっているのか、スクラッチで実際に作ってみている記事&lt;/li&gt;
+&lt;li&gt;job と executor の2つくらいで、かなりシンプルに作られていることを知れた&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://christiantietze.de/posts/2022/05/weak-self-consistency/&#34;&gt;Weak Self &amp;ndash; Closure Rules of Thumb&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[weak self]&lt;/code&gt; 時の escaping closure の扱いについて&lt;/li&gt;
+&lt;li&gt;よく言われるやつだけど、どれにも落とし穴があるので注意という良い記事だった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.donnywals.com/what-are-swift-concurrencys-task-local-values/&#34;&gt;What are Swift Concurrency’s task local values?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Task.init {}&lt;/code&gt; を使っているとたまにエラーになる Task local value の話&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@TaskLocal&lt;/code&gt; property wrapper を使えば、task のスコープ内でのみ有効なプロパティが定義できる
+&lt;ul&gt;
+&lt;li&gt;それを Task を識別できる id などにすれば、非同期処理のデバッグもしやすい&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.donnywals.com/an-introduction-to-synchronizing-access-with-swifts-actors/&#34;&gt;An introduction to synchronizing access with Swift’s Actors&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;DateFormatter のキャッシュを例にして、スレッド跨いだアクセスでクラッシュさせながら GCD、Actor とステップに分けて分かりやすく解説している&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.donnywals.com/thoughts-on-combine-in-an-async-await-world/&#34;&gt;Thoughts on Combine in an async/await world&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;async/await が出た当時の記事&lt;/li&gt;
+&lt;li&gt;Combine との差別化や意図などが書かれている&lt;/li&gt;
+&lt;li&gt;記事にも書かれている通り、Combine は値やイベントの同期や操作が目的で async/await が出ても無くならないとは思う
+&lt;ul&gt;
+&lt;li&gt;かつ Combine は SwiftUI に密に関わっているので&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&#39;組織デザイン&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/%E7%B5%84%E7%B9%94%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Mon, 07 Feb 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E7%B5%84%E7%B9%94%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/dp/4532110238&#34;&gt;組織デザイン&lt;/a&gt; という本を SNS などで何人かが読んでいたので気になって手に取ってみた。&lt;/p&gt;
+&lt;h2 id=&#34;全体通しての感想&#34;&gt;全体通しての感想&lt;/h2&gt;
+&lt;p&gt;今までの EM などの実務を通して断片的に感じてきた事が改めて整理されていた。&lt;/p&gt;
+&lt;p&gt;また、それについて新しい角度で書かれていたりなど発見がいくつかあった。&lt;/p&gt;
+&lt;p&gt;特にソフトウェアエンジニアリングに特化した本ではないものの、共通する事がたくさんあるということに気づけた。&lt;/p&gt;
+&lt;h2 id=&#34;読書メモ&#34;&gt;読書メモ&lt;/h2&gt;
+&lt;p&gt;(メモの見出しと添字は適当に付けていて書籍とは関連無いです)&lt;/p&gt;
+&lt;h3 id=&#34;1-調整と分業について&#34;&gt;1. 調整と分業について&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;役割を分化させることを分業と呼び、それらの多様な役割の時間的・空間的連動を確保する努力のことを調整と呼ぶ p.14&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;どのような組織であろうと、合理的に運営されようと意図されているのであれば、これら二つの要素を備えようと努力しようとしているはずである p.17&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;分業を行うメリットについて書かれていて、主に以下の2つがあった。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;各タスクを完了させるためのパラメータがそれぞれにあるとして、全てを満たす人材はほとんどいない。いても賃金が高い&lt;/li&gt;
+&lt;li&gt;それぞれ1つのパラメータを満たす人材であれば現実的、かつ賃金も前者に比べて安い。なのでスケールアウトが現実的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これが「組織」を形成するモチベーションの元なんじゃないかなと感じた。&lt;/p&gt;
+&lt;p&gt;これを考えついたのはコンピュータの父とも呼ばれる&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%BC%E3%83%AB%E3%82%BA%E3%83%BB%E3%83%90%E3%83%99%E3%83%83%E3%82%B8&#34;&gt;チャールズ・バベッジ&lt;/a&gt;というのも面白かった。&lt;/p&gt;
+&lt;p&gt;アルゴリズムでも&lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%88%86%E5%89%B2%E7%B5%B1%E6%B2%BB%E6%B3%95&#34;&gt;分割統治法&lt;/a&gt;という考え方があるので、似たような発想なのかなと思った。&lt;/p&gt;
+&lt;h3 id=&#34;2-プロフェッショナルについて&#34;&gt;2. プロフェッショナルについて&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;プロフェッショナルや熟練工を活用することでもたらされるマイナスもある。基本的にはプロフェッショナルの雇用は重要な競争源とはなりにくいという問題と、かえってプロフェッショナルと他の人々との間の統合・調整が難しくなる p.116&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;直感とは真逆で意外な視点だった、少しソフトウェア産業とは違う視点かもしれないと思った。&lt;/p&gt;
+&lt;p&gt;その一方で、スケールアウトや仕組み化・標準化しづらいという点から考えると理解しやすいかもと感じた。&lt;/p&gt;
+&lt;p&gt;そしてプロフェッショナルは自分の所属する組織よりも、自分の専門領域やそのコミュニティに対して忠誠心を持つので他の組織に移籍しやすいという点もあり納得感があった。&lt;/p&gt;
+&lt;p&gt;余談だけど、産業革命時にイギリスの熟練工のせいで工業化が遅れ、一方歴史の浅いアメリカは熟練工がいないので自動化に頼らざるを得ず、一気にライジングしたのと似てるのかなと思った。&lt;/p&gt;
+&lt;h3 id=&#34;3-ヒエラルキーを使った管理について&#34;&gt;3. ヒエラルキーを使った管理について&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ヒエラルキーには「上司による部下の支配」といったマイナスのイメージがつきまとうこともあるが、例外に対する対応に関していえば、辿るべきコミュニケーションの経路が固定されているだけで対応の内容は幅広く選択可能であるため、本来、ある程度の柔軟性を備えた調整メカニズムだと評価されるべき p.167&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;｀調整に際して発生する例外に対しての処理機` という言語化に、改めて管理者の役割を再認識できた。&lt;/p&gt;
+&lt;p&gt;そしてそのためにある程度の Slack が必要で、それが調整弁として機能する。&lt;/p&gt;
+&lt;p&gt;調整にも予め可能なものとできないものがあって、前者に関しては標準化などで可能。&lt;/p&gt;
+&lt;p&gt;ただ、後者は監督者による例外処理などで対応するしかない。&lt;/p&gt;
+&lt;p&gt;管理者は例外処理の catch の方。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「なるほど、フラットな組織を設計したい場合には管理の幅を広くとれば良い」と考える人がいるかもしれないが、物事はそれほど簡単ではない。p.174&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;よくある 2-pizza rule や span of control などのマネジメントできる限界数の話がいくつかの指標で納得感ある説明がされていた。&lt;/p&gt;
+&lt;p&gt;例外の数が多い、例外の分析が難しい、例外の処理にかけられる時間が少ない、などのいくつかの制約条件があってその定数（人数）が決まってくるんだなと思った。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自分が忌み嫌っているタイプの秩序の下でやる気をみなぎらせられる人間は、滅多にいないだろう。だから本当はヒエラルキーの特徴そのものに問題があるわけではなくても、ヒエラルキーをみんなが嫌ってるが故に、みんなのモチベーションが低下し、ヒエラルキーのパフォーマンスが悪くなる可能性がある p.216&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;ヒエラルキーという言葉や概念自体が影響しているという話、トートロジーぽくて面白かった。&lt;/p&gt;
+&lt;p&gt;確かに例外処理の機構やコミュニケーションパスの固定化などメリットの方が多い気もするのに、なぜか嫌われていると感じるのはそういった背景もあるのかもしれない。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「スラック」とは「ゆるみ」とか「たるみ」のことである。組織ユニット同士が緊密に結びつけられているよりも、若干「ゆるみ」が設けられている方が、調整の仕事は楽になる。 p.223&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;an-elegant-puzzle_org&#34;&gt;An Elegant Puzzle: 2 Organizations のメモ&lt;/a&gt; でも似たような Slack についての話があった。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#39;円 劉慈欣短篇集&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/%E5%86%86-%E5%8A%89%E6%85%88%E6%AC%A3%E7%9F%AD%E7%AF%87%E9%9B%86-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Mon, 24 Jan 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E5%86%86-%E5%8A%89%E6%85%88%E6%AC%A3%E7%9F%AD%E7%AF%87%E9%9B%86-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/the-circle-cixin-liu/the-circle-cixin-liu.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/dp/4152098708/&#34;&gt;三体&lt;/a&gt; の作者でもある劉慈欣の短編集 &lt;a href=&#34;https://www.amazon.co.jp/gp/product/4152100621/&#34;&gt;円 劉慈欣短篇集&lt;/a&gt; を読んだ。&lt;/p&gt;
+&lt;p&gt;収録されてるものは &lt;a href=&#34;https://www.amazon.co.jp/dp/4152098708/&#34;&gt;三体&lt;/a&gt; より前に発表されたものもあれば後のもあって、&lt;/p&gt;
+&lt;p&gt;いくつかが &lt;a href=&#34;https://www.amazon.co.jp/dp/4152098708/&#34;&gt;三体&lt;/a&gt; へのエッセンスと感じられるかもしれない。&lt;/p&gt;
+&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
+&lt;p&gt;各作品どれも作者特有のSFギミックやデバイスを絡めた設定が入っていて、三体ロスな人にはとても良い短編集だと思った。読みやすいし。&lt;/p&gt;
+&lt;p&gt;その中で一つだけお気に入りを選ぶとすると &amp;lsquo;郷村教師&amp;rsquo; が抜群に良かった。&lt;/p&gt;
+&lt;p&gt;田舎の死が近い教師を中心に話が進んでいき、方向性が見えない途中から一気に世界観が広がっていく感じは作者ならではだと思った。&lt;/p&gt;
+&lt;p&gt;他にも未来のオリンピックを描く &amp;lsquo;栄光と夢&amp;rsquo;、 小さい頃の夢がそのまま世界を変えていく割とポジティブめな&amp;rsquo;円円のシャボン玉&amp;rsquo; も良かった。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#39;DARK SOULS REMASTERED&#39; をプレイした</title>
+      <link>http://localhost:1313/posts/dark-souls-remastered-%E3%82%92%E3%83%97%E3%83%AC%E3%82%A4%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 03 Jan 2022 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dark-souls-remastered-%E3%82%92%E3%83%97%E3%83%AC%E3%82%A4%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/dark-souls-remastered/bonfire.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://store.steampowered.com/app/570940/DARK_SOULS_REMASTERED/&#34;&gt;DARK SOULS REMASTERED&lt;/a&gt; を2021年のSteam オータムセールで割引されていたので購入した。&lt;/p&gt;
+&lt;h3 id=&#34;ソウル系シリーズプレイ歴&#34;&gt;ソウル系シリーズプレイ歴&lt;/h3&gt;
+&lt;p&gt;以下のような感じで、Bloodborne、 Sekiro あたりからしっかり取り組めるようになってきたので
+それ以降少しずつ過去作品を再度プレイしている。&lt;/p&gt;
+&lt;p&gt;以下シリーズ発売日順&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.playstation.com/ja-jp/concept/10000368&#34;&gt;Demon&amp;rsquo;s Souls&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;2009年発売当時はおそらく未プレイ&lt;/li&gt;
+&lt;li&gt;PS5リマスターでクリア&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/570940/DARK_SOULS_REMASTERED/&#34;&gt;DARK SOULS REMASTERED&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;2011年発売当時は早々に離脱、おそらく牛頭のデーモン前後&lt;/li&gt;
+&lt;li&gt;2021年末にSteamでクリア
+ー &lt;a href=&#34;https://store.steampowered.com/app/335300/DARK_SOULS_II_Scholar_of_the_First_Sin/&#34;&gt;DARK SOULS II&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2014年発売当時は序盤で断念、古い竜狩りに瞬殺されるくらいまでは記憶あり&lt;/li&gt;
+&lt;li&gt;2022年現在プレイ中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.playstation.com/ja-jp/games/bloodborne/&#34;&gt;Bloodborne&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;2015年発売当時に(何故か)クリア&lt;/li&gt;
+&lt;li&gt;DLC は購入したが30fpsが現在辛くてプレイ断念…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/374320/DARK_SOULS_III/&#34;&gt;DARK SOULS III&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;2016年発売当時は序盤で断念&lt;/li&gt;
+&lt;li&gt;セールで購入したので再プレイ予定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/&#34;&gt;Sekiro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;2019年発売当時にPS4でクリア&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
+&lt;h4 id=&#34;他ソウルシリーズ作品との比較&#34;&gt;他ソウルシリーズ作品との比較&lt;/h4&gt;
+&lt;p&gt;先にプレイしていた&lt;a href=&#34;https://store.playstation.com/ja-jp/concept/10000368&#34;&gt;Demon&amp;rsquo;s Souls&lt;/a&gt;や&lt;a href=&#34;https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/&#34;&gt;Sekiro&lt;/a&gt;で,
+パリィやバックスタブなどのゲームシステムに慣れていたおかげで、初見の時とは違い楽にプレイすることができた。&lt;/p&gt;
+&lt;p&gt;それらは一応ゲーム内でも説明はあるが、あまり理解はしておらず、当時は積極的に使うことはなかった。&lt;/p&gt;
+&lt;p&gt;他にも生者の時のみ呼び出せる白霊NPCなども詰んだ時に助けられた。&lt;/p&gt;
+&lt;p&gt;Sekiro と違いソウルシリーズのゲームシステム的に、ソウルを使ってステータスを振れたり武器防具のレベル上げができる点も難易度を下げてくれていた。&lt;/p&gt;
+&lt;p&gt;(プレイヤー自身のメンタル面でもソウルシリーズに慣れてきていたおかげで折れずに進めることができた。)&lt;/p&gt;
+&lt;h4 id=&#34;ゲームバランス&#34;&gt;ゲームバランス&lt;/h4&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/dark-souls-remastered/anor-londo.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ゲームバランスは中盤頃まではとても良かったと思う。&lt;/p&gt;
+&lt;p&gt;特にアノールロンドの屋根の上の槍や、そこでのスモウ・オーンスタインというボス戦は白熱死闘だった。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/dark-souls-remastered/smough.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ただ、上記の比較にも書いた通り後半にいくにつれて武器や防具、ソウルが溜まっていき比較的楽に敵が倒せたり浴びるダメージも減っていって緊張感が徐々に薄れていった感じがした。&lt;/p&gt;
+&lt;p&gt;同様にボス戦もそこまで苦労しなかったり、似たようなボスが多かった気もした。もしかしたら慣れの問題もあるかもしれない。&lt;/p&gt;
+&lt;p&gt;と言いつつ、ラスボスの薪の王グウィンは10回以上死んだ… (倒した時の&lt;a href=&#34;https://www.youtube.com/watch?v=j8QWA2YpJXo&#34;&gt;プレイ動画&lt;/a&gt;)&lt;/p&gt;
+&lt;h4 id=&#34;操作性&#34;&gt;操作性&lt;/h4&gt;
+&lt;p&gt;Bloodborne や Sekiro などと比べるとモッサリ感はどうしてもあるが、特段気になることはなかった。&lt;/p&gt;
+&lt;p&gt;リマスターということもあって、グラフィックも綺麗かつ60fpsでモダンなゲームと遜色なく遊べた。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ブログをNext.jsへ移行した</title>
+      <link>http://localhost:1313/posts/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92next.js%E3%81%B8%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%9F/</link>
+      <pubDate>Mon, 20 Dec 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92next.js%E3%81%B8%E7%A7%BB%E8%A1%8C%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h3 id=&#34;課題感&#34;&gt;課題感&lt;/h3&gt;
+&lt;p&gt;1年以上前に&lt;a href=&#34;start-new-blog&#34;&gt;Gatsby + Netlify の新しいブログを作った&lt;/a&gt;けれど、
+Gatsby を理解していないせいでカスタマイズが難しいなどの問題があって課題を途中から感じていた。&lt;/p&gt;
+&lt;p&gt;その中で &lt;a href=&#34;https://twitter.com/wapa5pow&#34;&gt;@wapa5powさん&lt;/a&gt;の&lt;a href=&#34;https://wapa5pow.com/posts/2021-03-02--blog-by-nextjs&#34;&gt;ブログをNext.jsへ移行しました&lt;/a&gt;をみて、課題感もかなり似ていたので、いつか移行したいなと思っていて、年末ということもあり移行することにした。&lt;/p&gt;
+&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;h4 id=&#34;テンプレート&#34;&gt;テンプレート&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript&#34;&gt;blog-starter-typescript&lt;/a&gt;のテンプレートを使ってブログを作成した。
+これで Markdown をベースに SSG で静的なブログが作れる。&lt;/p&gt;
+&lt;h4 id=&#34;deploy&#34;&gt;Deploy&lt;/h4&gt;
+&lt;p&gt;Deploy とホスティングは&lt;a href=&#34;https://vercel.com/dashboard&#34;&gt;Vercel&lt;/a&gt;を使っている。&lt;/p&gt;
+&lt;p&gt;体感だが以前より表示が速くなった気がする。&lt;/p&gt;
+&lt;h4 id=&#34;ogp&#34;&gt;OGP&lt;/h4&gt;
+&lt;p&gt;OGPも&lt;a href=&#34;https://github.com/Automattic/node-canvas&#34;&gt;node-canvas&lt;/a&gt;を使っていて、 &lt;code&gt;yarn build&lt;/code&gt; 時に自動生成されるようにした。&lt;/p&gt;
+&lt;p&gt;Canvas は最新バージョンだとVercelのnodeのバージョンが対応しておらずビルドできなかったので以下を参考にした。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ji23-dev.com/blogs/nextjs-ogp&#34;&gt;【Next.js × Vercel】OGP画像を動的生成してみた&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zenn.dev/tiwu_dev/articles/68d58d4ab710af&#34;&gt;Next.js + Vercel で OGP の画像を動的に生成する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/yuikoito/items/619120c592d99f9d3053&#34;&gt;【動的OGP】Next.js + TypeScript + Vercelデプロイで動的OGPを実現する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;動的と言っても静的ビルド時にMarkdownからタイトルを持ってきてpngとして書き出しているだけなので、リクエスト毎に生成されるわけでは無いので優しい。&lt;/p&gt;
+&lt;h4 id=&#34;css&#34;&gt;CSS&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://tailwindcss.com&#34;&gt;Tailwind CSS&lt;/a&gt;というのがバンドルされていたのでそれを使っている。
+適当に検索して書くと良い感じのpaddingやmargin、リサイズしてくれるので便利。
+正直雰囲気で書いている感は否めない。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ゲーミングPCを組んだ</title>
+      <link>http://localhost:1313/posts/%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0pc%E3%82%92%E7%B5%84%E3%82%93%E3%81%A0/</link>
+      <pubDate>Wed, 21 Jul 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0pc%E3%82%92%E7%B5%84%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;p&gt;今まで一度も PC を自分で組んだことは無かったけれど、いつかはやってみたい気持ちはあった。&lt;/p&gt;
+&lt;p&gt;それを後押ししたのが、 MS による Bethesda (ZeniMax Media) の買収だった。
+具体的には2022年11月11日発売予定の &lt;a href=&#34;https://bethesda.net/en/game/starfield&#34;&gt;Starfield&lt;/a&gt; が、噂通り PC/Xbox exclusive になることが決定してしまったから。
+これを機に自分で PC を組んで、より良い環境でゲームをプレイしながらそれに備えることにした。
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/built-a-gaming-pc/pc_parts.jpeg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;部品&#34;&gt;部品&lt;/h2&gt;
+&lt;p&gt;組み立てに使った部品一覧は&lt;a href=&#34;https://pcpartpicker.com/list/k8GrkX&#34;&gt;こちら&lt;/a&gt;の pcpartpicker にまとめた。
+このサイトは自分にとっては必須で、部品間の compatibility をチェックしてくれたり、他の build を参考に部品を選ぶことができる。&lt;/p&gt;
+&lt;h3 id=&#34;pc-case&#34;&gt;PC Case&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B07T7L875Z/&#34;&gt;NZXT H510 Elite&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;他の部品も NZXT 製品が多いのと、デザイン的にも無難だったのが主な理由&lt;/p&gt;
+&lt;h3 id=&#34;motherboard&#34;&gt;Motherboard&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B08WJ4SJXD&#34;&gt;ROG STRIX Z590-F GAMING WIFI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GPU を ASUS にする予定だったので、その流れでなんとなく mobo も ASUS から選んだ。
+種類に関しても11世代Intelまでサポートしている位しかみていなかった。
+買って気づくのは思った以上に光っていたりドラゴンなどの模様が結構書かれていること。&lt;/p&gt;
+&lt;h3 id=&#34;cpu&#34;&gt;CPU&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/dp/B086MG1C7D&#34;&gt;INTEL 第10世代CPU Comet Lake-S Corei9-10900KF&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Intel か Ryzen かで悩んでいたが、どちらも品薄だったので GPU のボトルネックにならない程度のそれなりに高い性能であれば何でもいいと思った。
+結果として満足に動いてるので全く問題ないが、もし在庫があったら第11世代にしても良かったなとは思う。&lt;/p&gt;
+&lt;h3 id=&#34;cpu-cooler&#34;&gt;CPU Cooler&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B082DYSQVF&#34;&gt;NZXT KRAKEN Z63&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;水冷のパフォーマンスはよく知らなかったけど、モニターが付いていたり水冷が単純にかっこよかったのでこれにした。
+これの組み立てが一番難しかった。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Flutter の学習をしている</title>
+      <link>http://localhost:1313/posts/flutter-%E3%81%AE%E5%AD%A6%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B/</link>
+      <pubDate>Fri, 16 Jul 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/flutter-%E3%81%AE%E5%AD%A6%E7%BF%92%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B/</guid>
+      <description>&lt;h1 id=&#34;flutter-の学習をしている&#34;&gt;Flutter の学習をしている&lt;/h1&gt;
+&lt;p&gt;最初は SwiftUI に関する情報や設計などを見聞きしたりするつもりだったはずだったけれど、
+試しに &lt;a href=&#34;https://flutter.dev&#34;&gt;Flutter&lt;/a&gt; の &lt;a href=&#34;https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro&#34;&gt;State managemennt&lt;/a&gt; も読んで参考にしてみようと調べ始めたのがきっかけな気がする。&lt;/p&gt;
+&lt;p&gt;そうしていると色々興味が湧いてきて最近熱心にドキュメントを読んだり、サンプルを clone してきて読んだりしている。
+&lt;a href=&#34;https://github.com/flutter/samples&#34;&gt;サンプル&lt;/a&gt;が豊富なことや、コミュニティが強いこともとても学習に助かっている。&lt;/p&gt;
+&lt;p&gt;特に YouTube の &lt;a href=&#34;https://www.youtube.com/c/flutterdev&#34;&gt;flutterdev&lt;/a&gt; はコンテンツの量と質が良くて、良い塩梅でフランクで見やすい時間の尺の動画が多い。
+また、これはサンプル程度の小規模のアプリだからの可能性があるが、開発体験がとても良かった。
+具体的には &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;VSCode&lt;/a&gt; と &lt;a href=&#34;https://flutter.dev&#34;&gt;Flutter&lt;/a&gt; のプラグイン含めた相性が良くて、特にブロッカー無しにスッと取り組めるようになった。
+合わせて通常の iOS アプリ開発とは違って、 hot reload が小気味よく動くのも良い。&lt;/p&gt;
+&lt;h1 id=&#34;以下は読んだ記事やコンテンツに関するメモ&#34;&gt;以下は読んだ記事やコンテンツに関するメモ&lt;/h1&gt;
+&lt;h2 id=&#34;1はじめに読んだ&#34;&gt;1.はじめに読んだ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://flutter.dev/docs/get-started/flutter-for/ios-devs&#34;&gt;Flutter for iOS developers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;現行で iOS アプリエンジニアなので、これを読むと大枠が掴めると勘繰って読んだ。
+その読みは大体あっていた位の印象。
+少し違っていたのは、全体的に UIKit ベースの iOS アプリ開発との比較対象で書かれているので、
+SwiftUI のようなモダンな宣言的 UI との比較ではなかった。
+結果としてもこれから読むのはファーストステップとしてとても良いと思う。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://flutter.dev/docs/deployment/ios&#34;&gt;Build and release an iOS app&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ざっと読んだだけだが、 Flutter 特有の便利ビルド設定や配布などは無くて愚直に &lt;code&gt;Runner&lt;/code&gt; を編集するしか無いのかと思った。&lt;/p&gt;
+&lt;h2 id=&#34;2環境構築&#34;&gt;2.環境構築&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;brew install flutter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;flutter doctor&lt;/code&gt; で足りないものを直す&lt;/li&gt;
+&lt;li&gt;VSCode で各種プラグインをインストール&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これくらいで開発を始められた&lt;/p&gt;
+&lt;h2 id=&#34;3はじめに手を動かした&#34;&gt;3.はじめに手を動かした&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://flutter.dev/docs/get-started/codelab&#34;&gt;Write your first Flutter app, part 1&lt;/a&gt;
+&lt;a href=&#34;https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2#0&#34;&gt;Write Your First Flutter App, part 2&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#39;イラストでわかる Docker と Kubernetes&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B-docker-%E3%81%A8-kubernetes-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Tue, 27 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B-docker-%E3%81%A8-kubernetes-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h3 id=&#34;読んだ動機や前提&#34;&gt;読んだ動機や前提&lt;/h3&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;イラストでわかるDockerとKubernetes Software Design plus&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;予め前提として自分のステータスは以下のような感じ。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker
+&lt;ul&gt;
+&lt;li&gt;主に業務のみで使用&lt;/li&gt;
+&lt;li&gt;用途としても人が書いた &lt;code&gt;docker-compose.yml&lt;/code&gt; の編集や、 &lt;code&gt;docker-compose up&lt;/code&gt; を行うのみ&lt;/li&gt;
+&lt;li&gt;VM を良い感じにしたやつ程度の認識&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Kubernetes
+&lt;ul&gt;
+&lt;li&gt;聞いたことあるだけ&lt;/li&gt;
+&lt;li&gt;SRE の人達がこれを使っていたので、deploy などに必要なんだろうなという程度の認識
+&lt;ul&gt;
+&lt;li&gt;YAML で色々管理されていそう&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;業務でも手元でのローカル開発などで使う頻度が増えて、ひとまず浅く理解したいという課題感があった。&lt;/p&gt;
+&lt;p&gt;その中で知人が &lt;a href=&#34;https://please-sleep.cou929.nu/docker-kubenetes-book.html&#34;&gt;blog&lt;/a&gt; で勧めていたので読んでみた。&lt;/p&gt;
+&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
+&lt;p&gt;主に Docker に関する理解が進んだ。逆に Kubernetes に関しては利用経験も無いのもあってか、概要のみの理解にとどまった。&lt;/p&gt;
+&lt;p&gt;Docker に関しては &lt;code&gt;第1章 コンテナ技術の概要&lt;/code&gt; と &lt;code&gt;第2章 Dockerの概要&lt;/code&gt; によって理解が進んだように感じる。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仮想マシンとコンテナの違い
+&lt;ul&gt;
+&lt;li&gt;軽量な実行環境&lt;/li&gt;
+&lt;li&gt;ポータビリティ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ワークフロー
+&lt;ul&gt;
+&lt;li&gt;Build
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Dockerfile&lt;/code&gt; を元にした &lt;code&gt;docker build&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ship
+&lt;ul&gt;
+&lt;li&gt;レジストリへのアップロード、登録&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Run&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;コンテナのレイヤー構造
+&lt;ul&gt;
+&lt;li&gt;キャッシュも効く&lt;/li&gt;
+&lt;li&gt;読み書き可能レイヤーや Copy on Write のところは面白かった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kubernetes に関しては以下のような理解になった。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#39;Build your own text editor in Rust&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/build-your-own-text-editor-in-rust-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Wed, 07 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/build-your-own-text-editor-in-rust-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h2 id=&#34;感想&#34;&gt;感想&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto/&#34;&gt;Hecto: Build your own text editor in Rust&lt;/a&gt; を手を動かしながら読んだのでそのメモ。&lt;/p&gt;
+&lt;p&gt;通して読んでみて総論とても良かった。&lt;/p&gt;
+&lt;p&gt;今まではチュートリアルや言語概要が主だったが、当初の思惑でもあった実践的な開発をこれを通して感じることができた。&lt;/p&gt;
+&lt;p&gt;具体的にはエディタというアプリケーションを（ほぼ）スクラッチで作っていく過程で、&lt;/p&gt;
+&lt;p&gt;学習者に OSS を使って自分のコードを置き換えてもらって便利さを味わってもらったり、&lt;/p&gt;
+&lt;p&gt;場当たり的な条件式や繰り返しのコードをリファクタリングしていくなど、&lt;/p&gt;
+&lt;p&gt;実際に即した開発を体感できているように感じた。&lt;/p&gt;
+&lt;p&gt;ひとまず Rust 学習についてはこれでひと段落させて、少し時間をあけて LeetCode などで Rust を使って行こうかと思っている。&lt;/p&gt;
+&lt;h2 id=&#34;読書メモ&#34;&gt;読書メモ&lt;/h2&gt;
+&lt;p&gt;以下は読書時メモ&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://viewsourcecode.org/snaptoken/kilo/index.html&#34;&gt;kilo&lt;/a&gt; という OSS のエディタの Rust 版実装&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-1/&#34;&gt;Chapter 1: Setup&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;特に真新しいことはない
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cargo init hecto&lt;/code&gt; しただけ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-2/&#34;&gt;Chapter2: Reading User Input&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;これで標準入力を受け取れる
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; std::io::Read;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; b &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; io::stdin().bytes() {}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;デフォルトの Rust のバイナリは canonical mode と呼ばれ、標準入力を Enter を押した後に受ける
+&lt;ul&gt;
+&lt;li&gt;また、終了するときは Ctrl + C などを入れる必要がある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;エディタで必要なのは raw mode
+&lt;ul&gt;
+&lt;li&gt;それを実現するための crate がある
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;termion&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Rust では character の場合は single quote&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;termion&lt;/code&gt; 導入
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;into_raw_mode&lt;/code&gt; を使って標準出力 &lt;code&gt;stdout&lt;/code&gt; を取得している
+&lt;ul&gt;
+&lt;li&gt;なぜ &lt;code&gt;stdout&lt;/code&gt; が 入力である &lt;code&gt;stdin&lt;/code&gt; に影響する？
+&lt;ul&gt;
+&lt;li&gt;Terminal は自身のステートを reader ではなく writer によって管理されているから&lt;/li&gt;
+&lt;li&gt;writer は screen への描画やカーソルの移動に使われている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;into_raw_mode&lt;/code&gt; で取得した &lt;code&gt;stdout&lt;/code&gt; はどこにもアサインされていないのに動くのはなぜ？
+&lt;ul&gt;
+&lt;li&gt;Rust の所有権 Ownership システムによるもの&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_stdout&lt;/code&gt; が存在する限り raw mode が続く&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt; をつけることで未使用変数でもコンパイラによる警告がなくなる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Observing key presses
+&lt;ul&gt;
+&lt;li&gt;variable shadowing
+&lt;ul&gt;
+&lt;li&gt;Rust では同じ変数名を2度定義できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;println!&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;macro&lt;/li&gt;
+&lt;li&gt;placeholder
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{}&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;print 可能な string representation を持つオブジェクト向け&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{:?}&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;上記以外&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;carriage return
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;インデントなしで次の行に行ける&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;println!&lt;/code&gt; が &lt;code&gt;\n&lt;/code&gt; を入れる前に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ASCII code
+&lt;ul&gt;
+&lt;li&gt;0-31 と 127 は control character&lt;/li&gt;
+&lt;li&gt;32-126 がプリント可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;page up や page down は3~4byteが出力される
+&lt;ul&gt;
+&lt;li&gt;escape sequence と呼ばれる
+&lt;ul&gt;
+&lt;li&gt;必ず27から始まる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;backspace が 127&lt;/li&gt;
+&lt;li&gt;enter は 13、 carriage return&lt;/li&gt;
+&lt;li&gt;ctrl + A-Z が 1-26 に割り当てられている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Error Handling
+&lt;ul&gt;
+&lt;li&gt;Rust には try catch はない&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;panic!&lt;/code&gt; と return value で Result を使う&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unwrap&lt;/code&gt; は Ok なら中の value、Err なら &lt;code&gt;panic!&lt;/code&gt; の sugar syntax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-3/&#34;&gt;Chapter 3: Raw input and output&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;termion を使って stdin に keys を生やせる
+&lt;ul&gt;
+&lt;li&gt;それを使って &lt;code&gt;Key::Char&lt;/code&gt; &lt;code&gt;Key::Ctrl(&#39;q&amp;quot;)&lt;/code&gt; などで match で分岐する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;impl&lt;/code&gt; のなかで &lt;code&gt;&amp;amp;self&lt;/code&gt; パラメータがない場合はそれは static method になる&lt;/li&gt;
+&lt;li&gt;Rust で read-only property を作るには
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pub&lt;/code&gt; を付けずに変数定義して、読み取り用の &lt;code&gt;pub fn&lt;/code&gt; を作って参照を返すようにするしかない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;saturating_add&lt;/code&gt; は結果の値がその型の最大値もしくは最小値を超える場合、その最大最小で返す&lt;/li&gt;
+&lt;li&gt;カーソルを表示・非表示するのに escape sequence を使う&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cursor_position&lt;/code&gt; を editor に入れてるのが面白い
+&lt;ul&gt;
+&lt;li&gt;terminal ではないのは、それが screen ではなく document 内の場所だから&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-4/&#34;&gt;Chapter 4: A text viewer&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#[derive(Default)]&lt;/code&gt; をつけると、その struct のイニシャライザに &lt;code&gt;default()&lt;/code&gt; がついてパラメータ初期化を勝手にやってくれる
+&lt;ul&gt;
+&lt;li&gt;Rust が default を推測できないパラメータを持つ場合、上記の derive は使えない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;env::args()&lt;/code&gt; の 0 番目はプログラムの名前、引数の最初は 1&lt;/li&gt;
+&lt;li&gt;マルチバイト文字などを含め、マウスで選択できる1文字のことをGraphemeという
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Grapheme&#34;&gt;https://en.wikipedia.org/wiki/Grapheme&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;grapheme 単位で文字を扱うために &lt;code&gt;unicode-segmentation&lt;/code&gt; をインストール&lt;/li&gt;
+&lt;li&gt;時間関連の扱いに、 &lt;code&gt;std::time::Duration&lt;/code&gt; や &lt;code&gt;std::time:Instant&lt;/code&gt; がある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-5/&#34;&gt;Chapter 5: A text editor&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;iterator
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;take&lt;/code&gt; は 0 から at まで&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skip&lt;/code&gt; は at から終わりまで&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;collect&lt;/code&gt; が便利
+&lt;ul&gt;
+&lt;li&gt;iterator から collection に変換してくれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Result&lt;/code&gt; 型には &lt;code&gt;is_ok()&lt;/code&gt; が使える
+&lt;ul&gt;
+&lt;li&gt;同様に &lt;code&gt;Option&lt;/code&gt; には &lt;code&gt;is_none()&lt;/code&gt; &lt;code&gt;is_some()&lt;/code&gt; がある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;self.file_name&lt;/code&gt; などへのプロパティの参照は &lt;code&gt;&amp;amp;&lt;/code&gt; をつける
+&lt;ul&gt;
+&lt;li&gt;これをしないと所有権がうつらない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;bool flag を pub にしないで、 is_flag の pub fn として後悔するのは一般的なのかな？
+&lt;ul&gt;
+&lt;li&gt;read only で pub にできないからかな&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clippy::restriction&lt;/code&gt; で lint ぽいことができる
+&lt;ul&gt;
+&lt;li&gt;exclude するケースも &lt;code&gt;[allow(clippy::{rule})]&lt;/code&gt; で書く&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get_mut&lt;/code&gt; で安全に配列にアクセスすることもできるが、予め index check を行い確実にアクセスすることができるなら冗長になるので直接 &lt;code&gt;array[index]&lt;/code&gt; でアクセスする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-6/&#34;&gt;Chapter 6: Search&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;enumerate()&lt;/code&gt; で index と value を取得できるのは Swift と同じだな&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Fn&lt;/code&gt; の他にも &lt;code&gt;FnMut&lt;/code&gt; がある&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rfind&lt;/code&gt; は見つけた文字列の後ろから数えた index を返す&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PartialEq&lt;/code&gt; は比較できるようにするための trait&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.philippflenker.com/hecto-chapter-7/&#34;&gt;Chapter 7: Syntax Highlighting&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;最初は row 内で直接 digit にのみ色を付けて、そのあとリファクタリングする流れ良い&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&#39;Tour of Rust&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/tour-of-rust-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Mon, 08 Feb 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tour-of-rust-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
+&lt;p&gt;この前に&lt;a href=&#34;introduction-to-rust-programming&#34;&gt;Rustプログラミング入門 を読んだ&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;そこで Rust の全体像や実際の開発方法については浅くはありながらもキャッチアップできたと思うので、
+次はもう少し言語に深く触れてみたいという課題感があり、&lt;a href=&#34;https://tourofrust.com&#34;&gt;Tour of Rust&lt;/a&gt; をやってみた。&lt;/p&gt;
+&lt;p&gt;5日くらいかけて一日30分~1時間で全9章を終えることができた。
+途中からは日本語訳がないので苦手な人は注意が必要かも。
+終わってみての感想としては以前よりは言語に対しての理解が深まった気がする。
+特に heap / stack 周りの &lt;code&gt;Box&lt;/code&gt; を使ったメモリ管理や、Ownership management (dereference) あたり。&lt;/p&gt;
+&lt;p&gt;とはいえ、これで自分で何かものを作れるかというとまだ自信がないので次は実践的なアプリケーション開発をしてみようと思う。
+この &lt;a href=&#34;https://www.philippflenker.com/hecto/&#34;&gt;Hecto: Build your own text editor in Rust&lt;/a&gt; が良さそうと思っている。
+(追記) &lt;a href=&#34;../build-your-own-text-editor-in-rust&#34;&gt;Build your own text editor in Rust を読んだ&lt;/a&gt; で上記のメモを残した。&lt;/p&gt;
+&lt;h3 id=&#34;読書メモ&#34;&gt;読書メモ&lt;/h3&gt;
+&lt;p&gt;以下は読書時メモ&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chapter 1 The Basics
+&lt;ul&gt;
+&lt;li&gt;変数の型が違う場合の &lt;code&gt;as&lt;/code&gt; キーワードある&lt;/li&gt;
+&lt;li&gt;配列の初期化は &lt;code&gt;[T; N]&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;T は型、Nは固定長の長さ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;関数の返り値がない場合、空のタプル &lt;code&gt;()&lt;/code&gt; が返り値となる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 2 Basic Control Flow
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;loop&lt;/code&gt; から値を取り出す、便利
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;loop&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  x &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;13 を発見&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;ブロックの最後に &lt;code&gt;;&lt;/code&gt; が無い式は、それが戻り値として使用される&lt;/li&gt;
+&lt;li&gt;if 文を三項演算子のように使うこともできる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 3 Basic Data Structure Types
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;struct&lt;/code&gt; はフィールドの集合
+&lt;ul&gt;
+&lt;li&gt;フィールドとはデータ構造とキーワードを紐付ける値&lt;/li&gt;
+&lt;li&gt;その値はプリミティブな型かデータ構造&lt;/li&gt;
+&lt;li&gt;コンパイラにメモリ上で隣り合うデータの配置を伝える設計図のようなもの&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;メモリ
+&lt;ul&gt;
+&lt;li&gt;Rust には3種類のメモリ空間がある&lt;/li&gt;
+&lt;li&gt;データメモリ
+&lt;ul&gt;
+&lt;li&gt;固定長もしくはライフサイクル中に常に存在するデータを格納&lt;/li&gt;
+&lt;li&gt;プログラム内の文字列キャラクタは読み取り専用なのでここ&lt;/li&gt;
+&lt;li&gt;メモリ上の一は固定かつ知られているので、高速に使用可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;スタックメモリ
+&lt;ul&gt;
+&lt;li&gt;関数ないで宣言された変数を格納&lt;/li&gt;
+&lt;li&gt;関数から呼び出されている間はメモリ上の位置は変更されないため速くアクセス可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ヒープメモリ
+&lt;ul&gt;
+&lt;li&gt;プログラムの実行時に作られるデータ&lt;/li&gt;
+&lt;li&gt;データをヒープメモリに入れることを allocation、削除することを deallocation という&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;タプルを使った構造体も作ることができる
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Location&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;i32&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;i32&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;フィールドを持たない構造体も宣言できる
+&lt;ul&gt;
+&lt;li&gt;あまり使われない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 4 Generics Types
+&lt;ul&gt;
+&lt;li&gt;Generics
+&lt;ul&gt;
+&lt;li&gt;struct や enum につけることができる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;::&amp;lt;T&amp;gt;&lt;/code&gt; を使う
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;::&amp;lt;&amp;gt;&lt;/code&gt; を turbofish というらしい、魚に見えるから？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Rust には null がない
+&lt;ul&gt;
+&lt;li&gt;変数に値がない可能性を意味するため、プログラミングが難しくなる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;None&lt;/code&gt; によって代替する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Option&lt;/code&gt; を使うのが一般的
+&lt;ul&gt;
+&lt;li&gt;Swift ぽい、Swift には &lt;code&gt;nil&lt;/code&gt; があるけど&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;main()&lt;/code&gt; で &lt;code&gt;Result&lt;/code&gt; を返すこともできる&lt;/li&gt;
+&lt;li&gt;Result
+&lt;ul&gt;
+&lt;li&gt;強力な &lt;code&gt;?&lt;/code&gt; 演算子がある&lt;/li&gt;
+&lt;li&gt;以下の2つは等価
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;do_something_that_might_fail()&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;```&lt;/span&gt;rust
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;match&lt;/span&gt; do_something_that_might_fail() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Ok(v) &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; v,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Err(e) &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; Err(e),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;unwrap
+&lt;ul&gt;
+&lt;li&gt;Option / Result にある
+&lt;ul&gt;
+&lt;li&gt;値がある場合はその値を、無い場合は &lt;code&gt;panic!&lt;/code&gt; する&lt;/li&gt;
+&lt;li&gt;可能な限り &lt;code&gt;match&lt;/code&gt; を使う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Vec
+&lt;ul&gt;
+&lt;li&gt;可変サイズのリスト&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vec!&lt;/code&gt; マクロを使うと簡単に作れる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Vec&lt;/code&gt; は構造体、内部的にはヒープ上の固定リストへの参照を持っている&lt;/li&gt;
+&lt;li&gt;デフォルトの容量よりも多くの項目が追加された場合、ヒープにより大きな固定長を生成して再割り当てする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 5 Ownership &amp;amp; Borrowing Data
+&lt;ul&gt;
+&lt;li&gt;Rust にはがGarbage Collectionがない&lt;/li&gt;
+&lt;li&gt;C++ではResource Acquisition Is Initializationとも呼ばれる&lt;/li&gt;
+&lt;li&gt;メモリ開放は階層的に行われる
+&lt;ul&gt;
+&lt;li&gt;構造体自体がまず消され、その後に子要素が消える&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;関数の引数に所有者が渡されると、所有権は関数の仮引数にmoveする&lt;/li&gt;
+&lt;li&gt;move後は元の関数内の変数は使用できない&lt;/li&gt;
+&lt;li&gt;参照を使ってリソースへのアクセスをborrowすることもできる
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt; を使う&lt;/li&gt;
+&lt;li&gt;参照も変数同様消える&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;変更可能な参照もborrowすることができる
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;mut&lt;/code&gt; を使う&lt;/li&gt;
+&lt;li&gt;データ競合を防止す流ため、可変な参照は1つしか持てない&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;mut&lt;/code&gt; の参照は &lt;code&gt;*&lt;/code&gt; 演算子を使って dereference できる
+&lt;ul&gt;
+&lt;li&gt;値のコピーも可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;参照は所有者よりも長くは存在してはいけない
+&lt;ul&gt;
+&lt;li&gt;存在しないデータへの参照を防ぐ&lt;/li&gt;
+&lt;li&gt;C言語ではダングリングポインタと呼ばれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;参照の一部を参照することも可能&lt;/li&gt;
+&lt;li&gt;明示的なライフタイム
+&lt;ul&gt;
+&lt;li&gt;コンパイラは全ての変数のライフタイムを管理している　&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;&lt;/code&gt; を関数の引数や戻り値に指定してライフタイムの共有を指定する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 6 Text
+&lt;ul&gt;
+&lt;li&gt;utf-8
+&lt;ul&gt;
+&lt;li&gt;可変サイズ 1~4byte
+&lt;ul&gt;
+&lt;li&gt;簡単なindexing、例えばstring[3]がO(1)でできなくなってしまった&lt;/li&gt;
+&lt;li&gt;シーケンスを繰り返して見るのでO(N)になる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Unicode での文字列の作業が困難なので、Rust では char 型の文字のベクトルにして取得する方法が提供されている
+&lt;ul&gt;
+&lt;li&gt;char は常に4バイトの長さ&lt;/li&gt;
+&lt;li&gt;Swift のテキスト操作の面倒さもこの辺りからきてるんだろうか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Chapter 7 Object Oriented Programming
+&lt;ul&gt;
+&lt;li&gt;Rust には inheritance は無い&lt;/li&gt;
+&lt;li&gt;method の最初のパラメータは必ず self への参照になる
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_sound&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;self) -&amp;gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;str&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;デフォルトだと object のフィールドやメソッドはモジュール内でのみ公開になる
+&lt;ul&gt;
+&lt;li&gt;モジュール外にも出す場合、 &lt;code&gt;pub&lt;/code&gt; キーワードをつける&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;polymorphism は trait を使って実現する
+&lt;ul&gt;
+&lt;li&gt;これは Swift の protocol oriented programming と同じ&lt;/li&gt;
+&lt;li&gt;trait は実装済みの method を持つこともできる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;trait は他の trait を inherit できる&lt;/li&gt;
+&lt;li&gt;dynamic vs static dispatch
+&lt;ul&gt;
+&lt;li&gt;static dispatch
+&lt;ul&gt;
+&lt;li&gt;インスタンスの型がわかってる場合は直接その関数を呼ぶことができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;dynamic dispatch
+&lt;ul&gt;
+&lt;li&gt;インスタンスの型がわからない場合、何が正しい関数なのかを知る必要がある　&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;dyn MyTrait&lt;/code&gt; を使うことで引数などで dynamic dispatch が使えるようになる
+&lt;ul&gt;
+&lt;li&gt;trait object と呼ばれる
+&lt;ul&gt;
+&lt;li&gt;function へのポインタを持つインスタンスへのポインタ&lt;/li&gt;
+&lt;li&gt;C++では vtable と呼ばれる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Generics
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;generics を使うことでコンパイル時に静的に型が付き、static dispatch が可能になる&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#39;Rustプログラミング入門&#39; を読んだ</title>
+      <link>http://localhost:1313/posts/rust%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E5%85%A5%E9%96%80-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Tue, 02 Feb 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rust%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E5%85%A5%E9%96%80-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/introduction-to-rust-programming/introduction-to-rust-programming.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;読んだ動機&#34;&gt;読んだ動機&lt;/h3&gt;
+&lt;p&gt;個人で Rust を使って何か作ってみたいというのと、普段の業務とは別の言語を触ってみて何が良いのか学んでおきたいというのが主な動機だったかなと思う。&lt;/p&gt;
+&lt;p&gt;前提として1年以上前に &lt;!-- raw HTML omitted --&gt;プログラミングRust&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; は読んだことがあったけれど、モチベーションが続かず途中で読むのをやめてしまっている。&lt;/p&gt;
+&lt;p&gt;なので、今回はもう少し実践的で手を動かしながら挑戦してみたいと思っていたところに、タイトルにもある以下のほんの評判を聞き手にとってみた。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;実践Rustプログラミング入門&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h3 id=&#34;本の概要&#34;&gt;本の概要&lt;/h3&gt;
+&lt;p&gt;この本は Rust の概要から始まり、言語仕様や周辺のツールチェーンの紹介まで書かれており、これらで1/3ほど使われていた。&lt;/p&gt;
+&lt;p&gt;その後の1/3ほどで実際のアプリケーションの開発を行う。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;簡単な TODO 管理を行う Web アプリ&lt;/li&gt;
+&lt;li&gt;WebAssembly を使った Web アプリ&lt;/li&gt;
+&lt;li&gt;GUI ネイティブアプリ&lt;/li&gt;
+&lt;li&gt;組み込み開発&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;個人的にこれらの実際のアプリケーション開発はとてもありがたかった。&lt;/p&gt;
+&lt;p&gt;実際に開発で使う場合に、どんな crate を使うのが良いかなどは初心者にとってはなかなか掴み所が難しかったりするので。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>iCloud に溜まった写真のバックアップを取った</title>
+      <link>http://localhost:1313/posts/icloud-%E3%81%AB%E6%BA%9C%E3%81%BE%E3%81%A3%E3%81%9F%E5%86%99%E7%9C%9F%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%82%92%E5%8F%96%E3%81%A3%E3%81%9F/</link>
+      <pubDate>Wed, 13 Jan 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/icloud-%E3%81%AB%E6%BA%9C%E3%81%BE%E3%81%A3%E3%81%9F%E5%86%99%E7%9C%9F%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%82%92%E5%8F%96%E3%81%A3%E3%81%9F/</guid>
+      <description>&lt;p&gt;iCloud が登場してから、ずっと iPhone + iCloud のみで写真を管理してきている。&lt;/p&gt;
+&lt;p&gt;家族もファミリープランに登録しており、以下の200GBのプランを使ってた。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.apple.com/ja-jp/HT201238&#34;&gt;https://support.apple.com/ja-jp/HT201238&lt;/a&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/icloud-photo-backup/icloud-storage-pricing.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;しかし子供が産まれてから写真を取る頻度や枚数がとても増えて、契約していた200GBプランの上限が見えてきてしまった。&lt;/p&gt;
+&lt;p&gt;面倒なので更に上の2TBプランを契約しようかとも考えたが、今後も考えると2TBでもあまり長続きもしなさそうと思い、これを機会に考えることにした。&lt;/p&gt;
+&lt;p&gt;このブログでは実際に決定した運用方針を説明する。&lt;/p&gt;
+&lt;h2 id=&#34;選定サービス&#34;&gt;選定サービス&lt;/h2&gt;
+&lt;p&gt;信頼性とコストの面も考えて、いくつかの対象に分けて保存することにした。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/b?ie=UTF8&amp;amp;node=5262648051&#34;&gt;Amazon Photos&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;iCloud&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Google Photos&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Time Machine&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;HDD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;大きくクラウド3つとローカル2つに分かれる。
+全部で5つと対象が多くなってしまったのがやや課題だが、ローカルの2つに関しては元から運用していた。&lt;/p&gt;
+&lt;h3 id=&#34;1-amazon-photos&#34;&gt;1. &lt;a href=&#34;https://www.amazon.co.jp/b?ie=UTF8&amp;amp;node=5262648051&#34;&gt;Amazon Photos&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;以前から Amazon Prime 会員ではあるので、メインのクラウドバックアップ先になった。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/b?ie=UTF8&amp;amp;node=5262648051&#34;&gt;Amazon Photos&lt;/a&gt; の特徴は主に以下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Amazon Prime 会員だと写真に関しては無制限アップロードかつ品質も元のままでアップロードが可能&lt;/li&gt;
+&lt;li&gt;Family Vault という概念があり、会員は5名まで招待できて招待されたユーザも招待者と同じ無制限アップロードが与えられる&lt;/li&gt;
+&lt;li&gt;無制限は写真のみで、動画は Amazon Prime 会員であっても5GBまで&lt;/li&gt;
+&lt;li&gt;Mac 版アプリが配布されているので、スマートフォンでポチポチやる必要無し&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;また心理的な面でも、既に Amazon Prime で年会費は払っているので急な有料化などは起こりづらいのではという仮説があり、&lt;/p&gt;
+&lt;p&gt;自分の場合は他の無料サービスと比較して安心して決定できた。&lt;/p&gt;
+&lt;h3 id=&#34;2-icloud&#34;&gt;2. iCloud&lt;/h3&gt;
+&lt;p&gt;引き続き200GBプランを継続して使用する。&lt;/p&gt;
+&lt;p&gt;50GB に下げることも可能だが、後述する実運用でバックアップを行うインターバルが短くなって面倒なのと、&lt;/p&gt;
+&lt;p&gt;現在の値段だと対してどちらも変わらないため。&lt;/p&gt;
+&lt;p&gt;iCloud は写真と動画それぞれどちらも劣化なしで元ファイルを保持してくれるので、一時キャッシュとして扱うことにした。&lt;/p&gt;
+&lt;h3 id=&#34;3-google-photo&#34;&gt;3. Google Photo&lt;/h3&gt;
+&lt;p&gt;既に2021年6月1日からのストレージ有料化が発表されているので、メインのバックアップ先としては検討できなかった。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://photos.google.com/u/0/storagepolicy?hl=ja&#34;&gt;https://photos.google.com/u/0/storagepolicy?hl=ja&lt;/a&gt;\&lt;/p&gt;
+&lt;p&gt;ただ現状は無料なので、サブの保存先としてとりあえずあげている。&lt;/p&gt;
+&lt;p&gt;万が一何かが消えた時などにもしかしたらここにあるかも？と探せれば良いかな程度の温度感。&lt;/p&gt;
+&lt;h3 id=&#34;4-time-machine&#34;&gt;4. Time Machine&lt;/h3&gt;
+&lt;p&gt;以前から Mac で Time Machine を使ってバックアップを取っていた。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rust をインストールする</title>
+      <link>http://localhost:1313/posts/rust-%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 07 Jan 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/rust-%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/</guid>
+      <description>&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+&lt;p&gt;以下のページにあるコマンドを実行する&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rustup.rs&#34;&gt;https://rustup.rs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;その時に &lt;code&gt;nightly&lt;/code&gt; &lt;code&gt;beta&lt;/code&gt; &lt;code&gt;stable&lt;/code&gt; を選択するが、M1 Mac の場合は &lt;code&gt;beta&lt;/code&gt; を選択する必要があった。
+しかし以下のように &lt;code&gt;stable&lt;/code&gt; でも 1.49.0 がリリースされていたので、 もう &lt;code&gt;stable&lt;/code&gt; を選ぶだけで良い。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; stable-aarch64-apple-darwin installed - rustc 1.49.0 (e1884a8e3 2020-12-29)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上記の切り替えは &lt;code&gt;rustup&lt;/code&gt; を使って、以下のように行うことができる。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rustup default stable
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;エディタ&#34;&gt;エディタ&lt;/h2&gt;
+&lt;p&gt;以下のページに各種エディタの Rust サポート状況がまとめられている。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://areweideyet.com&#34;&gt;https://areweideyet.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;VS Code が無難そうなので、それを使うことにした。&lt;/p&gt;
+&lt;h2 id=&#34;ツールチェイン&#34;&gt;ツールチェイン&lt;/h2&gt;
+&lt;p&gt;Rust のツールチェインは、上記の &lt;code&gt;rustup&lt;/code&gt; がまとめてインストールしてくれる。
+具体的には以下で出てくるパッケージ管理に使う &lt;code&gt;Cargo&lt;/code&gt; などがそれに当たる。
+他にも rustc のようなコンパイラもそれに当たると思う。&lt;/p&gt;
+&lt;h2 id=&#34;パッケージ&#34;&gt;パッケージ&lt;/h2&gt;
+&lt;p&gt;プログラムに必要なパッケージは、 &lt;code&gt;Cargo&lt;/code&gt; と呼ばれるパッケージ管理システムを使ってインストールする。
+例えば &lt;code&gt;cargo-edit&lt;/code&gt; を入れるには&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cargo add cargo-edit
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;になる。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Resolve storyboard/xib files upgrade diffs at once</title>
+      <link>http://localhost:1313/posts/resolve-storyboard/xib-files-upgrade-diffs-at-once/</link>
+      <pubDate>Mon, 21 Dec 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/resolve-storyboard/xib-files-upgrade-diffs-at-once/</guid>
+      <description>&lt;h3 id=&#34;storyboardxib-diffs&#34;&gt;Storyboard/Xib diffs&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re an iOS Developer, you might have experience storyboard / xib diffs appeared when you just opened it.&lt;/p&gt;
+&lt;p&gt;Those interface builder files have some version specification ih those files named &lt;code&gt;toolsVersion&lt;/code&gt;. It can be modified if Xcode version and it&amp;rsquo;s changed since last time you opened.&lt;/p&gt;
+&lt;p&gt;And it&amp;rsquo;s noisy because everytime when you opened interface builder files, it&amp;rsquo;ll be modified even if you don&amp;rsquo;t want to modify it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Roam Research でノート・タスク管理のツールをアップデートした</title>
+      <link>http://localhost:1313/posts/roam-research-%E3%81%A7%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86%E3%81%AE%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E3%81%97%E3%81%9F/</link>
+      <pubDate>Sat, 05 Dec 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/roam-research-%E3%81%A7%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86%E3%81%AE%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h1 id=&#34;ツールの変更&#34;&gt;ツールの変更&lt;/h1&gt;
+&lt;p&gt;2020年9月末くらいから、ノートやタスク管理系のツールをガッと一気に変更した。
+定期的にツールを変えたくなる時は訪れる（良くない癖）けど、ここまで一気に変更するのは初めてかもしれない。
+今までの課題感・変更する動機などを簡単にまとめる。
+新しいツールを3ヶ月弱使ってみた上での紹介などは長くなるので別の記事などで書きたいと思う。&lt;/p&gt;
+&lt;h1 id=&#34;今までのツールと課題感&#34;&gt;今までのツールと課題感&lt;/h1&gt;
+&lt;p&gt;今まではノートを取るのは iOS/Mac 純正メモアプリ、タスク管理(主にGTD)は &lt;a href=&#34;https://culturedcode.com/things/&#34;&gt;Things&lt;/a&gt; を使って行っていた。
+変遷でいうとノートはその前は全盛期（今では見る影もない）の &lt;a href=&#34;https://evernote.com&#34;&gt;Evernote&lt;/a&gt; を長く使っていた。
+タスク管理は以前は &lt;a href=&#34;https://todoist.com&#34;&gt;Todoist&lt;/a&gt; や iOS/Mac 純正リマインダーも使っていた。
+その中で大きな不便などはもちろん無いけれど、漠然とした課題感は大きく以下のようにあった。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;消費したコンテンツの内容を体系化して保存できておらず、忘れてしまう
+&lt;ul&gt;
+&lt;li&gt;書いたノートを見返す事もほぼ無く、書き捨てを前提にしている&lt;/li&gt;
+&lt;li&gt;記憶力も良くないので、知識が蓄積されている感じがしない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;タスク管理とノートは相互でつながっていることが多く、ツールを跨いで移したりなどが面倒
+&lt;ul&gt;
+&lt;li&gt;kiriminさんの&lt;a href=&#34;https://kirimin.hatenablog.com/entry/2019/08/06/190809&#34;&gt;様々なTODOアプリやタスク管理方法を試行した結果最終的にプレーンテキストに行き着いた話&lt;/a&gt;にとても共感する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;タスク管理をしていても、中・長期的(Weekly, Monthly, Quarterly, Yearly)な目標管理ができていない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上から順に解決したい課題だった。&lt;/p&gt;
+&lt;h1 id=&#34;動機&#34;&gt;動機&lt;/h1&gt;
+&lt;p&gt;上記のような課題がある一方で、同時に移行コストも高いので日々良さそうなツールを試したりしながら見送っていた。
+そんな中良いタイミングで良いツールや紹介記事と出会い、また個人的にも&lt;a href=&#34;../four-years-at-mercari-and-merpay&#34;&gt;転職&lt;/a&gt;もあり、良いリフレッシュの機会が提供されて移行できた。
+あと &lt;a href=&#34;https://rebuild.fm/287/&#34;&gt;Rebuild.fm #287&lt;/a&gt; でも話されていて、自分のきっかけなどを書きたくなった。&lt;/p&gt;
+&lt;p&gt;以降に際しての方針は課題に対して大まかに以下だった。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ノートやタスク管理などを個々で1ツールで扱うのではなく、なるべく一元化して一つの場所で管理したい
+&lt;ul&gt;
+&lt;li&gt;そのための UI や体験は一定犠牲になっても良い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;体系的にノートを管理する上で、必要以上の労力をかけたくない
+&lt;ul&gt;
+&lt;li&gt;過去にも Evernote などで頑張って tagging や構造化を試したりしたが、上手くいかなかった
+&lt;ul&gt;
+&lt;li&gt;メンテナンスコストが非常に高いのと、ノートを作成する心理的消費も同時に高くなる（面倒くさくなる）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mobile アプリは充実していなくても良い
+&lt;ul&gt;
+&lt;li&gt;これは時節柄、最近はあまり外出しないのと、Mobile デバイスで長いテキストを書くことがほぼ無いから&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;移行先ツール&#34;&gt;移行先ツール&lt;/h1&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/start-roam-research/roamresearch.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;移行先のツールに関してはタイトルにもある通り &lt;a href=&#34;https://roamresearch.com&#34;&gt;Roam Research&lt;/a&gt; を使うことにした。
+早速方針の &lt;code&gt;なるべく一元化して一つの場所で管理したい&lt;/code&gt; と矛盾するが、その他の補助ツールもいくつかある。
+それらの紹介については簡単にしておいて次回以降、以下のようなワークフロー別に書こうと思う。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;未読管理 (bookmark, highlight保存など)&lt;/li&gt;
+&lt;li&gt;GTD、タスク管理&lt;/li&gt;
+&lt;li&gt;目標管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://roamresearch.com&#34;&gt;Roam Research&lt;/a&gt; の良かったところは主に以下である。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;構造化が不必要なグラフ型のノート管理
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[[]]&lt;/code&gt; でリンクを作ることで一瞬でノートが作成できる&lt;/li&gt;
+&lt;li&gt;双方向リンクが簡単に作れる、かつ修正が容易&lt;/li&gt;
+&lt;li&gt;各アウトラインがノートの単位になっている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;コミュニティの熱量がとても高い #roamcult&lt;/li&gt;
+&lt;li&gt;各種サービスとの連携が比較的できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;詳細は長くなってしまうので、これまた別で書こうと思う。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>メルカリ・メルペイでの4年間</title>
+      <link>http://localhost:1313/posts/%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%83%A1%E3%83%AB%E3%83%9A%E3%82%A4%E3%81%A7%E3%81%AE4%E5%B9%B4%E9%96%93/</link>
+      <pubDate>Thu, 01 Oct 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%83%A1%E3%83%AB%E3%83%9A%E3%82%A4%E3%81%A7%E3%81%AE4%E5%B9%B4%E9%96%93/</guid>
+      <description>&lt;h2 id=&#34;メルカリメルペイを退職する&#34;&gt;メルカリ・メルペイを退職する&lt;/h2&gt;
+&lt;p&gt;2020年9月末で最終出社となり、有給休暇を挟んだ後に&lt;a href=&#34;https://about.mercari.com/&#34;&gt;メルカリ&lt;/a&gt;を退職することに決めた。&lt;/p&gt;
+&lt;p&gt;入社したのは2016年5月なので、4年4ヶ月の間在籍していたことになる。（間に育休取得もさせてもらったので便宜上4年としている）
+当初いわゆる退職エントリを書くつもりはなかったけれど、こういった時世ということもあり、社内・社外に沢山お世話になった方々がいる中で、挨拶もあまり満足にできなかったので書くことにした。
+最終出社を終えて、毎日見ていたSlackが見れなくなり、こういう文章を書いてみてようやく少しずつ辞めたんだなぁと実感している。&lt;/p&gt;
+&lt;p&gt;このエントリは分の4年間の振り返りも兼ねた&lt;a href=&#34;https://twitter.com/itmammoth/status/420021368537624576&#34;&gt;個人の日記&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;改めて振り返ってみると、メルカリに入社した動機は大きく以下の3つであった。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自分や自分の周りが毎日触るようなサービスに携わりたい&lt;/li&gt;
+&lt;li&gt;US 進出を本気で行っている&lt;/li&gt;
+&lt;li&gt;自分より優秀な人がたくさんいる環境 (&lt;a href=&#34;https://www.amazon.co.jp/dp/B01IGW5MQ0/&#34;&gt;一番の下手くそでいよう&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;入社を決めた動機は全て正しかったと今でも思える。
+そんな4年の経験で得られた一番のモノは、&amp;ldquo;なんとかやっていく&amp;quot;力だろうと思う。
+急拡大する会社・サービスではなんとかしないといけないことが本当にたくさん起こる。&lt;/p&gt;
+&lt;p&gt;それは &lt;a href=&#34;https://hinative.com/ja/questions/5661138&#34;&gt;Get shit done&lt;/a&gt; なのかもしれないし、 &lt;a href=&#34;https://en.wikipedia.org/wiki/Disagree_and_commit&#34;&gt;Disagree and commit&lt;/a&gt; かもしれない。&lt;/p&gt;
+&lt;p&gt;とにかく&amp;quot;やっていく&amp;quot;しかない状況・環境によって&amp;quot;やっていく&amp;quot;ことができたよう思う。&lt;/p&gt;
+&lt;h2 id=&#34;やっていたこと&#34;&gt;やっていたこと&lt;/h2&gt;
+&lt;p&gt;移行期にグラーデーションこそあれど、大まかにいうと最初の2年はIndividual Contributor/Tech LeadとしてSoftware Engineer(iOS)、残りの2年をEngineering Managerといった役割で仕事させてもらった。&lt;/p&gt;
+&lt;h3 id=&#34;ictl&#34;&gt;IC/TL&lt;/h3&gt;
+&lt;p&gt;Mercari JP/Mercari US/Merpayという大きく3つのドメインで、主にプロダクト開発業務に携わらせてもらった。
+Mercari USでは出品画面を作ったり出品画面を作ったりした。
+最終的にはアプリの作り直しをやることになり、複数人で3ヶ月という短期間で望んだ。&lt;/p&gt;
+&lt;p&gt;iOSDC 2017で発表させてもらった時のスライド &lt;a href=&#34;https://speakerdeck.com/jarinosuke/us-ban-mercari-womarugoto1karazuo-rizhi-sitahua&#34;&gt;US 版 Mercari をまるごと1から作り直した話&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Merpayではとても多い機能開発を、メンバーを採用しながら開発も並行で行い1年かけてリリースまで行った。
+開発開始からリリースまで1年かかったのは自分の経験では初めてで、リリースの瞬間は今でもよく覚えている。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jarinosuke/status/1095592964179472384&#34;&gt;twitter&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;em&#34;&gt;EM&lt;/h3&gt;
+&lt;p&gt;Merpay開発開始から半年経ったくらいからEngineering Managerの業務をすることになった。
+具体的には採用から評価・フィードバックまで、体系立てて色々当経験させてもらった。
+そんな中で誇れるのは何といっても、優秀かつ多様なメンバーを採用することができたこと。&lt;/p&gt;
+&lt;p&gt;これには本当に恵まれていたなと今でも思っている。&lt;/p&gt;
+&lt;p&gt;2019年末には機会を頂いて&lt;a href=&#34;https://eof.connpass.com/event/143794/&#34;&gt;EOF 2019&lt;/a&gt;で以下の発表もさせてもらった。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/jarinosuke/merupeifalseenziniaringuzu-zhi-falsebian-hua-tomu-zhi-sutimuxiang&#34;&gt;メルペイのエンジニアリング組織の変化と目指すチーム像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mercan.mercari.com/articles/18940/&#34;&gt;メルペイiOSエンジニアが「EMとしての1年半」で気づいた、チームに必要な3つの要素 #eof2019&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2020年に入ってもOrigamiチームの合流や、リモート環境下でのマネジメントやコミュニケーションなどチャレンジングなことが続いた。&lt;/p&gt;
+&lt;h2 id=&#34;次とその動機&#34;&gt;次とその動機&lt;/h2&gt;
+&lt;h3 id=&#34;次&#34;&gt;次&lt;/h3&gt;
+&lt;p&gt;小さなスタートアップで、もう一度Software Engineerとして働く。
+社員数も一桁で、ここまで人数が少ない会社は初めてで不安も無くはないが、&lt;a href=&#34;https://www.amazon.co.jp/dp/B08CX9YNRD/&#34;&gt;熱量&lt;/a&gt;高く、楽しんでやっていく。&lt;/p&gt;
+&lt;h3 id=&#34;動機&#34;&gt;動機&lt;/h3&gt;
+&lt;p&gt;チャレンジしようと思える(自身の興味のある分野|信頼ある知人のリファレンス|アップサイドの可能性のある)機会をもらったのが一番の動機かと思う。&lt;/p&gt;
+&lt;p&gt;と同時に自分自身としてもそろそろ&lt;a href=&#34;https://rfushimi.hatenablog.jp/entry/2019/04/23/204637&#34;&gt;エンジニアとマネージャの振り子&lt;/a&gt;を振るタイミングと思っていた。&lt;/p&gt;
+&lt;p&gt;Engineering Managerを2年近くやらせてもらって、客観的な評価含め一定成果は出せたと自分で思えているのも、振り子を振り直す理由の一つになったのかなと思う。
+個人的見解だけれど、いわゆるマネジメントのスキルはSoftware Engineeringに比べてより普遍で劣化速度も遅いと思っていて、もう少し年齢など含むステージ的に後でもチャレンジできそうと判断した。&lt;/p&gt;
+&lt;p&gt;逆にこのまま更に数年Engineering Managerを続けてやるという決断をした場合に、もう一度Software Engineerとして振り子を振り直せるかどうか怪しいと思ったのも、大きくはないが理由の一つとしてはあるかもしれない。
+&lt;a href=&#34;https://rfushimi.hatenablog.jp/entry/2019/04/23/204637&#34;&gt;エンジニアとマネージャの振り子&lt;/a&gt;を強く信じているし、キャリアについても金融のポートフォリオと似たような所があると思っていて、&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Elegant Puzzle: 2 Organizations のメモ</title>
+      <link>http://localhost:1313/posts/an-elegant-puzzle-2-organizations-%E3%81%AE%E3%83%A1%E3%83%A2/</link>
+      <pubDate>Wed, 19 Aug 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/an-elegant-puzzle-2-organizations-%E3%81%AE%E3%83%A1%E3%83%A2/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;前にも一度読んでいて、簡単な&lt;a href=&#34;an-elegant-puzzle&#34;&gt;blogを書いた&lt;/a&gt;けれど、もう少し詳細に日本語で自分用に見返せるメモが欲しいなと、改めて読んでいて思ったので大きな章ごとにまとめておく&lt;/p&gt;
+&lt;h2 id=&#34;2-organizations&#34;&gt;2. Organizations&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I believe that excellent organizations grow from consistently applying a straightforward process.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;複雑なパズルもシンプルなアプローチで解けることは意識したい&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When I have a problem that I want to solve quickly and cheaply, I start thinking about process design. A problem I want to solve permanently and we have time to go slow? That’s a good time to evolve your culture. However, if process is too weak a force, and culture too slow, then organizational design lives between those two.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ダークモード対応した</title>
+      <link>http://localhost:1313/posts/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89%E5%AF%BE%E5%BF%9C%E3%81%97%E3%81%9F/</link>
+      <pubDate>Sat, 25 Jul 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89%E5%AF%BE%E5%BF%9C%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;h3 id=&#34;やったこと&#34;&gt;やったこと&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;prefers-color-scheme&lt;/code&gt; を使ってスタイルの切り替えを実装した（ダークモード対応）
+&lt;ul&gt;
+&lt;li&gt;それに伴って全体的にデザインを変更、普段使ってる Mac/iOS Note.app ぽい黄色にした&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;シンタックスハイライトのデザイン変更した&lt;/li&gt;
+&lt;li&gt;コードブロックの上にファイル名やタイトルを付け加えられるようにした&lt;/li&gt;
+&lt;li&gt;内部の Markdown へのリンク遷移時に、リロードされないようにした
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gatsby-plugin-catch-links&lt;/code&gt; を使った&lt;/li&gt;
+&lt;li&gt;直リンクだと、デプロイ前のプレビューで遷移確認できないのと、せっかくSPAぽく動いてるので無駄なリロードは避けたかったので&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;対応した PR は&lt;a href=&#34;https://github.com/jarinosuke/blog.jarinosuke.com/pull/9&#34;&gt;これ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;しなかったこと&#34;&gt;しなかったこと&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;シンタックスハイライトのダークモード対応
+&lt;ul&gt;
+&lt;li&gt;面倒そうだったのと、 &lt;code&gt;prism-tomorrow&lt;/code&gt; でどちらの場合も事足りそうな雰囲気だったので見送り&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;トグルやチェックボックスを置いて、ユーザがスタイルを切り替えるようにする
+&lt;ul&gt;
+&lt;li&gt;React Component をシュッと作れそうに無かったのと、そんなに使われなさそう&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;css-media-query&#34;&gt;CSS Media Query&lt;/h3&gt;
+&lt;p&gt;ユーザの端末や設定などに CSS からアクセスするための仕組み&lt;/p&gt;
+&lt;p&gt;今回のダークモードについても &lt;code&gt;prefers-color-scheme&lt;/code&gt; というキー名に対して以下の様にクエリを投げ、&lt;/p&gt;
+&lt;p&gt;その返り値が &lt;code&gt;light&lt;/code&gt; か &lt;code&gt;dark&lt;/code&gt; によってスタイルの出し分けを行っている&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;media&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;prefers-color-scheme&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;light&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt; {} 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;media&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;prefers-color-scheme&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;dark&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt; {} 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;手元の Safari や Chrome では動くぽいので、既に一定標準なのかもしれない&lt;/p&gt;
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.jxck.io/entries/2018-11-10/dark-mode-via-prefers-color-scheme.html&#34;&gt;prefers-color-scheme を用いた Dark Mode 対応と User Preference Media Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.ebiken.dev/blog/my-new-blog/&#34;&gt;Gatsbyでブログを作りました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://littlebylittle.work/2020/01/gatsby-syntax-highlighting/&#34;&gt;Gatsbyにシンタックスハイライトを入れてコードをきれいに表示する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kikunantoka.com/2019/12/11--install-code-title/&#34;&gt;GatsbyJSで作っているブログでコードブロックにタイトルをつけられるようにした&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@sgpropguide/relative-page-links-in-markdown-files-within-gatsby-1f56ce69d06c&#34;&gt;Relative page links in markdown files within gatsby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/50300574/gatsby-js-preprocessing-relative-path-links-in-markdown&#34;&gt;Gatsby.js: Preprocessing Relative Path Links in Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Gatsby &#43; Netlify の新しいブログを作った</title>
+      <link>http://localhost:1313/posts/gatsby--netlify-%E3%81%AE%E6%96%B0%E3%81%97%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/</link>
+      <pubDate>Fri, 24 Jul 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/gatsby--netlify-%E3%81%AE%E6%96%B0%E3%81%97%E3%81%84%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/</guid>
+      <description>&lt;h3 id=&#34;動機&#34;&gt;動機&lt;/h3&gt;
+&lt;p&gt;最近 blog 書く頻度また減ってきた。&lt;/p&gt;
+&lt;p&gt;それと同時にもう少しカジュアルに書きたい・書けるようにしたいというモチベーションが出てきて&lt;/p&gt;
+&lt;p&gt;これを機会に blog の移設をしようと思った。&lt;/p&gt;
+&lt;p&gt;今までは&lt;a href=&#34;https://jarinosuke.hatenablog.com&#34;&gt;はてなブログ&lt;/a&gt;で書いていたけれど、以下のような点で億劫になってきていた。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Markdown で書けるには書けるが、画像のアップロードなどでなんやかんや結構 CMS というか Web UI を触らなければならない
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ローカルのエディタで編集は完結していて、あとは push したらシュッと色々やられてデプロイされるのが望ましい&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;はてなブログ Pro の値段が高い / その価格に対して恩恵を得られていない（ブログを書いていないのが大きいのかもしれない…）&lt;/li&gt;
+&lt;li&gt;界隈のコミュニティ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今までの記事全てを export するのも面倒だなと思ったので、2020 年に書いた 3 つの記事だけ手作業で移した。&lt;/p&gt;
+&lt;h3 id=&#34;gatsby&#34;&gt;Gatsby&lt;/h3&gt;
+&lt;p&gt;Gatsby を選んだ動機は ishkawa さんの記事 &lt;a href=&#34;https://ishkawa.org/1584277737/&#34;&gt;ブログをGatsbyで再構築した | ishkawa&lt;/a&gt; を見て良さそうと思ったから。&lt;/p&gt;
+&lt;p&gt;CSS など特に参考にさせてもらった。&lt;/p&gt;
+&lt;p&gt;Jekyll の延長線くらいの理解で、ちゃんと理解しないまま Gatsby を使い始めたけど、 &lt;a href=&#34;https://qiita.com/uehaj/items/1b7f0a86596353587466&#34;&gt;Reactベース静的サイトジェネレータGatsbyの真の力をお見せします&lt;/a&gt; を読んで結構違うよう。&lt;/p&gt;
+&lt;p&gt;GraphQL を使って、ビルド時にあれこれできるのは面白いなと思った。&lt;/p&gt;
+&lt;h3 id=&#34;netlify&#34;&gt;Netlify&lt;/h3&gt;
+&lt;p&gt;デプロイ + ホスティングには GitHub Actions + Pages は使っていなくて、 Netlify で完結している。&lt;/p&gt;
+&lt;p&gt;ポチポチやるだけで GitHub とのインテグレーションが完結して、なんなら Pull Request を作成するたびに &lt;code&gt;gatsby build&lt;/code&gt; が走ってデプロイ予定の Preview のビルドまでしてくれる。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>‘Intro to TensorFlow for Deep Learning | Udacity’ を受講した</title>
+      <link>http://localhost:1313/posts/intro-to-tensorflow-for-deep-learning-udacity-%E3%82%92%E5%8F%97%E8%AC%9B%E3%81%97%E3%81%9F/</link>
+      <pubDate>Wed, 25 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/intro-to-tensorflow-for-deep-learning-udacity-%E3%82%92%E5%8F%97%E8%AC%9B%E3%81%97%E3%81%9F/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/assets/blog/intro-to-tensorflow-deep-learning/intro-to-tensorflow.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;intro-to-tensorflow-for-deep-learning&#34;&gt;&lt;a href=&#34;https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187&#34;&gt;Intro to TensorFlow for Deep Learning&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Udacity の Free Course で &lt;a href=&#34;https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187&#34;&gt;Intro to TensorFlow for Deep Learning&lt;/a&gt; を受講した&lt;/p&gt;
+&lt;p&gt;空き時間などで少しずつ進めて、だいたい1ヶ月ちょっとで一通り終えられたと思う&lt;/p&gt;
+&lt;p&gt;この記事は受講した上での感想と、忘れないために受講後にわかったこと/わからないことを挙げている
+その後に簡単に自分の目線でのコースの説明も付けておいた&lt;/p&gt;
+&lt;h2 id=&#34;感想&#34;&gt;感想&lt;/h2&gt;
+&lt;p&gt;コースの全体的な構成としては、数分の説明用のビデオ(Youtube)を見た後に &lt;a href=&#34;https://colab.research.google.com/notebooks/intro.ipynb&#34;&gt;Colab&lt;/a&gt; と呼ばれる Google が提供している Python のオンラインの実行環境で課題を行うという流れだった&lt;/p&gt;
+&lt;p&gt;以前受講した &lt;a href=&#34;https://www.coursera.org/learn/machine-learning&#34;&gt;Coursera の Machine Learning&lt;/a&gt; というコースは Octave という Matlab ぽい数値解析言語を使っていたのに対して、この Colab + Python(numpy) という環境が気軽に実行できるかつ分かりやすくてとても良かった&lt;/p&gt;
+&lt;p&gt;課題の内容自体は、基本的には前回のビデオの内容から分かるもので自力で頑張るというより、そこからパラメータを変更したりして学習内容の結果を比較したりなどが多い印象
+なのでどこかでスタックしてやる気を無くすみたいなことは無かった。反面、身に付いているかどうかは少し疑問が残るので以下に身に付いたこと、全然わからないことなどメモとして残す&lt;/p&gt;
+&lt;h3 id=&#34;身に付いたこと&#34;&gt;身に付いたこと&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;TensorFlow を用いた学習のパイプラインと実際のコーディング
+&lt;ul&gt;
+&lt;li&gt;ただし見ないで書けるわけではない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CNN
+&lt;ul&gt;
+&lt;li&gt;Convolution/Pooling layer についても大枠理解&lt;/li&gt;
+&lt;li&gt;また CNN が画像系で力を発揮することも理解した&lt;/li&gt;
+&lt;li&gt;この &lt;a href=&#34;https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53&#34;&gt;blog&lt;/a&gt; もわかりやすかった&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Transfer Leraning とはなにか
+&lt;ul&gt;
+&lt;li&gt;大体これでいい結果出るのでは…？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Overfitting の避け方
+&lt;ul&gt;
+&lt;li&gt;これは単純に面白かった&lt;/li&gt;
+&lt;li&gt;意図的にニューロンを消したり(Dropout)、テストデータを擬似的に増やしたり(Image augmentation)など&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;全然わからないこと&#34;&gt;全然わからないこと&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NNのモデルのレイヤーやパラメータをどうやって決めるのか
+&lt;ul&gt;
+&lt;li&gt;各レイヤーのニューロンの数、レイヤーの数など&lt;/li&gt;
+&lt;li&gt;何かセオリーがあるのか&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;問題にアプライするNNへの勘どころ
+&lt;ul&gt;
+&lt;li&gt;CNN/Transfer Learning
+&lt;ul&gt;
+&lt;li&gt;Transfer Learning だとしてどれを使うのか
+&lt;ul&gt;
+&lt;li&gt;ImageNet, Inception V3 など（それぞれのアーキテクチャについてはもちろん知らない）
+&lt;ul&gt;
+&lt;li&gt;Inception の論文
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/pdf/1409.4842.pdf&#34;&gt;https://arxiv.org/pdf/1409.4842.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inception V3 の論文
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/pdf/1512.00567.pdf&#34;&gt;https://arxiv.org/pdf/1512.00567.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Python 3/Numpy がまだまだ怪しい
+&lt;ul&gt;
+&lt;li&gt;特に tensor のサイズ違いでのエラーなど多い&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;コース内容&#34;&gt;コース内容&lt;/h2&gt;
+&lt;h3 id=&#34;introduction-to-machine-learning&#34;&gt;Introduction to Machine Learning&lt;/h3&gt;
+&lt;p&gt;Fahrenheit = celsius * 1.8 + 32 の温度の変換式を、簡単な NN モデルを使って学習し求める&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>‘A Philosophy of Software Design’ を読んだ</title>
+      <link>http://localhost:1313/posts/a-philosophy-of-software-design-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Thu, 05 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/a-philosophy-of-software-design-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h2 id=&#34;a-philosophy-of-software-design&#34;&gt;A Philosophy of Software Design&lt;/h2&gt;
+&lt;p&gt;Kindle だと 1000 円ちょっとで買えた。
+Comment に関する Chapter は飛ばしたが、ざっと全部読んだ。
+英語も平易な感じなので苦労せず読めた。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;A Philosophy of Software Design&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;内容を簡単に説明すると&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Complexity とは何か&lt;/li&gt;
+&lt;li&gt;Complexity を最小化する大きな2つのアプローチ
+&lt;ul&gt;
+&lt;li&gt;その2つについての具体的な複数手法(Design Principles)についての説明&lt;/li&gt;
+&lt;li&gt;Complexity 増加の原因となりうる red flag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;と、全体を通して Complextity と戦う話になっていた。&lt;/p&gt;
+&lt;p&gt;この本は code review や architecture design を複数人で行うときなどに revisit すると良いと思った。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>‘An Elegant Puzzle: System of Engineering Management’ を読んだ</title>
+      <link>http://localhost:1313/posts/an-elegant-puzzle-system-of-engineering-management-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</link>
+      <pubDate>Fri, 24 Jan 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/an-elegant-puzzle-system-of-engineering-management-%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A0/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;An Elegant Puzzle: Systems of Engineering Management (English Edition)&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Yahoo, Digg, Uber, Stripe などの会社で EM/VPoE などの組織をリードしてきた（現在もしている） Will Larson &lt;a href=&#34;https://twitter.com/lethain&#34;&gt;@lethain&lt;/a&gt; さん。&lt;/p&gt;
+&lt;p&gt;エンジニアリング組織において発生する色々な課題に対して筆者が考える解決策を分かりやすく書いてくれている本になっている&lt;/p&gt;
+&lt;p&gt;以下は序文からの引用になるけれど&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There’s a saying that people don’t leave companies, they leave managers. Management is a key part of any organization, yet the discipline is often self-taught and unstructured. Getting to good solutions for complex management challenges can make the difference between fulfillment and frustration for teams, and, ultimately, between the success or failure of companies.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
