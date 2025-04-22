@@ -1,6 +1,7 @@
 ---
 title: "Roam Research でノート・タスク管理のツールをアップデートした"
 date: '2020-12-05T09:00:00.000Z'
+tags: ['blog', 'productivity']
 ---
 
 # ツールの変更

@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの10 - 気まずい1:1"
 date: '2022-11-21T09:00:00.000Z'
+tags: ['organization']
 ---
 
 - [The Art of the Awkward 1:1](https://medium.com/@mrabkin/the-art-of-the-awkward-1-1-f4e1dcbd1c5c)

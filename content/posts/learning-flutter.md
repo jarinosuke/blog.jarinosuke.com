@@ -1,6 +1,7 @@
 ---
 title: "Flutter の学習をしている"
 date: '2021-07-16T09:00:00.000Z'
+tags: ['flutter']
 ---
 
 # Flutter の学習をしている

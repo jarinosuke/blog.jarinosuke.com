@@ -1,7 +1,7 @@
 ---
 title: "'Build your own text editor in Rust' を読んだ"
 date: '2021-04-07T09:00:00.000Z'
-tags: ["Rust"]
+tags: ["rust"]
 ---
 
 ## 感想

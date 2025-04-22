@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experience"
 date: '2022-10-31T09:00:00.000Z'
+tags: ['organization']
 ---
 
 - [Asynchronous Communication is the Great Leveler in Engineering](https://shopify.engineering/asynchronous-communication-shopify-engineering)

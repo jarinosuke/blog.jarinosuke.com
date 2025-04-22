@@ -1,6 +1,7 @@
 ---
 title: "'円 劉慈欣短篇集' を読んだ"
 date: '2022-01-24T09:00:00.000Z'
+tags: ['reading', 'novel']
 ---
 
 ![](/assets/blog/the-circle-cixin-liu/the-circle-cixin-liu.jpg)

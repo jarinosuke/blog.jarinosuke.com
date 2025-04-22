@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの4 - モバイルアプリのリファクタリング"
 date: '2022-06-13T09:00:00.000Z'
+tags: ['engineering', 'ios']
 ---
 
 [前回](what_i_read_recently_3) の続き

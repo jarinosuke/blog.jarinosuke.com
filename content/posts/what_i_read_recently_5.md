@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの5 - 世界史独学、Team Topologies など"
 date: '2022-06-27T09:00:00.000Z'
+tags: ['history', 'organization']
 ---
 
 - [【推薦書リスト】世界史独学のための100冊](https://note.com/sekaishi/n/n765627ad11d9)

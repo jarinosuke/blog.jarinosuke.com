@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject など"
 date: '2022-11-14T09:00:00.000Z'
+tags: ['ios']
 ---
 
 - [Check localizable strings with the accented pseudolanguage in Xcode](https://nilcoalescing.com/blog/CheckLocalizableStringsWithAccentedPseudolanguage/)

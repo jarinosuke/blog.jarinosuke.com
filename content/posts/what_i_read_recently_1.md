@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの1 - Actor, @MainActor, [weak self] など"
 date: '2022-05-20T09:00:00.000Z'
+tags: ['ios']
 ---
 
 - [How @MainActor works](https://oleb.net/2022/how-mainactor-works/)

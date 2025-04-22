@@ -1,6 +1,7 @@
 ---
 title: "最近読んだもの2 - Engineering Career Ladder, PdM の役割"
 date: '2022-05-30T09:00:00.000Z'
+tags: ['engineering', 'career']
 ---
 
 - [Sharing our Engineering Career Framework with the world](https://dropbox.tech/culture/sharing-our-engineering-career-framework-with-the-world)
