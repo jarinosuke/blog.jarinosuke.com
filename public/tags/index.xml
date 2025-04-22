@@ -15,5 +15,110 @@
       <guid>http://localhost:1313/tags/test/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Tue, 27 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rust</title>
+      <link>http://localhost:1313/tags/rust/</link>
+      <pubDate>Wed, 07 Apr 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rust/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backup</title>
+      <link>http://localhost:1313/tags/backup/</link>
+      <pubDate>Wed, 13 Jan 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/backup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photos</title>
+      <link>http://localhost:1313/tags/photos/</link>
+      <pubDate>Wed, 13 Jan 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/photos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>http://localhost:1313/tags/productivity/</link>
+      <pubDate>Wed, 13 Jan 2021 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dev</title>
+      <link>http://localhost:1313/tags/dev/</link>
+      <pubDate>Mon, 21 Dec 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ios</title>
+      <link>http://localhost:1313/tags/ios/</link>
+      <pubDate>Mon, 21 Dec 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Career</title>
+      <link>http://localhost:1313/tags/career/</link>
+      <pubDate>Thu, 01 Oct 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Management</title>
+      <link>http://localhost:1313/tags/management/</link>
+      <pubDate>Thu, 01 Oct 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Work</title>
+      <link>http://localhost:1313/tags/work/</link>
+      <pubDate>Thu, 01 Oct 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/work/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>http://localhost:1313/tags/frontend/</link>
+      <pubDate>Sat, 25 Jul 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/tags/machine-learning/</link>
+      <pubDate>Wed, 25 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Online Course</title>
+      <link>http://localhost:1313/tags/online-course/</link>
+      <pubDate>Wed, 25 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/online-course/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reading</title>
+      <link>http://localhost:1313/tags/reading/</link>
+      <pubDate>Thu, 05 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/reading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Design</title>
+      <link>http://localhost:1313/tags/software-design/</link>
+      <pubDate>Thu, 05 Mar 2020 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/software-design/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
