@@ -6,7 +6,7 @@ theme = "PaperMod"
 
 # 投稿のURL構造
 [permalinks]
-  posts = "/posts/:slug/"
+  posts = "/posts/:filename/"
 
 # メニュー（任意で追加）
 [menu]
@@ -36,7 +36,7 @@ theme = "PaperMod"
   ShowReadingTime = true
   ShowToc = true
   TocOpen = false
-  ShowShareButtons = true
+  ShowShareButtons = false
   ShowPostNavLinks = true
   
 
