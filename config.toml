@@ -55,3 +55,6 @@ theme = "PaperMod"
   [[params.socialIcons]]
     name = "twitter"
     url = "https://twitter.com/jarinosuke"
+
+  [params.analytics]
+  google = "G-KDD18Q3VKN"
