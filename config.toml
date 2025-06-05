@@ -8,6 +8,11 @@ theme = "PaperMod"
 [permalinks]
   posts = "/posts/:filename/"
 
+# タクソノミー（タグとカテゴリ）
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 # メニュー（任意で追加）
 [menu]
 
