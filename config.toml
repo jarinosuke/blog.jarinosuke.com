@@ -39,7 +39,7 @@ theme = "PaperMod"
   ShowShareButtons = false
   ShowPostNavLinks = true
   ShowTags = true
-  
+  disableSpecial1stPost = true
 
   # コードブロックにアイコン表示
   ShowCodeCopyButtons = true
