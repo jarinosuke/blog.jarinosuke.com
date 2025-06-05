@@ -1,0 +1,96 @@
+{{- /* Custom CSS for tag chips and tag pages */ -}}
+<style>
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.tag-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--secondary);
+  background: var(--tertiary);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 10;
+}
+
+.tag-chip:hover {
+  background: var(--primary);
+  color: var(--theme);
+  transform: translateY(-1px);
+}
+
+.dark .tag-chip {
+  background: var(--tertiary);
+  color: var(--primary);
+}
+
+.dark .tag-chip:hover {
+  background: var(--primary);
+  color: var(--theme);
+}
+
+/* Tag cloud styling for /tags/ page */
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: var(--primary);
+}
+
+.tag-cloud-item:hover {
+  background: var(--primary);
+  color: var(--theme);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tag-name {
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.tag-count {
+  font-size: 12px;
+  background: var(--tertiary);
+  color: var(--secondary);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.tag-cloud-item:hover .tag-count {
+  background: var(--theme);
+  color: var(--primary);
+}
+
+.dark .tag-cloud-item {
+  background: var(--entry);
+  color: var(--primary);
+}
+
+.dark .tag-cloud-item:hover {
+  background: var(--primary);
+  color: var(--theme);
+}
+</style>

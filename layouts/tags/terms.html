@@ -1,0 +1,30 @@
+{{- define "main" }}
+
+<header class="page-header">
+    <h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+      All Tags
+    </h1>
+    <div class="post-description">
+        Browse posts by topic
+    </div>
+</header>
+
+<div class="tags-cloud">
+    {{- $type := .Type }}
+    {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- $name := .Name }}
+    {{- $count := .Count }}
+    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+    <a href="{{ .Permalink }}" class="tag-cloud-item">
+        <span class="tag-name">{{ .Name }}</span>
+        <span class="tag-count">{{ $count }}</span>
+    </a>
+    {{- end }}
+    {{- end }}
+</div>
+
+{{- end }}{{/* end main */ -}}
