@@ -1,7 +1,7 @@
-baseURL = "https://blog.jarinosuke.com/"
+baseURL = "/"
 languageCode = "ja-jp"
 title = "jarinosuke blog"
-theme = "PaperMod"
+theme = "hugo-paper"
 #enableInlineShortcodes: true
 
 # 投稿のURL構造
@@ -28,54 +28,35 @@ theme = "PaperMod"
   url = "/posts/"
   weight = 2
 
-[[menu.main]]
-  identifier = "github"
-  name = "GitHub"
-  url = "https://github.com/jarinosuke"
-  weight = 3
-
-[[menu.main]]
-  identifier = "twitter"
-  name = "Twitter"
-  url = "https://twitter.com/jarinosuke"
-  weight = 4
-
-[[menu.main]]
-  identifier = "bluesky"
-  name = "Bluesky"
-  url = "https://bsky.app/profile/jarinosuke.bsky.social"
-  weight = 5
 
 # 各種パラメータ
 [params]
   mainSections = ["posts"]
-  env = "development" # development | production
   author = "jarinosuke"
   description = "jarinosuke blog"
   keywords = ["blog", "ios"]
   DateFormat = "2006-01-02"
-  defaultTheme = "auto" # dark, light, auto
-
-  ShowReadingTime = true
-  ShowToc = true
-  TocOpen = false
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowTags = true
-  disableSpecial1stPost = true
-  displayFullLangName = true
-
-  # コードブロックにアイコン表示
-  ShowCodeCopyButtons = true
-
+  
+  # Hugo Paper theme specific settings
+  color = "linen"  # linen, wheat, gray, light
+  avatar = "naokiishikawa0808@gmail.com"
+  name = "jarinosuke"
+  bio = "iOS Engineer, Tech Enthusiast"
+  twitter = "jarinosuke"
+  github = "jarinosuke"
+  linkedin = "jarinosuke"
+  bluesky = "jarinosuke.bsky.social"
+  rss = true
+  
+  # Custom favicon
+  favicon = "favicon.ico"
+  appleTouchIcon = "apple-touch-icon.png"
+  
   # 投稿リストの表示数
   paginate = 10
 
-  # ソーシャルリンク（任意）
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/jarinosuke"
-
-  [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/jarinosuke"
+# Suppress HTML warnings  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
