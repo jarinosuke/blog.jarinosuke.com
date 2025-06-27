@@ -58,6 +58,7 @@
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
     prose-h3:!text-base prose-p:!text-skin-base 
+    prose-a:!text-skin-accent prose-a:!decoration-skin-accent/50
     prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50
     prose-blockquote:opacity-80
     prose-figcaption:!text-skin-base prose-figcaption:opacity-70
@@ -75,7 +76,7 @@
     prose-hr:!border-skin-line;
   }
   .prose a {
-    @apply break-words hover:!text-skin-accent;
+    @apply break-words text-skin-accent hover:!text-skin-accent underline decoration-skin-accent/50 hover:decoration-skin-accent transition-colors;
   }
   .prose thead th:first-child,
   tbody td:first-child,
