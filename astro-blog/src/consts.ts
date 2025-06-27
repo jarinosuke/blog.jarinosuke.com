@@ -12,4 +12,5 @@ export const SOCIAL_LINKS = {
 	github: 'https://github.com/jarinosuke',
 	linkedin: 'https://linkedin.com/in/jarinosuke',
 	bluesky: 'https://jarinosuke.bsky.social',
+	rss: '/rss.xml',
 };
