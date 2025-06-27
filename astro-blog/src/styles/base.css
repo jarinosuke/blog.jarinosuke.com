@@ -5,20 +5,22 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 34, 139, 34;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    /* AstroPaper v4 Special - Leaf Blue Theme */
+    --color-fill: 242, 245, 236;        /* #f2f5ec - Light green-white background */
+    --color-text-base: 53, 53, 56;      /* #353538 - Dark gray text */
+    --color-accent: 17, 88, 209;        /* #1158d1 - Blue accent */
+    --color-card: 187, 199, 137;        /* #bbc789 - Soft green muted */
+    --color-card-muted: 162, 173, 117;  /* Darker muted green */
+    --color-border: 124, 173, 255;      /* #7cadff - Soft blue border */
   }
   html[data-theme="dark"] {
-    --color-fill: 47, 55, 65;
-    --color-text-base: 230, 230, 230;
-    --color-accent: 72, 187, 120;
-    --color-card: 63, 75, 88;
-    --color-card-muted: 89, 107, 129;
-    --color-border: 89, 107, 129;
+    /* AstroPaper v4 Special - Leaf Blue Dark Theme */
+    --color-fill: 32, 39, 46;           /* Dark blue-gray background */
+    --color-text-base: 230, 235, 240;   /* Light text */
+    --color-accent: 100, 149, 237;      /* Lighter blue accent for dark mode */
+    --color-card: 45, 55, 65;           /* Dark card background */
+    --color-card-muted: 55, 65, 75;     /* Darker muted */
+    --color-border: 70, 130, 200;       /* Blue border for dark mode */
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {

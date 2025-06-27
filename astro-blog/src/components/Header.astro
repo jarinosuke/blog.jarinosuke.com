@@ -72,4 +72,40 @@ import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
   }
+
+  // テーマ切り替え機能
+  function initTheme() {
+    const themeBtn = document.getElementById('theme-btn');
+    const html = document.documentElement;
+    const sunSvg = document.getElementById('sun-svg');
+    const moonSvg = document.getElementById('moon-svg');
+
+    // 初期テーマの設定
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcons(savedTheme);
+
+    // テーマ切り替えイベント
+    themeBtn?.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcons(newTheme);
+    });
+
+    function updateThemeIcons(theme) {
+      if (theme === 'light') {
+        sunSvg.style.display = 'block';
+        moonSvg.style.display = 'none';
+      } else {
+        sunSvg.style.display = 'none';
+        moonSvg.style.display = 'block';
+      }
+    }
+  }
+
+  // DOMContentLoaded時にテーマを初期化
+  document.addEventListener('DOMContentLoaded', initTheme);
 </script>
