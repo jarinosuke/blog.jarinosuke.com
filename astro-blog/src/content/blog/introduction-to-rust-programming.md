@@ -12,13 +12,13 @@ tags: ["rust"]
 
 個人で Rust を使って何か作ってみたいというのと、普段の業務とは別の言語を触ってみて何が良いのか学んでおきたいというのが主な動機だったかなと思う。
 
-前提として1年以上前に <a target="_blank" href="https://www.amazon.co.jp/gp/product/4873118557/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873118557&linkCode=as2&tag=jarinosuke-22&linkId=a85e2244c56b38bb36bbd8a3ee744a2a">プログラミングRust</a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4873118557" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> は読んだことがあったけれど、モチベーションが続かず途中で読むのをやめてしまっている。
+前提として1年以上前に <a target="_blank" href="https://www.amazon.co.jp/gp/product/4873118557/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873118557&linkCode=as2&tag=jarinosuke-22&linkId=a85e2244c56b38bb36bbd8a3ee744a2a">プログラミングRust</a> は読んだことがあったけれど、モチベーションが続かず途中で読むのをやめてしまっている。
 
 なので、今回はもう少し実践的で手を動かしながら挑戦してみたいと思っていたところに、タイトルにもある以下のほんの評判を聞き手にとってみた。
 
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4798061700/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798061700&linkCode=as2&tag=jarinosuke-22&linkId=e288cf314c8dd1388922fddddd75ab2b"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4798061700&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4798061700" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
-<a target="_blank" href="https://www.amazon.co.jp/gp/product/4798061700/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798061700&linkCode=as2&tag=jarinosuke-22&linkId=e5d5cc097b1a3043442edf85e7823933">実践Rustプログラミング入門</a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4798061700" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+<a target="_blank" href="https://www.amazon.co.jp/gp/product/4798061700/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4798061700&linkCode=as2&tag=jarinosuke-22&linkId=e5d5cc097b1a3043442edf85e7823933">実践Rustプログラミング入門</a>
 
 ### 本の概要
 
