@@ -1,6 +1,6 @@
 ---
 title: "'Rustプログラミング入門' を読んだ"
-description: "'Rustプログラミング入門' を読んだについて"
+description: "メモリ安全性と高性能を両立するRust言語の基礎から実践まで学んだ入門書レビュー"
 pubDate: "2021-02-02T09:00:00.000Z"
 heroImage: ""
 tags: ["rust"]

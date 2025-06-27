@@ -1,6 +1,6 @@
 ---
 title: "メルカリ・メルペイでの4年間"
-description: "メルカリ・メルペイでの4年間について"
+description: "メルカリ・メルペイで4年間のエンジニアリングマネージャー経験と組織成長を振り返るキャリアレポート"
 pubDate: "2020-10-01T09:00:00.000Z"
 heroImage: ""
 tags: ["work","management","career"]

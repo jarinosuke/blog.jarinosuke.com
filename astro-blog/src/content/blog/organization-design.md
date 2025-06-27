@@ -1,6 +1,6 @@
 ---
 title: "'組織デザイン' を読んだ"
-description: "'組織デザイン' を読んだについて"
+description: "分業と調整の原理から学ぶ、効果的な組織運営の設計手法に関する書籍レビュー"
 pubDate: "2022-02-07T09:00:00.000Z"
 heroImage: ""
 tags: ["management","reading"]

@@ -6,11 +6,6 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/posts/*"
-  to = "/blog/:splat"
-  status = 301
-
 # Preserve existing URLs for SEO
 [[redirects]]
   from = "/index.xml"

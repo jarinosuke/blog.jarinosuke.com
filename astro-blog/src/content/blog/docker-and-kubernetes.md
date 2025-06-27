@@ -1,6 +1,6 @@
 ---
 title: "'イラストでわかる Docker と Kubernetes' を読んだ"
-description: "'イラストでわかる Docker と Kubernetes' を読んだについて"
+description: "コンテナ技術とオーケストレーションの基本概念を図解で学んだ実践的な技術書レビュー"
 pubDate: "2021-04-27T09:00:00.000Z"
 heroImage: ""
 tags: ["docker"]

@@ -1,6 +1,6 @@
 ---
 title: "‘A Philosophy of Software Design’ を読んだ"
-description: "‘A Philosophy of Software Design’ を読んだについて"
+description: "実用的なソフトウェア設計原則と複雑性管理に関する技術書籍レビュー"
 pubDate: "2020-03-05T09:00:00.000Z"
 heroImage: ""
 tags: ["reading","software design"]

@@ -1,6 +1,6 @@
 ---
 title: "ダークモード対応した"
-description: "ダークモード対応したについて"
+description: "ウェブサイトとアプリケーションのダークモード実装における技術的考慮点と実装手法"
 pubDate: "2020-07-25T09:00:00.000Z"
 heroImage: ""
 tags: ["frontend","blog"]

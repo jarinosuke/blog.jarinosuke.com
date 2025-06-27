@@ -1,6 +1,6 @@
 ---
 title: "‘An Elegant Puzzle: System of Engineering Management’ を読んだ"
-description: "‘An Elegant Puzzle: System of Engineering Management’ を読んだについて"
+description: "エンジニアリング組織の課題解決手法を学んだ Will Larson 著の管理職向け書籍レビュー"
 pubDate: "2020-01-24T09:00:00.000Z"
 heroImage: ""
 tags: ["management","reading"]

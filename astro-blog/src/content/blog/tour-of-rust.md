@@ -1,6 +1,6 @@
 ---
 title: "'Tour of Rust' を読んだ"
-description: "'Tour of Rust' を読んだについて"
+description: "Rustプログラミング言語の基本概念を学ぶインタラクティブなオンライン学習体験レポート"
 pubDate: "2021-02-08T09:00:00.000Z"
 heroImage: ""
 tags: ["rust"]
