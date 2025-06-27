@@ -12,8 +12,8 @@ Kindle だと 1000 円ちょっとで買えた。
 Comment に関する Chapter は飛ばしたが、ざっと全部読んだ。
 英語も平易な感じなので苦労せず読めた。
 
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/1732102201/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1732102201&linkCode=as2&tag=jarinosuke-22&linkId=863337fc790fb44ad7747eec8ab2b664"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=1732102201&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=1732102201" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-<a target="_blank" href="https://www.amazon.co.jp/gp/product/1732102201/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1732102201&linkCode=as2&tag=jarinosuke-22&linkId=7d3bdbdf6ae038b851379fc89c8a395d">A Philosophy of Software Design</a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=1732102201" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/1732102201/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1732102201&linkCode=as2&tag=jarinosuke-22&linkId=863337fc790fb44ad7747eec8ab2b664"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=1732102201&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=1732102201" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a target="_blank" href="https://www.amazon.co.jp/gp/product/1732102201/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=1732102201&linkCode=as2&tag=jarinosuke-22&linkId=7d3bdbdf6ae038b851379fc89c8a395d">A Philosophy of Software Design</a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=1732102201" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 
 内容を簡単に説明すると
@@ -31,8 +31,8 @@ Comment に関する Chapter は飛ばしたが、ざっと全部読んだ。
 
 ちなみに最近ななめ読みした Clean Architecture 本とも Complexitiy はじめ繋がるところが結構あった。
 
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4048930656/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4048930656&linkCode=as2&tag=jarinosuke-22&linkId=b1d52f97fea1db387f88b229ce435212"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4048930656&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4048930656" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-<a target="_blank" href="https://www.amazon.co.jp/gp/product/4048930656/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4048930656&linkCode=as2&tag=jarinosuke-22&linkId=e0275adb45c998a6c6740630d081eea9">Clean Architecture 達人に学ぶソフトウェアの構造と設計</a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4048930656" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/4048930656/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4048930656&linkCode=as2&tag=jarinosuke-22&linkId=b1d52f97fea1db387f88b229ce435212"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4048930656&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4048930656" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a target="_blank" href="https://www.amazon.co.jp/gp/product/4048930656/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4048930656&linkCode=as2&tag=jarinosuke-22&linkId=e0275adb45c998a6c6740630d081eea9">Clean Architecture 達人に学ぶソフトウェアの構造と設計</a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=jarinosuke-22&l=am2&o=9&a=4048930656" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 ## Complexity とは
 

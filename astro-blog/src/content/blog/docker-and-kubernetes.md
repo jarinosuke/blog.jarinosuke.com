@@ -8,7 +8,7 @@ tags: ["docker"]
 
 ### 読んだ動機や前提
 
-<a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08PNMRXKN/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08PNMRXKN&linkCode=as2&tag=jarinosuke-22&linkId=d602065dfe8eead0133a045f4ad964af"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08PNMRXKN&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a>
+<a target="_blank"  href="https://www.amazon.co.jp/gp/product/B08PNMRXKN/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08PNMRXKN&linkCode=as2&tag=jarinosuke-22&linkId=d602065dfe8eead0133a045f4ad964af"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B08PNMRXKN&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL250_&tag=jarinosuke-22" ></a>
 
 <a target="_blank" href="https://www.amazon.co.jp/gp/product/B08PNMRXKN/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B08PNMRXKN&linkCode=as2&tag=jarinosuke-22&linkId=9533f89539259a55c9fb34e2278d32bc">イラストでわかるDockerとKubernetes Software Design plus</a>
 
