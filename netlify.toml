@@ -1,0 +1,24 @@
+[build]
+  base = "astro-blog"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/posts/*"
+  to = "/blog/:splat"
+  status = 301
+
+# Preserve existing URLs for SEO
+[[redirects]]
+  from = "/index.xml"
+  to = "/rss.xml"
+  status = 301
+
+# Handle SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
