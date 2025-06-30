@@ -82,7 +82,7 @@ import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
+    menu?.classList.toggle('hidden');
   }
 
   // テーマ切り替え機能
@@ -107,13 +107,13 @@ import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
       updateThemeIcons(newTheme);
     });
 
-    function updateThemeIcons(theme) {
+    function updateThemeIcons(theme: string) {
       if (theme === 'light') {
-        sunSvg.style.display = 'block';
-        moonSvg.style.display = 'none';
+        sunSvg!.style.display = 'block';
+        moonSvg!.style.display = 'none';
       } else {
-        sunSvg.style.display = 'none';
-        moonSvg.style.display = 'block';
+        sunSvg!.style.display = 'none';
+        moonSvg!.style.display = 'block';
       }
     }
   }

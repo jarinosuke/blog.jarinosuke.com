@@ -6,7 +6,7 @@ const blog = defineCollection({
 	loader: glob({ 
 		base: './src/content/blog', 
 		pattern: '**/*.{md,mdx}',
-		generateId: ({ entry, data }) => {
+		generateId: ({ entry }) => {
 			// Generate slug from filename without extension
 			return entry.replace(/\.(md|mdx)$/, '');
 		}
