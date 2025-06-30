@@ -1,9 +1,14 @@
 ---
-title: "最近読んだもの4 - モバイルアプリのリファクタリング"
-description: "最近読んだもの4 - モバイルアプリのリファクタリングについて"
-pubDate: "2022-06-13T09:00:00.000Z"
-heroImage: ""
-tags: ["engineering","ios"]
+author: jarinosuke
+datetime: '2022-06-13T09:00:00.000Z'
+title: 最近読んだもの4 - モバイルアプリのリファクタリング
+slug: what_i_read_recently_4
+featured: false
+draft: false
+tags:
+  - engineering
+  - ios
+description: 最近読んだもの4 - モバイルアプリのリファクタリングについて
 ---
 
 [前回](what_i_read_recently_3) の続き

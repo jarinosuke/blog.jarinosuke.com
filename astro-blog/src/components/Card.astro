@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Datetime from "./Datetime.astro";
+import Tag from "./Tag.astro";
+import { slugifyStr } from "@utils/slugify";
+
+export interface Props {
+  href?: string;
+  frontmatter: CollectionEntry<"blog">["data"];
+  secHeading?: boolean;
+  readingTime?: string;
+}
+
+const { href, frontmatter, secHeading = true, readingTime } = Astro.props;
+
+const { title, datetime, description, tags } = frontmatter;
+
+const headerProps = {
+  style: { viewTransitionName: slugifyStr(title) },
+  className: "text-xl font-medium decoration-dashed hover:underline",
+};
+---
+
+<li class="my-8">
+  <a
+    href={href}
+    class="inline-block text-xl font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+  >
+    {
+      secHeading ? (
+        <h2 {...headerProps}>{title}</h2>
+      ) : (
+        <h3 {...headerProps}>{title}</h3>
+      )
+    }
+  </a>
+  <div class="flex items-center gap-3 text-sm text-skin-base/60 mt-2">
+    <Datetime datetime={datetime} />
+    {readingTime && (
+      <>
+        <span>•</span>
+        <span>{readingTime}</span>
+      </>
+    )}
+  </div>
+  <p class="text-lg mt-2">{description}</p>
+  {
+    tags && tags.length > 0 && (
+      <div class="flex flex-wrap items-center gap-2 mt-2">
+        {tags.map(tag => (
+          <Tag name={slugifyStr(tag)} />
+        ))}
+      </div>
+    )
+  }
+</li>

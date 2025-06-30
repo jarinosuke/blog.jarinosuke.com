@@ -1,9 +1,14 @@
 ---
-title: "‘An Elegant Puzzle: System of Engineering Management’ を読んだ"
-description: "エンジニアリング組織の課題解決手法を学んだ Will Larson 著の管理職向け書籍レビュー"
-pubDate: "2020-01-24T09:00:00.000Z"
-heroImage: ""
-tags: ["management","reading"]
+author: jarinosuke
+datetime: '2020-01-24T09:00:00.000Z'
+title: '‘An Elegant Puzzle: System of Engineering Management’ を読んだ'
+slug: an-elegant-puzzle
+featured: false
+draft: false
+tags:
+  - management
+  - reading
+description: エンジニアリング組織の課題解決手法を学んだ Will Larson 著の管理職向け書籍レビュー
 ---
 
 ## Summary

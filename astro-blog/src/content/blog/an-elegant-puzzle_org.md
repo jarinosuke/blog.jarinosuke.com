@@ -1,9 +1,12 @@
 ---
-title: "An Elegant Puzzle: 2 Organizations のメモ"
-description: "An Elegant Puzzle: 2 Organizations のメモについて"
-pubDate: "2020-08-19T09:00:00.000Z"
-heroImage: ""
+author: jarinosuke
+datetime: '2020-08-19T09:00:00.000Z'
+title: 'An Elegant Puzzle: 2 Organizations のメモ'
+slug: an-elegant-puzzle_org
+featured: false
+draft: false
 tags: []
+description: 'An Elegant Puzzle: 2 Organizations のメモについて'
 ---
 
 ## 背景

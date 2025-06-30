@@ -1,0 +1,18 @@
+---
+export interface Props {
+  name: string;
+  size?: "sm" | "lg";
+}
+
+const { name, size = "sm" } = Astro.props;
+---
+
+<a
+  href={`/tags/${name}/`}
+  class={`${
+    size === "sm" ? "text-xs px-2 py-1" : "text-sm px-3 py-1"
+  } inline-block bg-skin-card/50 hover:bg-skin-card rounded-full transition-colors border border-skin-line/20 hover:border-skin-accent/30 text-skin-base hover:text-skin-accent mr-2 mb-2`}
+  aria-label={`View all posts with the tag: ${name}`}
+>
+  {name}
+</a>

@@ -1,9 +1,13 @@
 ---
-title: "'DARK SOULS REMASTERED' をプレイした"
-description: "'DARK SOULS REMASTERED' をプレイしたについて"
-pubDate: "2022-01-03T09:00:00.000Z"
-heroImage: ""
-tags: ["gaming"]
+author: jarinosuke
+datetime: '2022-01-03T09:00:00.000Z'
+title: '''DARK SOULS REMASTERED'' をプレイした'
+slug: dark-souls-remastered
+featured: false
+draft: false
+tags:
+  - gaming
+description: '''DARK SOULS REMASTERED'' をプレイしたについて'
 ---
 
 ![](/assets/blog/dark-souls-remastered/bonfire.jpg)

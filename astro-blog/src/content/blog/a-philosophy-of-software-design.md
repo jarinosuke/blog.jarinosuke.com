@@ -1,9 +1,14 @@
 ---
-title: "‘A Philosophy of Software Design’ を読んだ"
-description: "実用的なソフトウェア設計原則と複雑性管理に関する技術書籍レビュー"
-pubDate: "2020-03-05T09:00:00.000Z"
-heroImage: ""
-tags: ["reading","software design"]
+author: jarinosuke
+datetime: '2020-03-05T09:00:00.000Z'
+title: ‘A Philosophy of Software Design’ を読んだ
+slug: a-philosophy-of-software-design
+featured: false
+draft: false
+tags:
+  - reading
+  - software design
+description: 実用的なソフトウェア設計原則と複雑性管理に関する技術書籍レビュー
 ---
 
 ## A Philosophy of Software Design

@@ -1,9 +1,15 @@
 ---
-title: "iCloud に溜まった写真のバックアップを取った"
-description: "iCloud に溜まった写真のバックアップを取ったについて"
-pubDate: "2021-01-13T09:00:00.000Z"
-heroImage: ""
-tags: ["photos","backup","productivity"]
+author: jarinosuke
+datetime: '2021-01-13T09:00:00.000Z'
+title: iCloud に溜まった写真のバックアップを取った
+slug: icloud-photo-backup
+featured: false
+draft: false
+tags:
+  - photos
+  - backup
+  - productivity
+description: iCloud に溜まった写真のバックアップを取ったについて
 ---
 
 iCloud が登場してから、ずっと iPhone + iCloud のみで写真を管理してきている。
