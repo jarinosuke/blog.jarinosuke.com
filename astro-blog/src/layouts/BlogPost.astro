@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
 import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'] & { readingTime?: string };
@@ -17,6 +18,7 @@ const { title, description, datetime, modDatetime, ogImage, tags, readingTime } 
 	</head>
 
 	<body>
+		<ScrollProgress />
 		<Header />
 		<main class="mx-auto max-w-3xl px-4">
 			<article>
