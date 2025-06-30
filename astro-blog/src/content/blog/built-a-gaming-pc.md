@@ -1,9 +1,13 @@
 ---
-title: "ゲーミングPCを組んだ"
-description: "ゲーミングPCを組んだについて"
-pubDate: "2021-07-21T09:00:00.000Z"
-heroImage: ""
-tags: ["gaming"]
+author: jarinosuke
+datetime: '2021-07-21T09:00:00.000Z'
+title: ゲーミングPCを組んだ
+slug: built-a-gaming-pc
+featured: false
+draft: false
+tags:
+  - gaming
+description: ゲーミングPCを組んだについて
 ---
 
 今まで一度も PC を自分で組んだことは無かったけれど、いつかはやってみたい気持ちはあった。

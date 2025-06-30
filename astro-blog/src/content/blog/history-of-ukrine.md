@@ -1,9 +1,14 @@
 ---
-title: "'物語 ウクライナの歴史―ヨーロッパ最後の大国' を読んだ"
-description: "'物語 ウクライナの歴史―ヨーロッパ最後の大国' を読んだについて"
-pubDate: "2022-06-20T09:00:00.000Z"
-heroImage: ""
-tags: ["reading","history"]
+author: jarinosuke
+datetime: '2022-06-20T09:00:00.000Z'
+title: '''物語 ウクライナの歴史―ヨーロッパ最後の大国'' を読んだ'
+slug: history-of-ukrine
+featured: false
+draft: false
+tags:
+  - reading
+  - history
+description: '''物語 ウクライナの歴史―ヨーロッパ最後の大国'' を読んだについて'
 ---
 
 ## 読んだ動機

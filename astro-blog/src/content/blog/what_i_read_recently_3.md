@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの3 - モバイルアプリのコード共通化、リファクタリング"
-description: "最近読んだもの3 - モバイルアプリのコード共通化、リファクタリングについて"
-pubDate: "2022-06-06T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-06-06T09:00:00.000Z'
+title: 最近読んだもの3 - モバイルアプリのコード共通化、リファクタリング
+slug: what_i_read_recently_3
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの3 - モバイルアプリのコード共通化、リファクタリングについて
 ---
 
 - [Client Consistency at Slack: Beyond Libslack](https://slack.engineering/client-consistency-at-slack-beyond-libslack/)

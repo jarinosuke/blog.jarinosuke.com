@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理など"
-description: "最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理などについて"
-pubDate: "2022-11-30T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-11-30T09:00:00.000Z'
+title: 最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理など
+slug: what_i_read_recently_11
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの11 - アプリの肥大化軽量化、秘匿情報管理などについて
 ---
 
 - [Secret Management on iOS](https://nshipster.com/secrets)

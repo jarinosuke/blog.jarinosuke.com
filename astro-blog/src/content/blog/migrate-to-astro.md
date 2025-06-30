@@ -1,9 +1,16 @@
 ---
-title: "Astro でブログを再リニューアルした"
-description: "Hugo から Astro へブログを移行した話"
-pubDate: "2025-06-27"
-heroImage: ""
-tags: ["astro","blog","hugo","migration"]
+author: jarinosuke
+datetime: '2025-06-27'
+title: Astro でブログを再リニューアルした
+slug: migrate-to-astro
+featured: false
+draft: false
+tags:
+  - astro
+  - blog
+  - hugo
+  - migration
+description: Hugo から Astro へブログを移行した話
 ---
 
 ### Hugo から Astro へ

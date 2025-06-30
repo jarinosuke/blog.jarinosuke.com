@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの6 - SwiftUI 関連"
-description: "最近読んだもの6 - SwiftUI 関連について"
-pubDate: "2022-10-24T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-10-24T09:00:00.000Z'
+title: 最近読んだもの6 - SwiftUI 関連
+slug: what_i_read_recently_6
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの6 - SwiftUI 関連について
 ---
 
 - [What are Sendable and @Sendable closures in Swift?](https://www.donnywals.com/what-are-sendable-and-sendable-closures-in-swift/)

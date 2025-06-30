@@ -1,9 +1,13 @@
 ---
-title: "'Build your own text editor in Rust' を読んだ"
-description: "'Build your own text editor in Rust' を読んだについて"
-pubDate: "2021-04-07T09:00:00.000Z"
-heroImage: ""
-tags: ["rust"]
+author: jarinosuke
+datetime: '2021-04-07T09:00:00.000Z'
+title: '''Build your own text editor in Rust'' を読んだ'
+slug: build-your-own-text-editor-in-rust
+featured: false
+draft: false
+tags:
+  - rust
+description: '''Build your own text editor in Rust'' を読んだについて'
 ---
 
 ## 感想

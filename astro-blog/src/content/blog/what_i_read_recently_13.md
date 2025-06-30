@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの13 - Swift Concurrencyなど"
-description: "最近読んだもの13 - Swift Concurrencyなどについて"
-pubDate: "2023-01-23T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2023-01-23T09:00:00.000Z'
+title: 最近読んだもの13 - Swift Concurrencyなど
+slug: what_i_read_recently_13
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの13 - Swift Concurrencyなどについて
 ---
 
 - [How Does Swift Concurrency Prevents Thread Explosions?](https://swiftsenpai.com/swift/swift-concurrency-prevent-thread-explosion/)

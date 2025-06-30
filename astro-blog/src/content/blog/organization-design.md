@@ -1,9 +1,14 @@
 ---
-title: "'組織デザイン' を読んだ"
-description: "分業と調整の原理から学ぶ、効果的な組織運営の設計手法に関する書籍レビュー"
-pubDate: "2022-02-07T09:00:00.000Z"
-heroImage: ""
-tags: ["management","reading"]
+author: jarinosuke
+datetime: '2022-02-07T09:00:00.000Z'
+title: '''組織デザイン'' を読んだ'
+slug: organization-design
+featured: false
+draft: false
+tags:
+  - management
+  - reading
+description: 分業と調整の原理から学ぶ、効果的な組織運営の設計手法に関する書籍レビュー
 ---
 
 [組織デザイン]( https://www.amazon.co.jp/dp/4532110238) という本を SNS などで何人かが読んでいたので気になって手に取ってみた。

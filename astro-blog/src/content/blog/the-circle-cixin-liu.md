@@ -1,9 +1,14 @@
 ---
-title: "'円 劉慈欣短篇集' を読んだ"
-description: "'円 劉慈欣短篇集' を読んだについて"
-pubDate: "2022-01-24T09:00:00.000Z"
-heroImage: ""
-tags: ["reading","novel"]
+author: jarinosuke
+datetime: '2022-01-24T09:00:00.000Z'
+title: '''円 劉慈欣短篇集'' を読んだ'
+slug: the-circle-cixin-liu
+featured: false
+draft: false
+tags:
+  - reading
+  - novel
+description: '''円 劉慈欣短篇集'' を読んだについて'
 ---
 
 ![](/assets/blog/the-circle-cixin-liu/the-circle-cixin-liu.jpg)
