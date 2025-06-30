@@ -1,9 +1,13 @@
 ---
-title: "'Rustプログラミング入門' を読んだ"
-description: "メモリ安全性と高性能を両立するRust言語の基礎から実践まで学んだ入門書レビュー"
-pubDate: "2021-02-02T09:00:00.000Z"
-heroImage: ""
-tags: ["rust"]
+author: jarinosuke
+datetime: '2021-02-02T09:00:00.000Z'
+title: '''Rustプログラミング入門'' を読んだ'
+slug: introduction-to-rust-programming
+featured: false
+draft: false
+tags:
+  - rust
+description: メモリ安全性と高性能を両立するRust言語の基礎から実践まで学んだ入門書レビュー
 ---
 
 ![](/assets/blog/introduction-to-rust-programming/introduction-to-rust-programming.png)

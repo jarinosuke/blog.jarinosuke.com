@@ -1,9 +1,14 @@
 ---
-title: "最近読んだもの2 - Engineering Career Ladder, PdM の役割"
-description: "最近読んだもの2 - Engineering Career Ladder, PdM の役割について"
-pubDate: "2022-05-30T09:00:00.000Z"
-heroImage: ""
-tags: ["engineering","career"]
+author: jarinosuke
+datetime: '2022-05-30T09:00:00.000Z'
+title: '最近読んだもの2 - Engineering Career Ladder, PdM の役割'
+slug: what_i_read_recently_2
+featured: false
+draft: false
+tags:
+  - engineering
+  - career
+description: '最近読んだもの2 - Engineering Career Ladder, PdM の役割について'
 ---
 
 - [Sharing our Engineering Career Framework with the world](https://dropbox.tech/culture/sharing-our-engineering-career-framework-with-the-world)

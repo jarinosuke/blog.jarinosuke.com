@@ -1,9 +1,14 @@
 ---
-title: "Resolve storyboard/xib files upgrade diffs at once"
-description: "Resolve storyboard/xib files upgrade diffs at onceについて"
-pubDate: "2020-12-21T09:00:00.000Z"
-heroImage: ""
-tags: ["ios","dev"]
+author: jarinosuke
+datetime: '2020-12-21T09:00:00.000Z'
+title: Resolve storyboard/xib files upgrade diffs at once
+slug: resolve-ib-files-upgrade-at-once
+featured: false
+draft: false
+tags:
+  - ios
+  - dev
+description: Resolve storyboard/xib files upgrade diffs at onceについて
 ---
 
 ### Storyboard/Xib diffs

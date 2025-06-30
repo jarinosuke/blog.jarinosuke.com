@@ -1,9 +1,14 @@
 ---
-title: "最近読んだもの5 - 世界史独学、Team Topologies など"
-description: "最近読んだもの5 - 世界史独学、Team Topologies などについて"
-pubDate: "2022-06-27T09:00:00.000Z"
-heroImage: ""
-tags: ["history","organization"]
+author: jarinosuke
+datetime: '2022-06-27T09:00:00.000Z'
+title: 最近読んだもの5 - 世界史独学、Team Topologies など
+slug: what_i_read_recently_5
+featured: false
+draft: false
+tags:
+  - history
+  - organization
+description: 最近読んだもの5 - 世界史独学、Team Topologies などについて
 ---
 
 - [【推薦書リスト】世界史独学のための100冊](https://note.com/sekaishi/n/n765627ad11d9)

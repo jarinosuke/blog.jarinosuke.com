@@ -1,9 +1,13 @@
 ---
-title: "ブログをNext.jsへ移行した"
-description: "ブログをNext.jsへ移行したについて"
-pubDate: "2021-12-20T09:00:00.000Z"
-heroImage: ""
-tags: ["blog"]
+author: jarinosuke
+datetime: '2021-12-20T09:00:00.000Z'
+title: ブログをNext.jsへ移行した
+slug: start-new-blog-with-nextjs
+featured: false
+draft: false
+tags:
+  - blog
+description: ブログをNext.jsへ移行したについて
 ---
 
 ### 課題感

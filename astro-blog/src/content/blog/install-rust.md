@@ -1,9 +1,13 @@
 ---
-title: "Rust をインストールする"
-description: "Rust をインストールするについて"
-pubDate: "2021-01-07T09:00:00.000Z"
-heroImage: ""
-tags: ["rust"]
+author: jarinosuke
+datetime: '2021-01-07T09:00:00.000Z'
+title: Rust をインストールする
+slug: install-rust
+featured: false
+draft: false
+tags:
+  - rust
+description: Rust をインストールするについて
 ---
 
 ## インストール

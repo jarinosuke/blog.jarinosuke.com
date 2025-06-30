@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの10 - 気まずい1:1"
-description: "最近読んだもの10 - 気まずい1:1について"
-pubDate: "2022-11-21T09:00:00.000Z"
-heroImage: ""
-tags: ["organization"]
+author: jarinosuke
+datetime: '2022-11-21T09:00:00.000Z'
+title: '最近読んだもの10 - 気まずい1:1'
+slug: what_i_read_recently_10
+featured: false
+draft: false
+tags:
+  - organization
+description: '最近読んだもの10 - 気まずい1:1について'
 ---
 
 - [The Art of the Awkward 1:1](https://medium.com/@mrabkin/the-art-of-the-awkward-1-1-f4e1dcbd1c5c)

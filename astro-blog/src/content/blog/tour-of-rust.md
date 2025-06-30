@@ -1,9 +1,13 @@
 ---
-title: "'Tour of Rust' を読んだ"
-description: "Rustプログラミング言語の基本概念を学ぶインタラクティブなオンライン学習体験レポート"
-pubDate: "2021-02-08T09:00:00.000Z"
-heroImage: ""
-tags: ["rust"]
+author: jarinosuke
+datetime: '2021-02-08T09:00:00.000Z'
+title: '''Tour of Rust'' を読んだ'
+slug: tour-of-rust
+featured: false
+draft: false
+tags:
+  - rust
+description: Rustプログラミング言語の基本概念を学ぶインタラクティブなオンライン学習体験レポート
 ---
 
 ### 感想

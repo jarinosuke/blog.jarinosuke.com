@@ -1,9 +1,13 @@
 ---
-title: "Gatsby + Netlify の新しいブログを作った"
-description: "Gatsby + Netlify の新しいブログを作ったについて"
-pubDate: "2020-07-24T09:00:00.000Z"
-heroImage: ""
-tags: ["blog"]
+author: jarinosuke
+datetime: '2020-07-24T09:00:00.000Z'
+title: Gatsby + Netlify の新しいブログを作った
+slug: start-new-blog
+featured: false
+draft: false
+tags:
+  - blog
+description: Gatsby + Netlify の新しいブログを作ったについて
 ---
 
 ### 動機
