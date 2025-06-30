@@ -81,7 +81,7 @@ import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
 </header>
 
 <script>
-  window.toggleMobileMenu = function() {
+  (window as any).toggleMobileMenu = function() {
     const menu = document.getElementById('mobile-menu');
     menu?.classList.toggle('hidden');
   };
