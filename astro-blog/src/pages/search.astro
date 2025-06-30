@@ -41,7 +41,7 @@ const sortedPosts = getSortedPosts(posts);
         {
           sortedPosts.slice(0, 5).map(({ data, id }) => (
             <Card
-              href={`/posts/${id}/`}
+              href={`/blog/${id}/`}
               frontmatter={data}
               secHeading={false}
             />

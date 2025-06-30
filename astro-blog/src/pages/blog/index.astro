@@ -26,7 +26,7 @@ const sortedPosts = getSortedPosts(posts);
       {
         sortedPosts.map((post) => (
           <Card
-            href={`/posts/${post.id}/`}
+            href={`/blog/${post.id}/`}
             frontmatter={post.data}
           />
         ))
