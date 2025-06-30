@@ -5,6 +5,7 @@ import Card from '@components/Card.astro';
 import Hr from '@components/Hr.astro';
 import LinkButton from '@components/LinkButton.astro';
 import getSortedPosts from '@utils/getSortedPosts';
+import { getReadingTime } from '@utils/getReadingTime';
 import { SITE, SOCIALS } from '@config';
 
 const posts = await getCollection('blog');
@@ -71,11 +72,12 @@ const recentPosts = sortedPosts.slice(0, 4);
 				<section id="featured">
 					<h2 class="text-2xl font-bold tracking-wide">Featured</h2>
 					<ul>
-						{featuredPosts.map(({ data, id }) => (
+						{featuredPosts.map((post) => (
 							<Card
-								href={`/blog/${id}/`}
-								frontmatter={data}
+								href={`/blog/${post.id}/`}
+								frontmatter={post.data}
 								secHeading={false}
+								readingTime={getReadingTime(post.body).text}
 							/>
 						))}
 					</ul>
@@ -88,11 +90,12 @@ const recentPosts = sortedPosts.slice(0, 4);
 	<section id="recent-posts">
 		<h2 class="text-2xl font-bold tracking-wide">Recent Posts</h2>
 		<ul>
-			{recentPosts.map(({ data, id }) => (
+			{recentPosts.map((post) => (
 				<Card
-					href={`/blog/${id}/`}
-					frontmatter={data}
+					href={`/blog/${post.id}/`}
+					frontmatter={post.data}
 					secHeading={false}
+					readingTime={getReadingTime(post.body).text}
 				/>
 			))}
 		</ul>

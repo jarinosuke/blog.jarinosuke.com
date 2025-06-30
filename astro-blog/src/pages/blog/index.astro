@@ -4,6 +4,7 @@ import Main from '@layouts/Main.astro';
 import Card from '@components/Card.astro';
 import Hr from '@components/Hr.astro';
 import getSortedPosts from '@utils/getSortedPosts';
+import { getReadingTime } from '@utils/getReadingTime';
 import { SITE } from '@config';
 
 const posts = await getCollection('blog');
@@ -28,6 +29,7 @@ const sortedPosts = getSortedPosts(posts);
           <Card
             href={`/blog/${post.id}/`}
             frontmatter={post.data}
+            readingTime={getReadingTime(post.body).text}
           />
         ))
       }
