@@ -8,7 +8,7 @@ export const SITE: Site = {
   author: "jarinosuke",
   profile: "https://github.com/jarinosuke/",
   desc: "jarinosuke's personal blog about software engineering, technology, and thoughts.",
-  title: "jarinosuke's blog",
+  title: "jarinosuke blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
