@@ -35,7 +35,7 @@ files.forEach(file => {
   
   // Add optional fields if they exist
   if (frontmatter.updatedDate) {
-    newFrontmatter.modDatetime = frontmatter.updatedDate;
+    newFrontmatter['modDatetime'] = frontmatter.updatedDate;
   }
   
   if (frontmatter.heroImage) {

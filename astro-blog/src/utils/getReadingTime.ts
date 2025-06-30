@@ -1,7 +1,10 @@
 // ABOUTME: This file provides utilities for calculating reading time for blog posts
 // ABOUTME: It estimates reading time based on word count and average reading speed
 
-export function getReadingTime(content: string): { text: string; minutes: number } {
+export function getReadingTime(content: string | undefined): { text: string; minutes: number } {
+  if (!content) {
+    return { text: '1 min read', minutes: 1 };
+  }
   // Average reading speed: 200 words per minute (Japanese/English mixed content)
   const wordsPerMinute = 200;
   

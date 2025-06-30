@@ -81,10 +81,10 @@ import { SITE_TITLE, SOCIAL_LINKS } from '../consts';
 </header>
 
 <script>
-  function toggleMobileMenu() {
+  window.toggleMobileMenu = function() {
     const menu = document.getElementById('mobile-menu');
     menu?.classList.toggle('hidden');
-  }
+  };
 
   // テーマ切り替え機能
   function initTheme() {
