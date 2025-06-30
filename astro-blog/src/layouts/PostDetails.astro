@@ -7,6 +7,7 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime.astro";
 import { slugifyStr } from "@utils/slugify";
+import { getReadingTime } from "@utils/getReadingTime";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -17,6 +18,9 @@ const { post } = Astro.props;
 const { title, author, description, ogImage, canonicalURL, datetime, modDatetime, tags } = post.data;
 
 const { Content } = await render(post);
+
+// Calculate reading time
+const readingTime = getReadingTime(post.body);
 
 const ogImageSrc = ogImage && typeof ogImage === 'string' ? ogImage : `${title}.png`;
 const ogUrl = new URL(ogImageSrc, Astro.url.origin).href;
@@ -46,7 +50,11 @@ const ogUrl = new URL(ogImageSrc, Astro.url.origin).href;
   </div>
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <Datetime datetime={datetime} size="lg" className="my-2" />
+    <div class="flex items-center gap-3 text-sm text-skin-base/60 my-4">
+      <Datetime datetime={datetime} size="lg" />
+      <span>•</span>
+      <span>{readingTime.text}</span>
+    </div>
     {modDatetime && modDatetime > datetime && (
       <div class="last-updated-on">
         Last updated:
