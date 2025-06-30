@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの1 - Actor, @MainActor, [weak self] など"
-description: "最近読んだもの1 - Actor, @MainActor, [weak self] などについて"
-pubDate: "2022-05-20T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-05-20T09:00:00.000Z'
+title: '最近読んだもの1 - Actor, @MainActor, [weak self] など'
+slug: what_i_read_recently_1
+featured: false
+draft: false
+tags:
+  - ios
+description: '最近読んだもの1 - Actor, @MainActor, [weak self] などについて'
 ---
 
 - [How @MainActor works](https://oleb.net/2022/how-mainactor-works/)

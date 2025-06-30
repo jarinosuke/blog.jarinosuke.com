@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject など"
-description: "最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject などについて"
-pubDate: "2022-11-14T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-11-14T09:00:00.000Z'
+title: 最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject など
+slug: what_i_read_recently_9
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの9 - SwiftUI Localization、StateObject、EnvironmentObject などについて
 ---
 
 - [Check localizable strings with the accented pseudolanguage in Xcode](https://nilcoalescing.com/blog/CheckLocalizableStringsWithAccentedPseudolanguage/)

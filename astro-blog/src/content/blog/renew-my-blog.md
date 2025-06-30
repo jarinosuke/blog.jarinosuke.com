@@ -1,9 +1,14 @@
 ---
-title: "Hugo でブログをリニューアルした"
-description: "Hugo でブログをリニューアルしたについて"
-pubDate: "2025-04-22"
-heroImage: ""
-tags: ["hugo","blog"]
+author: jarinosuke
+datetime: '2025-04-22'
+title: Hugo でブログをリニューアルした
+slug: renew-my-blog
+featured: false
+draft: false
+tags:
+  - hugo
+  - blog
+description: Hugo でブログをリニューアルしたについて
 ---
 
 ### ブログが更新できなくなっていた

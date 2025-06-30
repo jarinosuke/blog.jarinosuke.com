@@ -1,9 +1,14 @@
 ---
-title: "Roam Research でノート・タスク管理のツールをアップデートした"
-description: "Roam Research でノート・タスク管理のツールをアップデートしたについて"
-pubDate: "2020-12-05T09:00:00.000Z"
-heroImage: ""
-tags: ["blog","productivity"]
+author: jarinosuke
+datetime: '2020-12-05T09:00:00.000Z'
+title: Roam Research でノート・タスク管理のツールをアップデートした
+slug: start-roam-research
+featured: false
+draft: false
+tags:
+  - blog
+  - productivity
+description: Roam Research でノート・タスク管理のツールをアップデートしたについて
 ---
 
 # ツールの変更

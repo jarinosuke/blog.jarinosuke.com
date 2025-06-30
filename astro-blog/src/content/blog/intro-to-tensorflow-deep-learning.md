@@ -1,9 +1,14 @@
 ---
-title: "‘Intro to TensorFlow for Deep Learning | Udacity’ を受講した"
-description: "TensorFlow入門から実践まで学んだUdacityの無料機械学習コース受講レポート"
-pubDate: "2020-03-25T09:00:00.000Z"
-heroImage: ""
-tags: ["machine learning","online course"]
+author: jarinosuke
+datetime: '2020-03-25T09:00:00.000Z'
+title: ‘Intro to TensorFlow for Deep Learning | Udacity’ を受講した
+slug: intro-to-tensorflow-deep-learning
+featured: false
+draft: false
+tags:
+  - machine learning
+  - online course
+description: TensorFlow入門から実践まで学んだUdacityの無料機械学習コース受講レポート
 ---
 
 ![](/assets/blog/intro-to-tensorflow-deep-learning/intro-to-tensorflow.png)

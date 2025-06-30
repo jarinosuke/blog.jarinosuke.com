@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experience"
-description: "最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experienceについて"
-pubDate: "2022-10-31T09:00:00.000Z"
-heroImage: ""
-tags: ["organization"]
+author: jarinosuke
+datetime: '2022-10-31T09:00:00.000Z'
+title: 最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experience
+slug: what_i_read_recently_7
+featured: false
+draft: false
+tags:
+  - organization
+description: 最近読んだもの7 - 非同期コミュニケーション、Mobile Developer Experienceについて
 ---
 
 - [Asynchronous Communication is the Great Leveler in Engineering](https://shopify.engineering/asynchronous-communication-shopify-engineering)

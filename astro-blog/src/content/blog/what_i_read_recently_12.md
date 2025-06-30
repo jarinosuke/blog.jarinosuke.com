@@ -1,9 +1,13 @@
 ---
-title: "最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化など"
-description: "最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化などについて"
-pubDate: "2022-12-19T09:00:00.000Z"
-heroImage: ""
-tags: ["ios"]
+author: jarinosuke
+datetime: '2022-12-19T09:00:00.000Z'
+title: 最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化など
+slug: what_i_read_recently_12
+featured: false
+draft: false
+tags:
+  - ios
+description: 最近読んだもの12 - ジャイロを使ったホログラム効果、Foundation OSS 化などについて
 ---
 
 - [Mimicking a Holographic Effect for Mercard](https://engineering.mercari.com/en/blog/entry/20221208-mimicking-a-holographic-effect-for-mercard/)

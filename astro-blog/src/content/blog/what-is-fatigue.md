@@ -1,9 +1,14 @@
 ---
-title: "'疲労とはなにか　すべてはウイルスが知っていた' を読んだ"
-description: "'疲労とはなにか　すべてはウイルスが知っていた' を読んだについて"
-pubDate: "2025-06-09T09:00:00.000Z"
-heroImage: ""
-tags: ["reading","health"]
+author: jarinosuke
+datetime: '2025-06-09T09:00:00.000Z'
+title: '''疲労とはなにか　すべてはウイルスが知っていた'' を読んだ'
+slug: what-is-fatigue
+featured: false
+draft: false
+tags:
+  - reading
+  - health
+description: '''疲労とはなにか　すべてはウイルスが知っていた'' を読んだについて'
 ---
 
 SNS で誰かがシェアしていて興味を持ったのがきっかけで読んでみた。

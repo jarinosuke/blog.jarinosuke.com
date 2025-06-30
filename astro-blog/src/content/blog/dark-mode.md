@@ -1,9 +1,14 @@
 ---
-title: "ダークモード対応した"
-description: "ウェブサイトとアプリケーションのダークモード実装における技術的考慮点と実装手法"
-pubDate: "2020-07-25T09:00:00.000Z"
-heroImage: ""
-tags: ["frontend","blog"]
+author: jarinosuke
+datetime: '2020-07-25T09:00:00.000Z'
+title: ダークモード対応した
+slug: dark-mode
+featured: false
+draft: false
+tags:
+  - frontend
+  - blog
+description: ウェブサイトとアプリケーションのダークモード実装における技術的考慮点と実装手法
 ---
 
 ### やったこと

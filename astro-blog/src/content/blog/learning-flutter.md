@@ -1,9 +1,13 @@
 ---
-title: "Flutter の学習をしている"
-description: "Flutter の学習をしているについて"
-pubDate: "2021-07-16T09:00:00.000Z"
-heroImage: ""
-tags: ["flutter"]
+author: jarinosuke
+datetime: '2021-07-16T09:00:00.000Z'
+title: Flutter の学習をしている
+slug: learning-flutter
+featured: false
+draft: false
+tags:
+  - flutter
+description: Flutter の学習をしているについて
 ---
 
 # Flutter の学習をしている
