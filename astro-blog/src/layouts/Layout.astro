@@ -6,6 +6,10 @@ export interface Props {
   ogImage?: string;
   canonicalURL?: string;
   scrollSmooth?: boolean;
+  datetime?: Date;
+  modDatetime?: Date;
+  frontmatter?: any;
+  pubDatetime?: Date;
 }
 
 const {
@@ -17,7 +21,6 @@ const {
   scrollSmooth = false,
 } = Astro.props;
 
-import { SITE } from "@config";
 import "@styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -51,15 +54,12 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
     <!-- Article Published/Modified time -->
     {
-      Astro.props.frontmatter || Astro.props.pubDatetime ? (
+      Astro.props.datetime && (
         <meta
           property="article:published_time"
-          content={
-            Astro.props.pubDatetime?.toISOString() ||
-            Astro.props.frontmatter.datetime.toISOString()
-          }
+          content={Astro.props.datetime.toISOString()}
         />
-      ) : null
+      )
     }
     {
       Astro.props.modDatetime && (

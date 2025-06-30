@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import LinkButton from "./LinkButton.astro";
 import Datetime from "./Datetime.astro";
 import Tag from "./Tag.astro";
 import { slugifyStr } from "@utils/slugify";
@@ -13,7 +12,7 @@ export interface Props {
 
 const { href, frontmatter, secHeading = true } = Astro.props;
 
-const { title, datetime, description, ogImage, tags } = frontmatter;
+const { title, datetime, description, tags } = frontmatter;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
