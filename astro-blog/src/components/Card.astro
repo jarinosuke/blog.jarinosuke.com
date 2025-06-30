@@ -16,14 +16,14 @@ const { title, datetime, description, tags } = frontmatter;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
-  className: "text-lg font-medium decoration-dashed hover:underline",
+  className: "text-xl font-medium decoration-dashed hover:underline",
 };
 ---
 
-<li class="my-6">
+<li class="my-8">
   <a
     href={href}
-    class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+    class="inline-block text-xl font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
   >
     {
       secHeading ? (
@@ -34,7 +34,7 @@ const headerProps = {
     }
   </a>
   <Datetime datetime={datetime} />
-  <p>{description}</p>
+  <p class="text-lg mt-2">{description}</p>
   {
     tags && tags.length > 0 && (
       <div class="flex flex-wrap items-center gap-2 mt-2">

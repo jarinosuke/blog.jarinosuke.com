@@ -32,9 +32,9 @@ const ogUrl = new URL(ogImageSrc, Astro.url.origin).href;
   modDatetime={modDatetime || undefined}
 >
   <Header />
-  <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
+  <div class="mx-auto flex w-full max-w-5xl justify-start px-6">
     <button
-      class="focus-outline mb-2 mt-8 flex hover:opacity-75"
+      class="focus-outline mb-4 mt-10 flex hover:opacity-75 text-lg"
       onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
     >
       <svg xmlns="http://www.w3.org/2000/svg">
@@ -70,10 +70,10 @@ const ogUrl = new URL(ogImageSrc, Astro.url.origin).href;
 
 <style>
   main {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+    @apply mx-auto w-full max-w-5xl px-6 pb-12;
   }
   .post-title {
-    @apply text-2xl font-bold text-skin-accent;
+    @apply text-3xl font-bold text-skin-accent sm:text-4xl;
   }
   .last-updated-on {
     @apply italic text-skin-base opacity-80;
