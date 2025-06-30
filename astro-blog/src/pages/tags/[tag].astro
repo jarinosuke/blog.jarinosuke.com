@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   // 各タグに対してパスを生成
   return Array.from(allTags).map((tag) => {
     const tagPosts = posts.filter((post) => 
-      post.data.tags && post.data.tags.includes(tag)
+      post.data.tags && post.data.tags.includes(tag as string)
     ).sort((a, b) => 
       new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
