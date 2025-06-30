@@ -24,10 +24,10 @@ const sortedPosts = getSortedPosts(posts);
   <section id="posts" class="pb-6 pt-12">
     <ul>
       {
-        sortedPosts.map(({ data, id }) => (
+        sortedPosts.map((post) => (
           <Card
-            href={`/posts/${id}/`}
-            frontmatter={data}
+            href={`/posts/${post.id}/`}
+            frontmatter={post.data}
           />
         ))
       }
