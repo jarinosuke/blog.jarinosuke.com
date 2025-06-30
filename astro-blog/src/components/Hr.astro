@@ -1,0 +1,11 @@
+---
+export interface Props {
+  noPadding?: boolean;
+}
+
+const { noPadding = false } = Astro.props;
+---
+
+<div class={`flex justify-center ${noPadding ? "" : "my-8"}`}>
+  <div class="w-24 h-px bg-skin-line/30"></div>
+</div>
