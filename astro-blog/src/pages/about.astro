@@ -1,27 +1,23 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Main from '@layouts/Main.astro';
+import Hr from '@components/Hr.astro';
+import { SITE } from '@config';
 ---
 
-<!doctype html>
-<html lang="ja">
-	<head>
-		<BaseHead title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main class="mx-auto max-w-3xl px-4">
-			<section class="mb-16">
-				<h1 class="text-4xl font-bold text-skin-base mb-4">About</h1>
-				<p class="text-xl text-skin-base/80 leading-relaxed">このサイトについて</p>
-			</section>
-			
-			<section class="prose prose-lg max-w-none text-skin-base">
-				<p class="text-lg">TBD</p>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Main
+  title={`About | ${SITE.title}`}
+  description="このサイトについて"
+>
+  <section id="hero" class="pb-6 pt-8">
+    <h1 class="text-2xl font-bold tracking-wide sm:text-3xl sm:font-extrabold">About</h1>
+    <p class="text-lg text-skin-base/80">
+      このサイトについて
+    </p>
+  </section>
+  <Hr noPadding />
+  <section id="about-content" class="pb-6 pt-12">
+    <div class="prose prose-lg max-w-none text-skin-base">
+      <p class="text-lg">TBD</p>
+    </div>
+  </section>
+</Main>
