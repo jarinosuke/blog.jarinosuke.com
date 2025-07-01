@@ -40,13 +40,12 @@ export async function generateOgImageForPost(
         name: fontConfig.name,
         data: fontData,
         weight: fontConfig.weight,
-        style: fontConfig.style,
+        style: fontConfig.style as "normal",
       };
     })
   );
 
   const svg = await satori(
-    // @ts-ignore - Satori has complex type definitions
     {
       type: "div",
       props: {
@@ -227,7 +226,7 @@ export async function generateOgImageForPost(
     {
       width: ogImageWidth,
       height: ogImageHeight,
-      fonts,
+      fonts: fonts as any,
     }
   );
 
