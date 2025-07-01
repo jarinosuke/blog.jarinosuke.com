@@ -1,0 +1,58 @@
+---
+// ABOUTME: This component shows reading progress as a horizontal bar at the top of the page
+// ABOUTME: It calculates scroll percentage and updates the progress bar width accordingly
+---
+
+<div id="scroll-progress" class="fixed top-0 left-0 w-full h-1 z-50 bg-skin-card/30">
+  <div 
+    id="progress-bar" 
+    class="h-full bg-skin-accent transition-all duration-150 ease-out"
+    style="width: 0%"
+  ></div>
+</div>
+
+<script>
+  function initScrollProgress() {
+    const progressBar = document.getElementById('progress-bar');
+    const scrollProgress = document.getElementById('scroll-progress');
+    
+    if (!progressBar || !scrollProgress) return;
+
+    function updateProgress() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      progressBar!.style.width = scrolled + '%';
+      
+      // Hide progress bar when at top of page
+      if (scrolled < 1) {
+        scrollProgress!.style.opacity = '0';
+      } else {
+        scrollProgress!.style.opacity = '1';
+      }
+    }
+
+    // Initial state
+    scrollProgress!.style.opacity = '0';
+
+    // Update on scroll
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    
+    // Update on resize
+    window.addEventListener('resize', updateProgress, { passive: true });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollProgress);
+  } else {
+    initScrollProgress();
+  }
+</script>
+
+<style>
+  #scroll-progress {
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>

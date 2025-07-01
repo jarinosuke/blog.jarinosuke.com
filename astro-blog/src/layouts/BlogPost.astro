@@ -4,19 +4,21 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
 import { Image } from 'astro:assets';
 
-type Props = CollectionEntry<'blog'>['data'] & { readingTime?: string };
+type Props = CollectionEntry<'blog'>['data'] & { readingTime?: string; postSlug?: string };
 
-const { title, description, datetime, modDatetime, ogImage, tags, readingTime } = Astro.props;
+const { title, description, datetime, modDatetime, ogImage, tags, readingTime, postSlug } = Astro.props;
 ---
 
 <html lang="ja">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} ogImage={typeof ogImage === 'string' ? ogImage : undefined} postSlug={postSlug} />
 	</head>
 
 	<body>
+		<ScrollProgress />
 		<Header />
 		<main class="mx-auto max-w-3xl px-4">
 			<article>

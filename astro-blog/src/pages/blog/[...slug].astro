@@ -18,6 +18,6 @@ const { Content } = await render(post);
 const readingTime = getReadingTime(post.body);
 ---
 
-<BlogPost {...post.data} readingTime={readingTime.text}>
+<BlogPost {...post.data} readingTime={readingTime.text} postSlug={post.data.slug || post.id}>
 	<Content />
 </BlogPost>
