@@ -222,7 +222,7 @@ export async function generateOgImageForPost(
           },
         ],
       },
-    },
+    } as any,
     {
       width: ogImageWidth,
       height: ogImageHeight,
