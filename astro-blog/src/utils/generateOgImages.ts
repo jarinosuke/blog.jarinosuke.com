@@ -5,6 +5,8 @@ import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@config";
+import fs from "fs";
+import path from "path";
 
 const ogImageWidth = 1200;
 const ogImageHeight = 630;
@@ -12,6 +14,11 @@ const ogImageHeight = 630;
 export async function generateOgImageForPost(
   post: CollectionEntry<"blog">
 ): Promise<ArrayBuffer> {
+  // Load kuwagata image
+  const imagePath = path.join(process.cwd(), "public", "kuwagata.tron.png");
+  const imageBuffer = fs.readFileSync(imagePath);
+  const imageBase64 = `data:image/png;base64,${imageBuffer.toString("base64")}`;
+
   // Google Fonts configuration for Japanese support
   const fontsConfig = [
     { name: "Noto Sans JP", font: "Noto+Sans+JP:wght@400", weight: 400, style: "normal" },
@@ -122,19 +129,16 @@ export async function generateOgImageForPost(
                     },
                     children: [
                       {
-                        type: "div",
+                        type: "img",
                         props: {
+                          src: imageBase64,
                           style: {
                             width: "60px",
                             height: "60px",
                             borderRadius: "50%",
-                            backgroundColor: "#1e293b",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
                             border: "2px solid #334155",
+                            objectFit: "cover",
                           },
-                          children: "🪲",
                         },
                       },
                       {
