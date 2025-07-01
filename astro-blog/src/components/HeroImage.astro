@@ -1,0 +1,50 @@
+---
+// ABOUTME: Hero image component that displays a circular profile image
+// ABOUTME: Used in the main hero section with hover effects and link to about page
+
+interface Props {
+  src: string;
+  alt: string;
+  href?: string;
+  className?: string;
+}
+
+const { src, alt, href = "/about", className = "" } = Astro.props;
+---
+
+{href ? (
+  <a href={href} class={`hero-image-link ${className}`} aria-label="Go to about page">
+    <img src={src} alt={alt} class="hero-image" />
+  </a>
+) : (
+  <img src={src} alt={alt} class={`hero-image ${className}`} />
+)}
+
+<style>
+  .hero-image-link {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  
+  .hero-image {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hero-image:hover {
+    transform: scale(1.05);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 640px) {
+    .hero-image {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+</style>
