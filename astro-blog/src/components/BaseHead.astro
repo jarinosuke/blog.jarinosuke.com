@@ -3,18 +3,33 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/base.css';
 import { SITE_TITLE } from '../consts';
+import { SITE } from '../config';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
 import type { ImageMetadata } from 'astro';
+import { slugifyStr } from '@utils/slugify';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: ImageMetadata;
+	ogImage?: string;
+	postSlug?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image = FallbackImage, ogImage, postSlug } = Astro.props;
+
+// Generate dynamic OG image URL if enabled and no custom OG image
+const dynamicOgImage = SITE.dynamicOgImage && postSlug && !ogImage 
+  ? new URL(`/og/${slugifyStr(title)}.png`, Astro.site)
+  : null;
+
+const finalOgImage = ogImage 
+  ? new URL(ogImage, Astro.site)
+  : dynamicOgImage 
+  ? dynamicOgImage
+  : new URL(image.src, Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -47,14 +62,14 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:image" content={finalOgImage} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<meta property="twitter:image" content={finalOgImage} />
 
 <!-- Theme initialization script (prevent flash) -->
 <script is:inline>

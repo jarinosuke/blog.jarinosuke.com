@@ -14,7 +14,7 @@ const { title, description, datetime, modDatetime, ogImage, tags, readingTime } 
 
 <html lang="ja">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} ogImage={typeof ogImage === 'string' ? ogImage : undefined} postSlug={title} />
 	</head>
 
 	<body>

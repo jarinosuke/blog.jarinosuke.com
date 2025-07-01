@@ -23,18 +23,18 @@
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       
-      progressBar.style.width = scrolled + '%';
+      progressBar!.style.width = scrolled + '%';
       
       // Hide progress bar when at top of page
       if (scrolled < 1) {
-        scrollProgress.style.opacity = '0';
+        scrollProgress!.style.opacity = '0';
       } else {
-        scrollProgress.style.opacity = '1';
+        scrollProgress!.style.opacity = '1';
       }
     }
 
     // Initial state
-    scrollProgress.style.opacity = '0';
+    scrollProgress!.style.opacity = '0';
 
     // Update on scroll
     window.addEventListener('scroll', updateProgress, { passive: true });
