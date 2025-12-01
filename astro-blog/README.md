@@ -1,68 +1,72 @@
-# Astro Starter Kit: Blog
+# blog.jarinosuke.com
+
+Astro 5 + Tailwind のブログ。ローカル開発やビルド時に使うコマンドをまとめています。
+
+## 前提
+
+- Node.js 18+（Astro 5 系必須）
+- npm（このリポジトリは npm ロックファイルを使用）
+
+## セットアップ
 
 ```sh
-npm create astro@latest -- --template blog
+cd astro-blog
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 開発
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- デフォルト: http://localhost:4321
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## ビルドとプレビュー
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+```sh
+npm run build      # 型チェック → Astro ビルド → Pagefind 生成
+npm run preview    # dist をローカルで確認
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 記事の作成手順
 
-## 🧞 Commands
+1. `src/content/blog/` に `slug.md` 形式でファイルを作成（例: `my-new-post.md`）。拡張子は `.md` でも `.mdx` でも可。
+2. フロントマターを記入（必須は `title`, `datetime`, `description`）。`slug` を省略するとファイル名が URL になる。
+3. 本文を書く。Markdown/MDX が使用可能。
+4. 下記コマンドでチェックとプレビュー。
 
-All commands are run from the root of the project, from a terminal:
+```yaml
+---
+title: 記事タイトル
+datetime: 2025-01-01
+description: 記事の説明文（一覧やOGP用）
+tags:
+  - sample
+draft: false        # 下書きなら true
+featured: false     # トップの「注目」に出すなら true
+ogImage: /og/default.png # 任意。1200x630 以上の画像またはパス
+---
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm run check   # 型/フロントマターを検証
+npm run dev     # プレビュー（http://localhost:4321）
+```
 
-## 👀 Want to learn more?
+### Makefile で記事を自動作成する場合
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+make new-post slug=my-new-post title="My New Post" description="短い説明"
+```
 
-## Credit
+- 必須: `slug`
+- 省略可: `title`（省略時は slug）、`description`（省略時はプレースホルダー）
+- 出力先: `src/content/blog/<slug>.md`
+- 生成時は `draft: true`、`featured: false` で作成される
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## 主要スクリプト
+
+- `npm run check` : `astro check` と `astro sync` による型/コンテンツ検証
+- `npm run format`: Prettier での整形
+- `npm run postbuild`: Pagefind の検索インデックスを生成し、必要なファイルをコピー
